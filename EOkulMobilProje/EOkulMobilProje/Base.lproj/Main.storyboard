@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="-59" width="393" height="970"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="TY1-pt-ZWm">
-                                <rect key="frame" x="30" y="297" width="333" height="262.33333333333331"/>
+                                <rect key="frame" x="30" y="297" width="333" height="276.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4xi-tk-PD5">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -139,12 +139,23 @@
                                             <action selector="loginButtonClk:" destination="MEJ-dE-Nwn" eventType="touchUpInside" id="zLs-nc-0bF"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şifreni mi Unuttun?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTk-ES-zoe">
-                                        <rect key="frame" x="0.0" y="242" width="333" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-5u-KZb">
+                                        <rect key="frame" x="0.0" y="242.00000000000003" width="333" height="34.333333333333343"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Şifreni mi Unuttun?">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="ArialMT"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPasswordButton:" destination="MEJ-dE-Nwn" eventType="touchUpInside" id="qa1-lI-U7g"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725491169999999" green="0.60000002379999995" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
@@ -231,7 +242,7 @@
                                 <rect key="frame" x="0.0" y="-59" width="393" height="970"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="CFR-Z5-hhZ">
-                                <rect key="frame" x="30" y="331" width="333" height="262.33333333333326"/>
+                                <rect key="frame" x="30" y="317" width="333" height="276.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mcg-fh-hPC">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -265,17 +276,29 @@
                                             <action selector="loginButtonClick:" destination="hdv-rE-Utx" eventType="touchUpInside" id="AiE-mw-W3o"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şifreni mi Unuttun?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-Hu-jcr">
-                                        <rect key="frame" x="0.0" y="242" width="333" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjB-lz-IO9">
+                                        <rect key="frame" x="0.0" y="242.00000000000003" width="333" height="34.333333333333343"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Şifreni mi Unuttun?">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="ArialMT"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPasswordButton:" destination="MEJ-dE-Nwn" eventType="touchUpInside" id="5QK-5Q-fiV"/>
+                                            <action selector="forgotPasswordButton:" destination="hdv-rE-Utx" eventType="touchUpInside" id="JpD-JL-U2D"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725491169999999" green="0.60000002379999995" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öğretmen Girişi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-Pe-DmV">
-                                <rect key="frame" x="72.333333333333329" y="196" width="248.33333333333337" height="100"/>
+                                <rect key="frame" x="72.333333333333329" y="182" width="248.33333333333337" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="LaF-5M-VSl"/>
                                     <constraint firstAttribute="height" constant="100" id="lPb-vd-0y6"/>
@@ -342,7 +365,7 @@
                                 <rect key="frame" x="0.0" y="-59" width="393" height="970"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jHg-9U-lNP">
-                                <rect key="frame" x="30" y="331" width="333" height="262.33333333333326"/>
+                                <rect key="frame" x="30" y="317" width="333" height="276.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ppv-d3-Euj">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -376,17 +399,29 @@
                                             <action selector="loginButtonClick:" destination="Fj9-Wk-9GF" eventType="touchUpInside" id="Cmk-T5-z1H"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şifreni mi Unuttun?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o78-pm-Sbo">
-                                        <rect key="frame" x="0.0" y="242" width="333" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyk-vr-eRd">
+                                        <rect key="frame" x="0.0" y="242.00000000000003" width="333" height="34.333333333333343"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Şifreni mi Unuttun?">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="ArialMT"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPasswordButton:" destination="Fj9-Wk-9GF" eventType="touchUpInside" id="7ES-am-4fm"/>
+                                            <action selector="forgotPasswordButton:" destination="MEJ-dE-Nwn" eventType="touchUpInside" id="ebc-Lb-EtT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725491169999999" green="0.60000002379999995" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Müdür Girişi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAq-RQ-1CC">
-                                <rect key="frame" x="98" y="196" width="197" height="100"/>
+                                <rect key="frame" x="98" y="182" width="197" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="2ge-VC-SX7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Myi-GF-rMf"/>

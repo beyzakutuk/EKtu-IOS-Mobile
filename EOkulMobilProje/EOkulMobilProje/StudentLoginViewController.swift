@@ -59,6 +59,30 @@ class StudentLoginViewController: UIViewController {
         present(viewController, animated: true)
     }
     
+    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+        
+        // "Şifreni mi unuttun?" butonuna tıklandığında eylem
+        let alertController = UIAlertController(title: "Şifreni mi unuttun?", message: "E-posta adresinizi girin", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "E-posta adresi"
+        }
+        
+        let cancelAction = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
+        let submitAction = UIAlertAction(title: "Gönder", style: .default) { (_) in
+            if let email = alertController.textFields?.first?.text {
+                // Burada e-posta adresiyle yapılacak işlemleri gerçekleştireceğiz
+                print("Girilen e-posta: \(email)")
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(submitAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -69,4 +93,4 @@ class StudentLoginViewController: UIViewController {
     }
     */
 
-}
+
