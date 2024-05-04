@@ -44,7 +44,7 @@ class StudentLoginViewController: UIViewController {
             success in
             if success
             {
-                self.goToStudentProfilePage()
+                self.performSegue(withIdentifier: "toStudentProfilePage", sender: self)
             }
             else
             {
@@ -53,7 +53,7 @@ class StudentLoginViewController: UIViewController {
         }
     }
     
-    private func goToStudentProfilePage()
+    private func goToStudentProfilePage() //silinebilir
     {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "StudentProfileVC") as! StudentProfileViewController
         present(viewController, animated: true)
