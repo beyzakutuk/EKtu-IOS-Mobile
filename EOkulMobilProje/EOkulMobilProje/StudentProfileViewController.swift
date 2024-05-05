@@ -8,6 +8,11 @@
 import UIKit
 
 class StudentProfileViewController: UIViewController {
+    
+    // MARK: -VARIABLES
+    
+    
+    // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +20,21 @@ class StudentProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func exitButtonClicked(_ sender: UIButton) {
+        
+        let exitAlert = UIAlertController(title: "Çıkış Yap", message: "Çıkış yapmak istediğinizden emin misiniz?", preferredStyle: .alert)
+        
+        //evet
+        exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
+                                          // Giriş sayfasına geri dön
+            self.performSegue(withIdentifier: "backToLogin", sender: self)
+                                      }))
+        //iptal
+        exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
+        
+        self.present(exitAlert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
