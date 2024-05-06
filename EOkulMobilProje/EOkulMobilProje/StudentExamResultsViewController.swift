@@ -40,8 +40,8 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         tableView.dataSource = self
         tableView.delegate = self
         
-        courses.append(StudentsCourses(courseName: "Matematik", midtermResult: 85, finalResult: 90))
-        courses.append(StudentsCourses(courseName: "Fizik", midtermResult: 90, finalResult: 85))
+        courses.append(StudentsCourses(course: (Courses(courseId: "1", courseName: "Matematik")), midtermResult: 85, finalResult: 90))
+        courses.append(StudentsCourses(course:(Courses(courseId: "2", courseName: "Fizik")), midtermResult: 90, finalResult: 85))
     }
     
     // Dropdown menüyü gösteren eylem fonksiyonu
@@ -83,11 +83,11 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentsCoursesTableViewCell
         let course = courses[indexPath.row] // Doğru dersi almak için indexPath.row kullanın
             
-            cell.titleLabel.text = course.courseName
-            cell.midtermResult.text = "Ara Sınav: \(course.midtermResult)" // course değişkenine erişin
-            cell.finalResult.text = "Final: \(course.finalResult)" // course değişkenine erişin
+        cell.titleLabel.text = course.course.courseName
+        cell.midtermResult.text = "Ara Sınav: \(course.midtermResult)" // course değişkenine erişin
+        cell.finalResult.text = "Final: \(course.finalResult)" // course değişkenine erişin
             
-            return cell
+        return cell
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
