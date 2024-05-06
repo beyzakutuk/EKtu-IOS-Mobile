@@ -3,4 +3,192 @@
    uuid = "E3611E6C-5EA9-4691-8EA4-0D2C674F0B31"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentCourseSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "StudentCourseSelectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 707b304e5399b2b5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.lessonsTableView.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - deddec454cd532a1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.lessonsTableView.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 8b280e49c837f2ab"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.lessonsTableView.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - af7cca9115f05afe"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.lessonsTableView.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 704c0ff5e4e70015"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EOkulMobilProje.StudentCourseSelectionViewController"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 2f74e78e13c852d7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EOkulMobilProje.StudentCourseSelectionViewController&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 704c0ff5e4e70015"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EOkulMobilProje.StudentCourseSelectionViewController"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "8E8E278F-83E2-4151-9B95-913DBA1DE6DD - 2f74e78e13c852d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EOkulMobilProje.StudentCourseSelectionViewController&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD7550F0-8D34-4F18-B636-F48D3E731941"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentCourseSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "StudentCourseSelectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BD7550F0-8D34-4F18-B636-F48D3E731941 - 704c0ff5e4e70015"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EOkulMobilProje.StudentCourseSelectionViewController"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "BD7550F0-8D34-4F18-B636-F48D3E731941 - 2f74e78e13c852d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentCourseSelectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EOkulMobilProje.StudentCourseSelectionViewController&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentCourseSelectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
