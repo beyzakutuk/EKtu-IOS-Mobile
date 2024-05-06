@@ -9,7 +9,12 @@ import Foundation
 
 struct StudentsCourses
 {
-    var courseName : String
+    var course : Courses
     var midtermResult : Int
     var finalResult : Int
+}
+
+class SelectedCourse
+{
+    var coursesArray : [StudentsCourses] = []
 }

@@ -11,6 +11,7 @@ struct Courses
 {
     var courseId: String
     var courseName : String
+    var isMainCourse: Bool = true // Ana ders mi?
 }
 
 class CourseManager
@@ -34,7 +35,7 @@ class CourseManager
             }
         }
         
-        lessons.append(Courses(courseId: "4", courseName: "Türk Dili"))
+        lessons.append(Courses(courseId: "4", courseName: "Türk Dili" , isMainCourse: false))
         return lessons
     }
     

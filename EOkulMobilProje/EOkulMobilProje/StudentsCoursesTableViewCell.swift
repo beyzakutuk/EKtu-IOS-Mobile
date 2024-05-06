@@ -11,9 +11,7 @@ class StudentsCoursesTableViewCell: UITableViewCell {
     
     // MARK: -VARIABLES
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var midtermResult: UILabel!
-    
     @IBOutlet weak var finalResult: UILabel!
     
     override func awakeFromNib() {
