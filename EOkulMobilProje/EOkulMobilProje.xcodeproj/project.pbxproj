@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B122900D2BEA64CF00C29D73 /* StudentTranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122900C2BEA64CF00C29D73 /* StudentTranscriptViewController.swift */; };
+		B122900F2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122900E2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift */; };
 		B15BB0472BE138F1009AF244 /* StudentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BB0462BE138F1009AF244 /* StudentLoginViewController.swift */; };
 		B15BB0492BE13A6B009AF244 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BB0482BE13A6B009AF244 /* StudentModel.swift */; };
 		B15BB04B2BE13CA3009AF244 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BB04A2BE13CA3009AF244 /* NetworkService.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B122900C2BEA64CF00C29D73 /* StudentTranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTranscriptViewController.swift; sourceTree = "<group>"; };
+		B122900E2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCollectionViewCell.swift; sourceTree = "<group>"; };
 		B15BB0462BE138F1009AF244 /* StudentLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLoginViewController.swift; sourceTree = "<group>"; };
 		B15BB0482BE13A6B009AF244 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		B15BB04A2BE13CA3009AF244 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				B1F16A932BE81B31006B6EA5 /* StudentsCoursesTableViewCell.swift */,
 				B1A204B52BE8FEAB009FE84C /* StudentCourseSelectionTableViewCell.swift */,
 				B1A204B82BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift */,
+				B122900C2BEA64CF00C29D73 /* StudentTranscriptViewController.swift */,
+				B122900E2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift */,
 			);
 			path = EOkulMobilProje;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 				B15BB04D2BE13E09009AF244 /* UserModel.swift in Sources */,
 				B15BB0552BE15A05009AF244 /* TeacherProfileViewController.swift in Sources */,
 				B15BB0532BE15849009AF244 /* DirectorLoginViewController.swift in Sources */,
+				B122900D2BEA64CF00C29D73 /* StudentTranscriptViewController.swift in Sources */,
 				B15DF8312BE0066900C170F7 /* AppDelegate.swift in Sources */,
 				B1A204B92BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift in Sources */,
 				B1B8FD942BE67197005C7AF5 /* StudentsCourses.swift in Sources */,
@@ -203,6 +210,7 @@
 				B15BB04F2BE1462D009AF244 /* StudentProfileViewController.swift in Sources */,
 				B1A204B42BE8FC93009FE84C /* StudentCourseSelectionViewController.swift in Sources */,
 				B1B8FD962BE673A7005C7AF5 /* StudentExamResultsViewController.swift in Sources */,
+				B122900F2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift in Sources */,
 				B1A204B22BE8FA1C009FE84C /* Courses.swift in Sources */,
 				B15BB0492BE13A6B009AF244 /* StudentModel.swift in Sources */,
 				B15BB04B2BE13CA3009AF244 /* NetworkService.swift in Sources */,

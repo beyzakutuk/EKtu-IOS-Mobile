@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -367,6 +368,9 @@
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Ujc-O0-aC7" kind="presentation" modalPresentationStyle="fullScreen" id="I9V-cd-bvk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZQ-tL-NUR">
                                         <rect key="frame" x="0.0" y="160" width="333" height="50"/>
@@ -648,7 +652,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPu-DP-W3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3383.969465648855" y="1743.661971830986"/>
+            <point key="canvasLocation" x="2917" y="2579"/>
+        </scene>
+        <!--Student Transcript View Controller-->
+        <scene sceneID="AAA-G7-R9M">
+            <objects>
+                <viewController id="Ujc-O0-aC7" userLabel="Student Transcript View Controller" customClass="StudentTranscriptViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uzq-Fy-upQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="XLX-yC-i3L">
+                                <rect key="frame" x="0.0" y="-64" width="393" height="980"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0of-ya-BhW">
+                                <rect key="frame" x="0.0" y="10" width="126" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqw-Gj-KS4" userLabel="Back">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Y9E-fz-0Jm"/>
+                                            <constraint firstAttribute="height" constant="40" id="uiW-nR-Pup"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transkript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-rA-tx7" userLabel="SınavSonucları">
+                                        <rect key="frame" x="49.333333333333336" y="0.0" width="76.666666666666657" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="H44-wA-Fce"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNs-fZ-jFj">
+                                <rect key="frame" x="0.0" y="129" width="393" height="723"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="18F-oK-bmo">
+                                    <size key="itemSize" width="393" height="91"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="FJK-za-UaQ" customClass="TranscriptCollectionViewCell" customModule="EOkulMobilProje" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="91"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iOs-EB-g0M">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dönem Başlığı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-Ic-kIn">
+                                                    <rect key="frame" x="1" y="10" width="391" height="30"/>
+                                                    <color key="backgroundColor" red="0.843286887886598" green="0.843286887886598" blue="0.843286887886598" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Mht-4Z-vF8"/>
+                                                        <constraint firstAttribute="width" constant="391" id="ugj-lH-RGD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uIp-Ic-kIn" firstAttribute="top" secondItem="iOs-EB-g0M" secondAttribute="top" constant="10" id="5Zw-pY-EUd"/>
+                                                <constraint firstAttribute="trailing" secondItem="uIp-Ic-kIn" secondAttribute="trailing" constant="1" id="XFb-Wv-JjO"/>
+                                                <constraint firstItem="uIp-Ic-kIn" firstAttribute="leading" secondItem="iOs-EB-g0M" secondAttribute="leading" constant="1" id="cHA-H3-dvr"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="393" height="91"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="uIp-Ic-kIn" id="7yY-Zn-VXU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Swc-mK-sHj">
+                                <rect key="frame" x="1" y="65" width="391" height="20.333333333333329"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ders Adı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-Kz-VjR">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başarı Notu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ge-3B-Kb0">
+                                        <rect key="frame" x="198" y="0.0" width="193" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a2R-GD-bJH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Swc-mK-sHj" firstAttribute="leading" secondItem="a2R-GD-bJH" secondAttribute="leading" constant="1" id="057-ai-uAC"/>
+                            <constraint firstItem="a2R-GD-bJH" firstAttribute="trailing" secondItem="Swc-mK-sHj" secondAttribute="trailing" constant="1" id="1e9-J9-0Ux"/>
+                            <constraint firstItem="Swc-mK-sHj" firstAttribute="top" secondItem="0of-ya-BhW" secondAttribute="bottom" constant="15" id="d19-tQ-uX1"/>
+                            <constraint firstItem="0of-ya-BhW" firstAttribute="top" secondItem="a2R-GD-bJH" secondAttribute="top" constant="10" id="t2V-8H-1Fw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="05M-KS-Ssq"/>
+                    <connections>
+                        <outlet property="collectionView" destination="tNs-fZ-jFj" id="BlA-4r-aga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skK-qN-sdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4590.0763358778622" y="1755.6338028169016"/>
         </scene>
         <!--Student Exam Results View Controller-->
         <scene sceneID="Rfw-3B-HXU">
@@ -795,7 +920,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sz-Wf-wrL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3383.969465648855" y="950.70422535211276"/>
+            <point key="canvasLocation" x="4592" y="951"/>
         </scene>
         <!--Teacher Login View Controller-->
         <scene sceneID="162-a8-09u">
@@ -1088,6 +1213,9 @@
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
