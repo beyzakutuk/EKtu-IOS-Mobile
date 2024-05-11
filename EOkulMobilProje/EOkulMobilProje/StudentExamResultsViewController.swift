@@ -40,8 +40,10 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         tableView.dataSource = self
         tableView.delegate = self
         
+        /*
         courses.append(StudentsCourses(course: (Courses(courseId: "1", courseName: "Matematik")), midtermResult: 85, finalResult: 90))
         courses.append(StudentsCourses(course:(Courses(courseId: "2", courseName: "Fizik")), midtermResult: 90, finalResult: 85))
+         */
     }
     
     // Dropdown menüyü gösteren eylem fonksiyonu

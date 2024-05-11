@@ -90,6 +90,8 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
             }
         }
     }
+    
+    
 
 
     /*
