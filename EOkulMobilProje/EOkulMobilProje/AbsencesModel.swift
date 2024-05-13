@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct AbsencesModel
-{
-    var courseName : String
-    var absencesDate : String
+struct AbsencesModel {
+    var courseName: String
+    var absenceDate: String
 }
 
 class AbsencesManager {
@@ -26,11 +25,27 @@ class AbsencesManager {
     
     // Devamsızlıkları tarihe göre sıralamak için
     private func sortAbsencesByDate() {
-        absencesList.sort { $0.absenceDate < $1.absenceDate }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // absenceDate'in formatına göre değiştirilmelidir
+        
+        absencesList.sort {
+            if let date1 = dateFormatter.date(from: $0.absenceDate), let date2 = dateFormatter.date(from: $1.absenceDate) {
+                return date1 < date2
+            } else {
+                // Tarihleri dönüştürme hatası
+                return false
+            }
+        }
+    }
+
+    // Tüm devamsızlıkları almak için
+    func getAllAbsences() -> [AbsencesModel] {
+        return absencesList
     }
     
-    func getAllAbsences() -> [AbsencesModel] {
-            return absencesList
+    // Toplam devamsızlık sayısını hesaplamak için
+    func totalAbsencesCount() -> Int {
+        return absencesList.count
     }
 }
 
