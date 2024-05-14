@@ -45,7 +45,7 @@ class TeacherLoginViewController: UIViewController {
             success in
             if success
             {
-                self.goToStudentProfilePage()
+                self.performSegue(withIdentifier: "toTeacherProfilePage", sender: self)
             }
             else
             {
@@ -53,12 +53,7 @@ class TeacherLoginViewController: UIViewController {
             }
         }
     }
-    
-    private func goToStudentProfilePage()
-    {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "TeacherProfileVC") as! TeacherProfileViewController
-        present(viewController, animated: true)
-    }
+
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         // "Şifreni mi unuttun?" butonuna tıklandığında eylem
