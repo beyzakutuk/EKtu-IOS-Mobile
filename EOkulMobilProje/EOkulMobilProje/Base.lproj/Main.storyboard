@@ -1350,6 +1350,8 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="exitButtonClicked:" destination="H5X-sN-Ytf" eventType="touchUpInside" id="RmP-eD-Gj6"/>
+                                                    <action selector="exitButtonClicked:" destination="chN-BL-i0K" eventType="touchUpInside" id="USX-l0-qSW"/>
+                                                    <segue destination="hdv-rE-Utx" kind="presentation" identifier="backToLogin" modalPresentationStyle="fullScreen" id="gwd-QZ-zbH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1493,6 +1495,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="gwd-QZ-zbH"/>
         <segue reference="AhE-1d-KXC"/>
         <segue reference="qT1-is-H61"/>
         <segue reference="jjN-bt-TMm"/>
