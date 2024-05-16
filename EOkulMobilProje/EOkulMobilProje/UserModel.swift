@@ -13,4 +13,12 @@ struct UserModel
     let lastName:String
     let tcNo:String
     let password:String
+    let userType: UserType
+}
+
+enum UserType {
+    case Student(classId: String)
+    case Teacher
+    case Director
+    // Diğer kullanıcı tipleri buraya eklenebilir
 }
