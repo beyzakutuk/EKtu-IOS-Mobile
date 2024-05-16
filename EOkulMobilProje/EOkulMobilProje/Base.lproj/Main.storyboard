@@ -1432,6 +1432,9 @@
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="tAK-tP-g1i" kind="presentation" modalPresentationStyle="fullScreen" id="b8m-9B-iuT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY4-t6-vhA">
                                         <rect key="frame" x="0.0" y="160" width="333" height="50"/>
@@ -1495,6 +1498,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHn-rJ-KIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="-1073"/>
+        </scene>
+        <!--Student İnformation View Controller-->
+        <scene sceneID="ECe-N8-RUD">
+            <objects>
+                <viewController id="tAK-tP-g1i" userLabel="Student İnformation View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zg9-TO-Trw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Ld-Co-zXN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b24-QO-ggN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4430" y="-29"/>
         </scene>
         <!--Exam Finalization View Controller-->
         <scene sceneID="9o7-S7-J7Y">
