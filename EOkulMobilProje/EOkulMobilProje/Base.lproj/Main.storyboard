@@ -655,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPu-DP-W3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024" y="2565"/>
+            <point key="canvasLocation" x="955" y="2581"/>
         </scene>
         <!--Student Absences View Controller-->
         <scene sceneID="oo7-QO-B2A">
@@ -775,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUb-QU-6Ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3551.9083969465646" y="2564.7887323943664"/>
+            <point key="canvasLocation" x="2024" y="2581"/>
         </scene>
         <!--Student Transcript View Controller-->
         <scene sceneID="AAA-G7-R9M">
@@ -899,7 +899,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skK-qN-sdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4590.0763358778622" y="1755.6338028169016"/>
+            <point key="canvasLocation" x="3244" y="2581"/>
         </scene>
         <!--Student Exam Results View Controller-->
         <scene sceneID="Rfw-3B-HXU">
@@ -1046,7 +1046,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sz-Wf-wrL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4592" y="951"/>
+            <point key="canvasLocation" x="4430" y="1928"/>
         </scene>
         <!--Teacher Login View Controller-->
         <scene sceneID="162-a8-09u">
@@ -1416,6 +1416,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="mWz-J5-AKs" kind="presentation" modalPresentationStyle="fullScreen" id="xuy-dt-725"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hki-ji-tf6">
                                         <rect key="frame" x="0.0" y="80" width="333" height="50"/>
@@ -1493,10 +1496,25 @@
             </objects>
             <point key="canvasLocation" x="2024" y="-1073"/>
         </scene>
+        <!--Exam Finalization View Controller-->
+        <scene sceneID="9o7-S7-J7Y">
+            <objects>
+                <viewController id="mWz-J5-AKs" userLabel="Exam Finalization View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzH-r3-6mB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GwW-qT-da4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMA-r6-e0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4430" y="749"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="gwd-QZ-zbH"/>
-        <segue reference="AhE-1d-KXC"/>
+        <segue reference="7pb-XC-FV4"/>
         <segue reference="qT1-is-H61"/>
         <segue reference="jjN-bt-TMm"/>
     </inferredMetricsTieBreakers>
