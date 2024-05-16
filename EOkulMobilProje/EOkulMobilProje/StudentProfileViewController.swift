@@ -11,13 +11,15 @@ class StudentProfileViewController: UIViewController {
     
     // MARK: -VARIABLES
     
+    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
@@ -35,14 +37,19 @@ class StudentProfileViewController: UIViewController {
         self.present(exitAlert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Öğrenci bilgilerini güncelleme fonksiyonu
+    func updateStudentInfo() {
+        if let currentUser = NetworkService.shared.currentUser {
+            switch currentUser.userType {
+                case .Student(let classId):
+                    // Eğer kullanıcı öğrenci ise, classId bilgisine eriş
+                    print("Öğrencinin sınıfı: \(classId)")
+                case .Teacher, .Director:
+                    // Öğrenci değilse, öğretmen veya müdür olabilir, uygun bir işlem yap
+                    print("Öğrenci değil")
+                }
+            nameLabel.text = "Ad Soyad: \(currentUser.firstName) \(currentUser.lastName)"
+        }
     }
-    */
 
 }

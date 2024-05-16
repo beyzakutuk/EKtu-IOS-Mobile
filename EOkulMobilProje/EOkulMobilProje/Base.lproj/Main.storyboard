@@ -426,6 +426,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5DO-Tt-q5j"/>
+                    <connections>
+                        <outlet property="classLabel" destination="ADb-MQ-pB5" id="8fi-Ig-gn7"/>
+                        <outlet property="nameLabel" destination="F0B-Zt-i1F" id="5G8-3T-L57"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay9-Xb-oPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1531,6 +1535,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="amO-09-m1g"/>
         <segue reference="gwd-QZ-zbH"/>
         <segue reference="7pb-XC-FV4"/>
         <segue reference="qT1-is-H61"/>
