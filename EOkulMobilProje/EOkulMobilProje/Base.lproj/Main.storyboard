@@ -1197,7 +1197,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="e0Z-jF-Wft"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1207,7 +1206,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BXc-te-Chg"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1221,6 +1219,7 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Giriş Yap" cornerStyle="capsule"/>
                                         <connections>
                                             <action selector="loginButtonClick:" destination="Fj9-Wk-9GF" eventType="touchUpInside" id="Cmk-T5-z1H"/>
+                                            <segue destination="xDr-mv-H52" kind="presentation" identifier="toDirectorProfilePage" modalPresentationStyle="fullScreen" id="s7V-eP-ISO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyk-vr-eRd">
@@ -1487,6 +1486,9 @@
                             <constraint firstItem="JVG-Jo-PXs" firstAttribute="trailing" secondItem="hOL-9S-Mbb" secondAttribute="trailing" constant="30" id="ocl-cu-kjv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="9uw-aD-NPk" id="97g-c2-f6Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxb-tw-qAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1539,11 +1541,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="amO-09-m1g"/>
         <segue reference="gwd-QZ-zbH"/>
-        <segue reference="7pb-XC-FV4"/>
+        <segue reference="AhE-1d-KXC"/>
         <segue reference="qT1-is-H61"/>
-        <segue reference="7bt-Lo-UMD"/>
+        <segue reference="znX-mK-xQP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
