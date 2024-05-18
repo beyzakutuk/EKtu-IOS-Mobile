@@ -1612,7 +1612,7 @@
                                                     <action selector="exitButtonClicked:" destination="H5X-sN-Ytf" eventType="touchUpInside" id="E9W-e9-ciy"/>
                                                     <action selector="exitButtonClicked:" destination="chN-BL-i0K" eventType="touchUpInside" id="WBL-Bd-i3v"/>
                                                     <action selector="exitButtonClicked:" destination="xDr-mv-H52" eventType="touchUpInside" id="z1m-Qt-hxe"/>
-                                                    <segue destination="Fj9-Wk-9GF" kind="presentation" modalPresentationStyle="fullScreen" id="1dL-nM-BoP"/>
+                                                    <segue destination="Fj9-Wk-9GF" kind="presentation" identifier="backToLogin" modalPresentationStyle="fullScreen" id="1dL-nM-BoP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
