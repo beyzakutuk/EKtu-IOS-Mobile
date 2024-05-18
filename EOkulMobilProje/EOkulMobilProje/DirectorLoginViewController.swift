@@ -12,14 +12,18 @@ class DirectorLoginViewController: UIViewController {
     // MARK: -VARIABLES
     
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
+    var loggedInDirector : DirectorModel?
+    
     // MARK: -FUNCTİONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
+        
+        DirectorDatabase.yeniMudurEkle(isim: "Merve", soyisim: "Kütük", tcKimlikNo: "34567890123", sifre: "0123")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,26 +42,31 @@ class DirectorLoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
-        NetworkService.shared.loginDirector(tcNo: usernameField.text!, password: passwordField.text!)
+        
+        let tckn = usernameField.text ?? ""
+        let sifre = passwordField.text ?? ""
+
+        if let director = DirectorDatabase.directorDatabase[tckn], director.sifre == sifre
         {
-            success in
-            if success
-            {
-                self.goToStudentProfilePage()
-            }
-            else
-            {
-                print("invalid credentials")
-            }
+            loggedInDirector = director
+
+            performSegue(withIdentifier: "toDirectorProfilePage", sender: nil)
+            print("Giriş başarılı, profil sayfasına yönlendiriliyor...")
         }
+        else
+        {
+            // Giriş başarısız, hata mesajı göster
+            let alert = UIAlertController(title: "Hata", message: "Hatalı TC kimlik numarası veya şifre!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            print("Hatalı TC kimlik numarası veya şifre!")
+        }
+
+           
+      
     }
     
-    private func goToStudentProfilePage()
-    {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "DirectorProfileVC") as! DirectorProfileViewController
-        present(viewController, animated: true)
-    }
-    
+
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         // "Şifreni mi unuttun?" butonuna tıklandığında eylem
                let alertController = UIAlertController(title: "Şifreni mi unuttun?", message: "E-posta adresinizi girin", preferredStyle: .alert)
@@ -79,16 +88,5 @@ class DirectorLoginViewController: UIViewController {
                
                present(alertController, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
