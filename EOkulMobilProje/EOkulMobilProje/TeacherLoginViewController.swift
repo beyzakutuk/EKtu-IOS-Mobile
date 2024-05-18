@@ -10,17 +10,21 @@ import UIKit
 class TeacherLoginViewController: UIViewController {
     
     // MARK: -VARIABLES
+    var user: UserModel?
     
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
+    
+    var loggedInTeacher: TeacherModel?
+    
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
+        
+        TeacherDatabase.yeniOgretmenEkle(isim: "Eda Nur", soyisim: "Korkusuz", tcKimlikNo: "23456789012", sifre: "9012")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,20 +44,28 @@ class TeacherLoginViewController: UIViewController {
     
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
-        NetworkService.shared.loginTeacher(tcNo: usernameField.text!, password: passwordField.text!)
-        {
-            success in
-            if success
-            {
-                self.performSegue(withIdentifier: "toTeacherProfilePage", sender: self)
-            }
-            else
-            {
-                print("invalid credentials")
-            }
-        }
-    }
+        let tckn = usernameField.text ?? ""
+        let sifre = passwordField.text ?? ""
 
+        if let teacher = TeacherDatabase.teacherDatabase[tckn], teacher.sifre == sifre
+        {
+            loggedInTeacher = teacher
+
+            performSegue(withIdentifier: "toTeacherProfilePage", sender: nil)
+            print("Giriş başarılı, profil sayfasına yönlendiriliyor...")
+        }
+        else
+        {
+            // Giriş başarısız, hata mesajı göster
+            let alert = UIAlertController(title: "Hata", message: "Hatalı TC kimlik numarası veya şifre!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            print("Hatalı TC kimlik numarası veya şifre!")
+        }
+
+           
+        }
+    
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         // "Şifreni mi unuttun?" butonuna tıklandığında eylem
@@ -76,16 +88,4 @@ class TeacherLoginViewController: UIViewController {
                
                present(alertController, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
