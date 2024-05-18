@@ -1611,6 +1611,8 @@
                                                 <connections>
                                                     <action selector="exitButtonClicked:" destination="H5X-sN-Ytf" eventType="touchUpInside" id="E9W-e9-ciy"/>
                                                     <action selector="exitButtonClicked:" destination="chN-BL-i0K" eventType="touchUpInside" id="WBL-Bd-i3v"/>
+                                                    <action selector="exitButtonClicked:" destination="xDr-mv-H52" eventType="touchUpInside" id="z1m-Qt-hxe"/>
+                                                    <segue destination="Fj9-Wk-9GF" kind="presentation" modalPresentationStyle="fullScreen" id="1dL-nM-BoP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1633,7 +1635,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTE-CW-Tsy">
-                                        <rect key="frame" x="145" y="121" width="110" height="100"/>
+                                        <rect key="frame" x="145.33333333333331" y="121" width="110" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="nSe-2b-3jV"/>
                                             <constraint firstAttribute="width" constant="110" id="rtp-4U-H4h"/>
@@ -1715,6 +1717,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1dL-nM-BoP"/>
         <segue reference="gwd-QZ-zbH"/>
         <segue reference="AhE-1d-KXC"/>
         <segue reference="qT1-is-H61"/>
