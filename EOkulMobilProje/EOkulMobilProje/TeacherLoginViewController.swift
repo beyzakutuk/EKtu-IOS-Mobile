@@ -88,4 +88,13 @@ class TeacherLoginViewController: UIViewController {
                
                present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTeacherProfilePage" {
+            if let destinationVC = segue.destination as? TeacherProfileViewController {
+                destinationVC.teacher = loggedInTeacher
+            }
+        }
+    }
 }

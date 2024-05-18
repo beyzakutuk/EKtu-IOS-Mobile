@@ -9,10 +9,14 @@ import UIKit
 
 class TeacherProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var teacher : TeacherModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       setupProfile()
     }
     
 
@@ -30,6 +34,9 @@ class TeacherProfileViewController: UIViewController {
         
         self.present(exitAlert, animated: true, completion: nil)
     }
-    
 
+    private func setupProfile() {
+            guard let Teacher = teacher else { return }
+            nameLabel.text = "\(Teacher.isim) \(Teacher.soyisim)"
+    }
 }
