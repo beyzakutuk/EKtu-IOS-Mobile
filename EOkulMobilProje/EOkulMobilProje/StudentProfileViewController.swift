@@ -14,12 +14,14 @@ class StudentProfileViewController: UIViewController {
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    var student : StudentModel?
+    
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateStudentInfo()
+        setupProfile()
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
@@ -52,19 +54,11 @@ class StudentProfileViewController: UIViewController {
         self.present(exitAlert, animated: true, completion: nil)
     }
     
-    // Öğrenci bilgilerini güncelleme fonksiyonu
-    func updateStudentInfo() {
-        if let currentUser = NetworkService.shared.currentUser {
-            switch currentUser.userType {
-                case .Student(let classId):
-                    // Eğer kullanıcı öğrenci ise, classId bilgisine eriş
-                    classLabel.text = "Sınıf: \(classId)"
-                case .Teacher, .Director:
-                    // Öğrenci değilse, öğretmen veya müdür olabilir, uygun bir işlem yap
-                    print("Öğrenci değil")
-                }
-            nameLabel.text = "Ad Soyad: \(currentUser.firstName) \(currentUser.lastName)"
-        }
+    private func setupProfile() {
+            guard let student = student else { return }
+            nameLabel.text = "\(student.isim) \(student.soyisim)"
+            classLabel.text = student.sinifNumarasi
     }
-
+    
 }
+

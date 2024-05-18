@@ -14,6 +14,8 @@ class StudentLoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
+    var loggedInStudent: StudentModel?
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
@@ -44,7 +46,10 @@ class StudentLoginViewController: UIViewController {
         let tckn = usernameField.text ?? ""
         let sifre = passwordField.text ?? ""
 
-        if StudentDatabase.studentLogin(tckn: tckn, password: sifre) {
+        if let student = StudentDatabase.studentDatabase[tckn], student.sifre == sifre
+        {
+            loggedInStudent = student
+
             performSegue(withIdentifier: "toStudentProfilePage", sender: nil)
             print("Giriş başarılı, profil sayfasına yönlendiriliyor...")
         }
@@ -82,6 +87,15 @@ class StudentLoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
         }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toStudentProfilePage" {
+            if let destinationVC = segue.destination as? StudentProfileViewController {
+                destinationVC.student = loggedInStudent
+            }
+        }
     }
+}
 
 
