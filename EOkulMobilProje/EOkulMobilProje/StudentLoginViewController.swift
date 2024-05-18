@@ -12,15 +12,17 @@ class StudentLoginViewController: UIViewController {
     // MARK: -VARIABLES
     
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
+        
+        // Yeni bir öğrenci ekle
+        StudentDatabase.yeniOgrenciEkle(isim: "Beyza", soyisim: "Kütük", tcKimlikNo: "12345678901", sifre: "8901", sinifNumarasi: "3.Sınıf")
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,25 +41,23 @@ class StudentLoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonClk(_ sender: Any) {
-        NetworkService.shared.loginStudent(tcNo: usernameField.text!, password: passwordField.text!)
+        let tckn = usernameField.text ?? ""
+        let sifre = passwordField.text ?? ""
+
+        if StudentDatabase.studentLogin(tckn: tckn, password: sifre) {
+            performSegue(withIdentifier: "toStudentProfilePage", sender: nil)
+            print("Giriş başarılı, profil sayfasına yönlendiriliyor...")
+        }
+        else
         {
-            success in
-            if success
-            {
-                self.performSegue(withIdentifier: "toStudentProfilePage", sender: self)
-            }
-            else
-            {
-                print("invalid credentials")
-            }
+            // Giriş başarısız, hata mesajı göster
+            let alert = UIAlertController(title: "Hata", message: "Hatalı TC kimlik numarası veya şifre!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            print("Hatalı TC kimlik numarası veya şifre!")
         }
     }
-    
-    private func goToStudentProfilePage() //silinebilir
-    {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "StudentProfileVC") as! StudentProfileViewController
-        present(viewController, animated: true)
-    }
+
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         
@@ -83,14 +83,5 @@ class StudentLoginViewController: UIViewController {
         
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
