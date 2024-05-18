@@ -88,5 +88,14 @@ class DirectorLoginViewController: UIViewController {
                
                present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDirectorProfilePage" {
+            if let destinationVC = segue.destination as? DirectorProfileViewController {
+                destinationVC.director = loggedInDirector
+            }
+        }
+    }
 
 }

@@ -1675,6 +1675,9 @@
                             <constraint firstItem="9dP-Be-sqD" firstAttribute="leading" secondItem="UiE-vt-sQP" secondAttribute="leading" constant="30" id="zCY-12-ccT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="N1r-5z-zEl" id="zdZ-k7-Fr5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHn-rJ-KIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
