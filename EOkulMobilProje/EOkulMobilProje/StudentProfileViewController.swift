@@ -18,8 +18,8 @@ class StudentProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        updateStudentInfo()
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
@@ -37,13 +37,28 @@ class StudentProfileViewController: UIViewController {
         self.present(exitAlert, animated: true, completion: nil)
     }
     
+    @IBAction func mainButtonClicked(_ sender: UIButton) {
+        
+        let exitAlert = UIAlertController(title: "Ana Sayfaya Dön", message: "Ana sayfaya dönmek istediğinizden emin misiniz?", preferredStyle: .alert)
+        
+        //evet
+        exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
+                                          // Giriş sayfasına geri dön
+            self.performSegue(withIdentifier: "backToMain", sender: self)
+                                      }))
+        //iptal
+        exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
+        
+        self.present(exitAlert, animated: true, completion: nil)
+    }
+    
     // Öğrenci bilgilerini güncelleme fonksiyonu
     func updateStudentInfo() {
         if let currentUser = NetworkService.shared.currentUser {
             switch currentUser.userType {
                 case .Student(let classId):
                     // Eğer kullanıcı öğrenci ise, classId bilgisine eriş
-                    print("Öğrencinin sınıfı: \(classId)")
+                    classLabel.text = "Sınıf: \(classId)"
                 case .Teacher, .Director:
                     // Öğrenci değilse, öğretmen veya müdür olabilir, uygun bir işlem yap
                     print("Öğrenci değil")

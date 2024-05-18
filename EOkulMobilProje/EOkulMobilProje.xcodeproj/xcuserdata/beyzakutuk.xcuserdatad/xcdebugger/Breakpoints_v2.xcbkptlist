@@ -20,5 +20,69 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "updateStudentInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688 - fbe503f6272a30fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.updateStudentInfo() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688 - fbe503f6272a30fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.updateStudentInfo() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EEAF77C-E9ED-440E-90C3-BBDC53E997E6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "StudentProfileViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
