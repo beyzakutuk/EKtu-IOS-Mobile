@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct UserModel
-{
-    let firstName : String
-    let lastName:String
-    let tcNo:String
-    let password:String
-    let userType: UserType
+class UserModel {
+    var isim: String
+    var soyisim: String
+    var tcKimlikNo: String
+    var sifre: String
+    
+    init(isim: String, soyisim: String, tcKimlikNo: String, sifre: String) {
+        self.isim = isim
+        self.soyisim = soyisim
+        self.tcKimlikNo = tcKimlikNo
+        self.sifre = sifre
+    }
 }
 
-enum UserType {
-    case Student(classId: String)
-    case Teacher
-    case Director
-    // Diğer kullanıcı tipleri buraya eklenebilir
-}
