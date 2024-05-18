@@ -264,6 +264,10 @@
                                                 <buttonConfiguration key="configuration" style="plain" cornerStyle="large">
                                                     <backgroundConfiguration key="background" image="homekit" catalog="system" strokeWidth="0.0"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="mainButtonClicked:" destination="H5X-sN-Ytf" eventType="touchUpInside" id="bDD-3x-yN5"/>
+                                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="backToMain" modalPresentationStyle="fullScreen" id="7bt-Lo-UMD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilz-Z0-Yls" userLabel="notificationButton">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
@@ -298,7 +302,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jra-GP-VaY">
                                         <rect key="frame" x="100.33333333333334" y="30" width="200.00000000000003" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="3. Sınıf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-MQ-pB5" userLabel="classID">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="asd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-MQ-pB5" userLabel="classID">
                                                 <rect key="frame" x="69.999999999999986" y="0.0" width="60.000000000000014" height="70"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1539,7 +1543,7 @@
         <segue reference="gwd-QZ-zbH"/>
         <segue reference="7pb-XC-FV4"/>
         <segue reference="qT1-is-H61"/>
-        <segue reference="jjN-bt-TMm"/>
+        <segue reference="7bt-Lo-UMD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
