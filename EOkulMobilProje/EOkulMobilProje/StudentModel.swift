@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct StudentModel
-{
-    let firstName:String
-    let lastName:String
-    let tcNo:String
-    let classId:String
-    let email:String
+class StudentModel: UserModel {
+    var sinifNumarasi: String
+    
+    init(isim: String, soyisim: String, tcKimlikNo: String, sifre: String, sinifNumarasi: String) {
+        self.sinifNumarasi = sinifNumarasi
+        super.init(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre)
+    }
+    
+    // Öğrenciye özgü davranışlar eklenebilir
 }
