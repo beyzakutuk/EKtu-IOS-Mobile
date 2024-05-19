@@ -61,6 +61,21 @@ class StudentAdditionViewController: UIViewController {
         StudentDatabase.yeniOgrenciEkle(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre, sinifNumarasi: sinifNumarasi)
         
 
+        // Onay mesajını güncelle
+        onayLabel.text = "Kaydedildi"
+        onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
+                
+        // TextField'lerin içeriğini temizle
+        isimField.text = ""
+        soyisimField.text = ""
+        tcKimlikField.text = ""
+        sifreField.text = ""
+        sinifField.text = ""
+        
+        // 3 saniye sonra sayfayı yeniden yükle
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.performSegue(withIdentifier: "goToDirectorProfile", sender: nil)
+        }
     }
     
 }
