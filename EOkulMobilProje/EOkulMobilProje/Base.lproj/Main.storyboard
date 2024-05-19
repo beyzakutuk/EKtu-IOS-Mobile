@@ -1618,6 +1618,9 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="7UU-Cm-aB7" eventType="touchUpInside" id="den-tY-fLP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kTt-Yf-v68"/>

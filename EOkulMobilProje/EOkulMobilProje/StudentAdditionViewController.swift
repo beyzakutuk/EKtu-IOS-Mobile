@@ -47,7 +47,20 @@ class StudentAdditionViewController: UIViewController {
         submitButton.isEnabled = isFormValid
     }
     
+    
+    @IBAction func submitButtonClicked(_ sender: UIButton) {
+        
+        guard let isim = isimField.text,
+                let soyisim = soyisimField.text,
+                let tcKimlikNo = tcKimlikField.text,
+                let sifre = sifreField.text,
+                let sinifNumarasi = sinifField.text else {
+            return
+        }
+        
+        StudentDatabase.yeniOgrenciEkle(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre, sinifNumarasi: sinifNumarasi)
+        
 
-   
-
+    }
+    
 }
