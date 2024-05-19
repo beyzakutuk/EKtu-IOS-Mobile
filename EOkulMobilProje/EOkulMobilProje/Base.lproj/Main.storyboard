@@ -1497,7 +1497,7 @@
         <!--Add Student View Controller-->
         <scene sceneID="vnV-op-MZ9">
             <objects>
-                <viewController id="7UU-Cm-aB7" userLabel="Add Student View Controller" sceneMemberID="viewController">
+                <viewController id="7UU-Cm-aB7" userLabel="Add Student View Controller" customClass="StudentAdditionViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="URq-og-Wps">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1633,6 +1633,15 @@
                             <constraint firstItem="CTV-lL-3Lx" firstAttribute="top" secondItem="URq-og-Wps" secondAttribute="top" constant="66" id="qiC-E7-qmd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="isimField" destination="TwN-gv-Yxb" id="23g-uD-ekf"/>
+                        <outlet property="onayLabel" destination="E0S-rD-1pn" id="hcC-zd-QVA"/>
+                        <outlet property="sifreField" destination="31v-Fa-GxX" id="q20-60-Hx5"/>
+                        <outlet property="sinifField" destination="CSY-7g-Yds" id="dp1-Mu-5vM"/>
+                        <outlet property="soyisimField" destination="NPy-5O-84r" id="P2s-fx-X0G"/>
+                        <outlet property="submitButton" destination="q1n-Nl-ZeK" id="xLs-Hc-iMy"/>
+                        <outlet property="tcKimlikField" destination="LDr-5g-36r" id="7up-hr-R6r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfW-Ed-P6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
