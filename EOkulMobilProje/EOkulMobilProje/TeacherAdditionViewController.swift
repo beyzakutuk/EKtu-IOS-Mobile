@@ -79,8 +79,30 @@ class TeacherAdditionViewController: UIViewController {
         sifreField.text = ""
         dersField.text = ""
         
+        showAlert()
+        
     }
     
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: "Başarılı", message: "Öğretmen sisteme başarıyla kaydedildi.", preferredStyle: .alert)
+            
+        let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
+            self.performSegue(withIdentifier: "toDirectorProfilePage", sender: self)
+        }
+            
+        let yeniOgretmenEkleAction = UIAlertAction(title: "Yeni Öğretmen Ekle", style: .default) { _ in
+            // ViewController'ı yeniden yükleme
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "TeacherAdditionViewController") as? TeacherAdditionViewController {
+                    self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+            
+        alertController.addAction(anaSayfayaDonAction)
+        alertController.addAction(yeniOgretmenEkleAction)
+            
+        present(alertController, animated: true, completion: nil)
+    }
 
 
 }
