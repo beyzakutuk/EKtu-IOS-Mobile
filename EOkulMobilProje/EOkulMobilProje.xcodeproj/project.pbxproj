@@ -25,6 +25,7 @@
 		B15DF8382BE0066900C170F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15DF8362BE0066900C170F7 /* Main.storyboard */; };
 		B15DF83A2BE0066A00C170F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15DF8392BE0066A00C170F7 /* Assets.xcassets */; };
 		B15DF83D2BE0066A00C170F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15DF83B2BE0066A00C170F7 /* LaunchScreen.storyboard */; };
+		B17B26782BFB7BE3008A052C /* TeacherAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B26772BFB7BE3008A052C /* TeacherAdditionViewController.swift */; };
 		B1924BAD2BF2246A00539F1A /* StudentAbsencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1924BAC2BF2246600539F1A /* StudentAbsencesViewController.swift */; };
 		B1924BAF2BF2247B00539F1A /* AbsencesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1924BAE2BF2247B00539F1A /* AbsencesTableViewCell.swift */; };
 		B1A204B22BE8FA1C009FE84C /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A204B12BE8FA1C009FE84C /* Courses.swift */; };
@@ -63,6 +64,7 @@
 		B15DF8392BE0066A00C170F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B15DF83C2BE0066A00C170F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B15DF83E2BE0066A00C170F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B17B26772BFB7BE3008A052C /* TeacherAdditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAdditionViewController.swift; sourceTree = "<group>"; };
 		B1924BAC2BF2246600539F1A /* StudentAbsencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAbsencesViewController.swift; sourceTree = "<group>"; };
 		B1924BAE2BF2247B00539F1A /* AbsencesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsencesTableViewCell.swift; sourceTree = "<group>"; };
 		B1A204B12BE8FA1C009FE84C /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				B1D124202BF963C9003A04A7 /* DirectorModel.swift */,
 				B1D124222BF96406003A04A7 /* DirectorDatabase.swift */,
 				B1D124242BF97AD3003A04A7 /* StudentAdditionViewController.swift */,
+				B17B26772BFB7BE3008A052C /* TeacherAdditionViewController.swift */,
 			);
 			path = EOkulMobilProje;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				B1A204B92BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift in Sources */,
 				B1B8FD942BE67197005C7AF5 /* StudentsCourses.swift in Sources */,
 				B1D124192BF93FA2003A04A7 /* StudentDatabase.swift in Sources */,
+				B17B26782BFB7BE3008A052C /* TeacherAdditionViewController.swift in Sources */,
 				B15DF8332BE0066900C170F7 /* SceneDelegate.swift in Sources */,
 				B15BB0572BE15B73009AF244 /* DirectorProfileViewController.swift in Sources */,
 				B15BB0512BE157F4009AF244 /* TeacherLoginViewController.swift in Sources */,
