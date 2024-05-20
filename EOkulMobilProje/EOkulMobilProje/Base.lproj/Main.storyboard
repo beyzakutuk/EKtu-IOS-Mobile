@@ -1503,7 +1503,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="B8Y-1D-xoE">
-                                <rect key="frame" x="0.0" y="-98" width="2250" height="1048"/>
+                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1048" id="UR4-JY-Nik"/>
                                 </constraints>
@@ -1529,7 +1529,7 @@
                                                     <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="xDr-mv-H52" kind="presentation" modalPresentationStyle="fullScreen" id="OAg-ah-jbi"/>
+                                                    <segue destination="xDr-mv-H52" kind="presentation" identifier="toDirectorProfilePage" modalPresentationStyle="fullScreen" id="OAg-ah-jbi"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öğrenci Ekleme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D5-V0-wTw" userLabel="SınavSonucları">
@@ -1631,6 +1631,7 @@
                             <constraint firstItem="kTt-Yf-v68" firstAttribute="trailing" secondItem="CTV-lL-3Lx" secondAttribute="trailing" constant="2" id="Fqt-jS-Sso"/>
                             <constraint firstItem="dga-wv-8r0" firstAttribute="top" secondItem="kTt-Yf-v68" secondAttribute="top" constant="182" id="euN-YQ-xAb"/>
                             <constraint firstItem="CTV-lL-3Lx" firstAttribute="leading" secondItem="URq-og-Wps" secondAttribute="leading" id="hgT-5l-4Uh"/>
+                            <constraint firstItem="kTt-Yf-v68" firstAttribute="trailing" secondItem="B8Y-1D-xoE" secondAttribute="trailing" id="lG1-BM-lLr"/>
                             <constraint firstItem="kTt-Yf-v68" firstAttribute="trailing" secondItem="dga-wv-8r0" secondAttribute="trailing" constant="30" id="oS4-Qe-h9K"/>
                             <constraint firstItem="dga-wv-8r0" firstAttribute="leading" secondItem="kTt-Yf-v68" secondAttribute="leading" constant="30" id="q64-je-IgA"/>
                             <constraint firstItem="CTV-lL-3Lx" firstAttribute="top" secondItem="URq-og-Wps" secondAttribute="top" constant="66" id="qiC-E7-qmd"/>
@@ -1649,6 +1650,163 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfW-Ed-P6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023.6641221374045" y="-2060.5633802816901"/>
+        </scene>
+        <!--Add Teacher View Controller-->
+        <scene sceneID="P8C-3U-cb7">
+            <objects>
+                <viewController id="bB7-ij-86T" userLabel="Add Teacher View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Pg-2R-jZn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="l8J-U1-CWA">
+                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1048" id="Fh7-K7-7T6"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="8EH-X5-4KH">
+                                <rect key="frame" x="1" y="20" width="386" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDG-ya-8Dv">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxo-Qi-J7o" userLabel="Back">
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="40"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="6dA-Ag-7FU"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="CnC-6D-f5f"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                    <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="xDr-mv-H52" kind="presentation" identifier="toDirectorProfilePage" modalPresentationStyle="fullScreen" id="ekt-Jm-L87"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaydedilmedi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haw-oq-qQC">
+                                        <rect key="frame" x="266" y="0.0" width="120" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="vnl-23-30e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.77130315719999998" green="0.22265927569999999" blue="0.14992242980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-v8-3TB">
+                                <rect key="frame" x="30" y="300" width="333" height="370"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TC Kimlik Numarası" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZY-SN-CNc">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="COr-i8-eIS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="İsim" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWG-ZU-Rjh">
+                                        <rect key="frame" x="0.0" y="80" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YaK-Z0-A5j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Soyisim" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-A9-uCp">
+                                        <rect key="frame" x="0.0" y="160" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wCX-Qk-Szg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLV-sB-2mq">
+                                        <rect key="frame" x="0.0" y="240" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="u06-8I-Kx4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sCA-J3-YXz">
+                                        <rect key="frame" x="0.0" y="320" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6fI-es-dhT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Öğretmen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHq-cC-Tdn" userLabel="SınavSonucları">
+                                <rect key="frame" x="30" y="174.33333333333334" width="333" height="42.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="eqI-Ai-N08"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" red="0.30627202575704005" green="0.34423052012614241" blue="0.40218266752577314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-St-fvJ">
+                                <rect key="frame" x="146" y="731" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UAq-Nu-lB3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" subtitle="" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.0" green="0.50227528990000003" blue="0.3460097936" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" red="0.0" green="0.50227528990000003" blue="0.3460097936" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Kaydet">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="20" name="ChalkboardSE-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="7UU-Cm-aB7" eventType="touchUpInside" id="xV6-gl-FSi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g1w-ih-EUg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="top" secondItem="6Pg-2R-jZn" secondAttribute="top" constant="300" id="0eU-P0-K4a"/>
+                            <constraint firstItem="5p8-St-fvJ" firstAttribute="leading" secondItem="g1w-ih-EUg" secondAttribute="leading" constant="146" id="2dk-qj-jNS"/>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="centerX" secondItem="l8J-U1-CWA" secondAttribute="centerX" id="4HJ-4l-9dK"/>
+                            <constraint firstItem="l8J-U1-CWA" firstAttribute="centerY" secondItem="6Pg-2R-jZn" secondAttribute="centerY" id="5qW-Cc-dJE"/>
+                            <constraint firstItem="l8J-U1-CWA" firstAttribute="leading" secondItem="g1w-ih-EUg" secondAttribute="leading" id="D18-FX-o9S"/>
+                            <constraint firstItem="8EH-X5-4KH" firstAttribute="top" secondItem="g1w-ih-EUg" secondAttribute="top" constant="20" id="MO7-NY-roI"/>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="trailing" secondItem="LHq-cC-Tdn" secondAttribute="trailing" id="Wno-gt-far"/>
+                            <constraint firstItem="l8J-U1-CWA" firstAttribute="centerX" secondItem="6Pg-2R-jZn" secondAttribute="centerX" id="a9x-ma-7gQ"/>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="leading" secondItem="g1w-ih-EUg" secondAttribute="leading" constant="30" id="dug-nJ-rR2"/>
+                            <constraint firstItem="8EH-X5-4KH" firstAttribute="leading" secondItem="g1w-ih-EUg" secondAttribute="leading" constant="1" id="gQZ-4w-nOs"/>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="top" secondItem="LHq-cC-Tdn" secondAttribute="bottom" constant="83" id="iGk-t1-TyT"/>
+                            <constraint firstItem="g1w-ih-EUg" firstAttribute="trailing" secondItem="8EH-X5-4KH" secondAttribute="trailing" constant="6" id="pzV-RU-mrI"/>
+                            <constraint firstItem="5p8-St-fvJ" firstAttribute="top" secondItem="PL5-v8-3TB" secondAttribute="bottom" constant="61" id="qN4-s2-ctu"/>
+                            <constraint firstItem="PL5-v8-3TB" firstAttribute="leading" secondItem="LHq-cC-Tdn" secondAttribute="leading" id="rcL-rA-See"/>
+                            <constraint firstItem="g1w-ih-EUg" firstAttribute="trailing" secondItem="5p8-St-fvJ" secondAttribute="trailing" constant="147" id="uYD-u4-Ucv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ao9-Lx-epm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3187" y="-2061"/>
         </scene>
         <!--Director Profile View Controller-->
         <scene sceneID="DLK-RB-czO">
@@ -1692,6 +1850,9 @@
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="bB7-ij-86T" kind="presentation" modalPresentationStyle="fullScreen" id="pUX-VJ-lqL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yk-vO-7RV">
                                         <rect key="frame" x="0.0" y="160" width="333" height="50"/>
@@ -1876,12 +2037,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OAg-ah-jbi"/>
+        <segue reference="he1-Jp-dcs"/>
+        <segue reference="ekt-Jm-L87"/>
         <segue reference="1dL-nM-BoP"/>
         <segue reference="gwd-QZ-zbH"/>
         <segue reference="qXA-cz-r6V"/>
         <segue reference="qT1-is-H61"/>
-        <segue reference="znX-mK-xQP"/>
+        <segue reference="jjN-bt-TMm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
