@@ -9,7 +9,10 @@ import Foundation
 
 class TeacherModel : UserModel
 {
-    override init(isim: String, soyisim: String, tcKimlikNo: String, sifre: String) {
-            super.init(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre)
-        }
+    var dersAdi :String
+    init(isim: String, soyisim: String, tcKimlikNo: String, sifre: String , dersAdi:String)
+    {
+        self.dersAdi = dersAdi
+        super.init(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre)
+    }
 }
