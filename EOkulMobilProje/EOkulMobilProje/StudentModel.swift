@@ -9,11 +9,11 @@ import Foundation
 
 class StudentModel: UserModel {
     var sinifNumarasi: String
+    var dersler : [ExamResultsModel]
     
     init(isim: String, soyisim: String, tcKimlikNo: String, sifre: String, sinifNumarasi: String) {
         self.sinifNumarasi = sinifNumarasi
+        self.dersler = []
         super.init(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre)
     }
-    
-    // Öğrenciye özgü davranışlar eklenebilir
 }
