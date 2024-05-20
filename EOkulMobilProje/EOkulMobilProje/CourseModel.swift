@@ -7,6 +7,24 @@
 
 import Foundation
 
+class CourseModel
+{
+    var courseId: String
+    var courseName : String
+    var isMainCourse: Bool = true // Ana ders mi?
+    var year : String
+    var type : String
+    
+    init(courseId: String, courseName: String, isMainCourse: Bool, year: String, type: String) {
+        self.courseId = courseId
+        self.courseName = courseName
+        self.isMainCourse = isMainCourse
+        self.year = year
+        self.type = type
+    }
+}
+
+/*
 struct Courses
 {
     var courseId: String
@@ -15,6 +33,7 @@ struct Courses
     var year : String
     var type : String
 }
+
 
 class CourseManager
 {
@@ -62,3 +81,4 @@ class CourseManager
             return organizedCourses
         }
 }
+*/
