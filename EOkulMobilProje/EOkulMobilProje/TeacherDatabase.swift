@@ -21,8 +21,8 @@ class TeacherDatabase
         }
     
     // Öğretmen ekleme fonksiyonu
-    static func yeniOgretmenEkle(isim: String, soyisim: String, tcKimlikNo: String, sifre: String) {
-        let yeniOgretmen = TeacherModel(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre)
+    static func yeniOgretmenEkle(isim: String, soyisim: String, tcKimlikNo: String, sifre: String , dersAdi: String) {
+        let yeniOgretmen = TeacherModel(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre , dersAdi: dersAdi)
         teacherDatabase[tcKimlikNo] = yeniOgretmen
     }
 }
