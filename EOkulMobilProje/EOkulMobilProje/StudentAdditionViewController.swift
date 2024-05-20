@@ -72,10 +72,34 @@ class StudentAdditionViewController: UIViewController {
         sifreField.text = ""
         sinifField.text = ""
         
+        showAlert()
+        
+        /*
         // 3 saniye sonra sayfayı yeniden yükle
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.performSegue(withIdentifier: "goToDirectorProfile", sender: nil)
+            self.performSegue(withIdentifier: "toDirectorProfilePage", sender: nil)
         }
+        */
+    }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: "Başarılı", message: "Öğrenci veritabanına başarıyla kaydedildi.", preferredStyle: .alert)
+            
+        let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
+            self.performSegue(withIdentifier: "toDirectorProfilePage", sender: self)
+        }
+            
+        let yeniOgrenciEkleAction = UIAlertAction(title: "Yeni Öğrenci Ekle", style: .default) { _ in
+            // ViewController'ı yeniden yükleme
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "StudentAdditionViewController") as? StudentAdditionViewController {
+                    self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+            
+        alertController.addAction(anaSayfayaDonAction)
+        alertController.addAction(yeniOgrenciEkleAction)
+            
+        present(alertController, animated: true, completion: nil)
     }
     
 }
