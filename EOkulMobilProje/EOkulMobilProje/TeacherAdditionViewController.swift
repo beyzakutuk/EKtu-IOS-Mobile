@@ -28,9 +28,11 @@ class TeacherAdditionViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
-        
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+    }
     
     private func setupViews() {
         // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır

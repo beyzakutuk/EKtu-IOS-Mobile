@@ -25,15 +25,18 @@ class StudentAdditionViewController: UIViewController {
         setupViews()
     }
     
-    // MARK: - Private Methods
-        private func setupViews() {
-            // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır
-            [isimField, soyisimField, tcKimlikField, sifreField, sinifField].forEach { textField in
-                textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
-            }
-            
-            validateFields() // Başlangıçta butonu pasif hale getirmek için
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+    }
+    
+    private func setupViews() {
+        // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır
+        [isimField, soyisimField, tcKimlikField, sifreField, sinifField].forEach { textField in
+            textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         }
+        
+        validateFields() // Başlangıçta butonu pasif hale getirmek için
+    }
     
     @objc private func validateFields()
     {
@@ -74,16 +77,10 @@ class StudentAdditionViewController: UIViewController {
         
         showAlert()
         
-        /*
-        // 3 saniye sonra sayfayı yeniden yükle
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.performSegue(withIdentifier: "toDirectorProfilePage", sender: nil)
-        }
-        */
     }
     
     private func showAlert() {
-        let alertController = UIAlertController(title: "Başarılı", message: "Öğrenci veritabanına başarıyla kaydedildi.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Başarılı", message: "Öğrenci sisteme başarıyla kaydedildi.", preferredStyle: .alert)
             
         let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
             self.performSegue(withIdentifier: "toDirectorProfilePage", sender: self)
