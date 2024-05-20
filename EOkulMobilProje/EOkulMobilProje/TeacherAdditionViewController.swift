@@ -55,6 +55,30 @@ class TeacherAdditionViewController: UIViewController {
 
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
+        
+        guard let isim = isimField.text,
+                let soyisim = soyisimField.text,
+                let tcKimlikNo = tcKimlikField.text,
+                let sifre = sifreField.text,
+                let dersAdi = dersField.text
+        else {
+            return
+        }
+        
+        TeacherDatabase.yeniOgretmenEkle(isim: isim, soyisim: soyisim, tcKimlikNo: tcKimlikNo, sifre: sifre , dersAdi: dersAdi)
+        
+
+        // Onay mesajını güncelle
+        onayLabel.text = "Kaydedildi"
+        onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
+                
+        // TextField'lerin içeriğini temizle
+        isimField.text = ""
+        soyisimField.text = ""
+        tcKimlikField.text = ""
+        sifreField.text = ""
+        dersField.text = ""
+        
     }
     
 
