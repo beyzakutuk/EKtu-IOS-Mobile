@@ -2177,20 +2177,105 @@
             </objects>
             <point key="canvasLocation" x="4337" y="-2061"/>
         </scene>
-        <!--Student İnformation View Controller-->
+        <!--Student Information View Controller-->
         <scene sceneID="ECe-N8-RUD">
             <objects>
-                <viewController id="tAK-tP-g1i" userLabel="Student İnformation View Controller" sceneMemberID="viewController">
+                <viewController id="tAK-tP-g1i" userLabel="Student Information View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zg9-TO-Trw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="SEX-yl-3Qn">
+                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1048" id="5w7-dt-WsO"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7V5-5f-1Bs">
+                                <rect key="frame" x="2" y="20" width="169" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-Iu-oAf" userLabel="Back">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YbC-VJ-WSH"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="zfw-Uh-2of"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öğrenci Bilgileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-Cn-uNK" userLabel="SınavSonucları">
+                                        <rect key="frame" x="49.333333333333336" y="0.0" width="119.66666666666666" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="7Ss-rK-MLj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-7t-MVV">
+                                <rect key="frame" x="0.0" y="112" width="393" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Dersi Alan Öğrenciler:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JDh-4u-Mri">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="76" id="viV-QD-NNe">
+                                        <rect key="frame" x="0.0" y="94" width="393" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="viV-QD-NNe" id="QIx-QV-eod">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="76"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kaçıncı sınıf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-nu-cUu">
+                                                    <rect key="frame" x="288" y="27" width="91" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Öğrenci İsmi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-gH-LNU">
+                                                    <rect key="frame" x="20" y="28" width="96" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Ld-Co-zXN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SEX-yl-3Qn" firstAttribute="centerY" secondItem="Zg9-TO-Trw" secondAttribute="centerY" id="1o7-9v-pLV"/>
+                            <constraint firstItem="SEX-yl-3Qn" firstAttribute="centerX" secondItem="Zg9-TO-Trw" secondAttribute="centerX" id="8gB-tG-pme"/>
+                            <constraint firstItem="Vaz-7t-MVV" firstAttribute="bottom" secondItem="5Ld-Co-zXN" secondAttribute="bottom" id="CRT-Zc-z7S"/>
+                            <constraint firstItem="7V5-5f-1Bs" firstAttribute="leading" secondItem="5Ld-Co-zXN" secondAttribute="leading" constant="2" id="ZAb-l7-Bqh"/>
+                            <constraint firstItem="Vaz-7t-MVV" firstAttribute="top" secondItem="7V5-5f-1Bs" secondAttribute="bottom" constant="52" id="Zch-8N-jAR"/>
+                            <constraint firstItem="SEX-yl-3Qn" firstAttribute="leading" secondItem="5Ld-Co-zXN" secondAttribute="leading" id="bJO-YZ-TyR"/>
+                            <constraint firstItem="SEX-yl-3Qn" firstAttribute="trailing" secondItem="Vaz-7t-MVV" secondAttribute="trailing" id="cgg-yQ-dwX"/>
+                            <constraint firstItem="7V5-5f-1Bs" firstAttribute="top" secondItem="5Ld-Co-zXN" secondAttribute="top" constant="20" id="kQr-hV-jTM"/>
+                            <constraint firstItem="SEX-yl-3Qn" firstAttribute="leading" secondItem="Vaz-7t-MVV" secondAttribute="leading" id="ukB-ty-Reh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b24-QO-ggN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4430" y="-29"/>
+            <point key="canvasLocation" x="4429.7709923664124" y="-29.577464788732396"/>
         </scene>
         <!--Exam Finalization View Controller-->
         <scene sceneID="9o7-S7-J7Y">
@@ -2199,8 +2284,50 @@
                     <view key="view" contentMode="scaleToFill" id="hzH-r3-6mB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-A4-dDK">
+                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1048" id="B7v-3R-lfm"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-8R-RXe">
+                                <rect key="frame" x="94" y="406" width="204.66666666666663" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svu-f0-ax5" userLabel="Back">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="K3G-LG-gg4"/>
+                                            <constraint firstAttribute="height" constant="40" id="X80-rV-fvj"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devamsızlık Durumu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-sq-cNY" userLabel="SınavSonucları">
+                                        <rect key="frame" x="49.333333333333329" y="0.0" width="155.33333333333337" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="4yA-We-I83"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GwW-qT-da4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zd8-A4-dDK" firstAttribute="centerX" secondItem="hzH-r3-6mB" secondAttribute="centerX" id="M9i-EO-6gh"/>
+                            <constraint firstItem="zd8-A4-dDK" firstAttribute="centerY" secondItem="hzH-r3-6mB" secondAttribute="centerY" id="o5L-jf-QhJ"/>
+                            <constraint firstItem="zd8-A4-dDK" firstAttribute="leading" secondItem="GwW-qT-da4" secondAttribute="leading" id="zSB-EN-KfK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMA-r6-e0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
