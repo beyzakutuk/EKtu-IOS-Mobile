@@ -50,5 +50,32 @@ class LessonAdditionViewController: UIViewController {
             
        kaydetButton.isEnabled = isFormValid
     }
+    
+    @IBAction func submitButtonClicked(_ sender: Any) {
+        
+        guard let id = idField.text,
+                let isim = isimField.text,
+                let yil = yilField.text,
+                let donem = donemField.text
+
+        else {
+            return
+        }
+        
+        CourseDatabase.yeniDersEkle(courseId: id, courseName: isim, isMainCourse: true, year: yil, type: donem)
+
+
+        // Onay mesajını güncelle
+        onayLabel.text = "Kaydedildi"
+        onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
+                
+        // TextField'lerin içeriğini temizle
+        idField.text = ""
+        isimField.text = ""
+        yilField.text = ""
+        donemField.text = ""
+
+    }
+    
 
 }
