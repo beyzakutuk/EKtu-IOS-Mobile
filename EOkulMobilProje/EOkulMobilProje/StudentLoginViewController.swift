@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class StudentLoginViewController: UIViewController {
     
     // MARK: -VARIABLES
@@ -21,10 +22,7 @@ class StudentLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
-        
-        // Yeni bir öğrenci ekle
-        StudentDatabase.yeniOgrenciEkle(isim: "Beyza", soyisim: "Kütük", tcKimlikNo: "12345678901", sifre: "8901", sinifNumarasi: "3.Sınıf")
-        
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,6 +41,17 @@ class StudentLoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonClk(_ sender: Any) {
+        
+        var myValue:String?
+        myValue = UserDefaults.standard.string(forKey: "refreshToken")
+        
+        if  myValue == nil
+        {
+            getToken()
+        }
+        
+
+        /*
         let tckn = usernameField.text ?? ""
         let sifre = passwordField.text ?? ""
 
@@ -60,7 +69,71 @@ class StudentLoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             print("Hatalı TC kimlik numarası veya şifre!")
+        }*/
+    }
+    
+    func saveTokens(refreshToken:String){
+        UserDefaults.standard.set(refreshToken , forKey: "refreshToken")
+    }
+    
+    func getToken() {
+        let apiUrl = URL(string: "https://localhost:7134/connect/token")!
+
+        // İstek parametreleri
+        guard let username = usernameField.text, let password = passwordField.text else {
+            print("Kullanıcı adı veya şifre eksik")
+            return
         }
+
+    
+
+        // İstek oluşturma
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let authString = "\("ResourceOwnerStudent"):\("secret")"
+            let authData = authString.data(using: .utf8)!
+            let authHeader = "Basic \(authData.base64EncodedString())"
+            request.setValue(authHeader, forHTTPHeaderField: "Authorization")
+
+        let bodyParameters = [
+                "grant_type": "password",
+                "username": username,
+                "password": password
+            ]
+            
+            request.httpBody = bodyParameters
+                .map { "\($0.key)=\($0.value)" }
+                .joined(separator: "&")
+                .data(using: .utf8)
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error?.localizedDescription {
+                print("Hata: \(error)")
+                return
+            }
+
+            // Cevap alındığında
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Status code: \(httpResponse.statusCode)")
+            }
+
+            // Cevap verisi kontrolü
+            if let data = data {
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    print("Cevap JSON: \(json)")
+                    if let refreshToken = json["refresh_token"] as? String {
+                           print(refreshToken)
+                        self.saveTokens(refreshToken: refreshToken)
+                       }
+                       
+                } else {
+                    print("Geçersiz cevap")
+                }
+            }
+        }
+        task.resume()
     }
 
     
@@ -96,6 +169,19 @@ class StudentLoginViewController: UIViewController {
             }
         }
     }
+
+
 }
 
+
+class MySessionDelegate: NSObject, URLSessionDelegate {
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+            let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+            completionHandler(.useCredential, credential)
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
+    }
+}
 
