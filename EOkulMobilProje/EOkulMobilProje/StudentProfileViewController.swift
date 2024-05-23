@@ -25,13 +25,14 @@ class StudentProfileViewController: UIViewController {
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
-        
+          
         let exitAlert = UIAlertController(title: "Çıkış Yap", message: "Çıkış yapmak istediğinizden emin misiniz?", preferredStyle: .alert)
         
         //evet
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
                                           // Giriş sayfasına geri dön
             self.performSegue(withIdentifier: "backToLogin", sender: self)
+            UserDefaults.standard.removeObject(forKey: "refreshToken")
                                       }))
         //iptal
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
