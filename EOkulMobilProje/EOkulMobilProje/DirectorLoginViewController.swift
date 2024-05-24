@@ -15,7 +15,6 @@ class DirectorLoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var loggedInDirector : DirectorModel?
     
     // MARK: -FUNCTİONS
 
@@ -23,7 +22,6 @@ class DirectorLoginViewController: UIViewController {
         super.viewDidLoad()
         setInitViews()
         
-        DirectorDatabase.yeniMudurEkle(isim: "Merve", soyisim: "Kütük", tcKimlikNo: "34567890123", sifre: "0123")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,27 +41,86 @@ class DirectorLoginViewController: UIViewController {
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
         
-        let tckn = usernameField.text ?? ""
-        let sifre = passwordField.text ?? ""
-
-        if let director = DirectorDatabase.directorDatabase[tckn], director.sifre == sifre
-        {
-            loggedInDirector = director
-
-            performSegue(withIdentifier: "toDirectorProfilePage", sender: nil)
-            print("Giriş başarılı, profil sayfasına yönlendiriliyor...")
+        guard let username = usernameField.text,
+              let password = passwordField.text else {
+            
+            return
         }
-        else
-        {
-            // Giriş başarısız, hata mesajı göster
-            let alert = UIAlertController(title: "Hata", message: "Hatalı TC kimlik numarası veya şifre!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            print("Hatalı TC kimlik numarası veya şifre!")
+        
+        guard let storyboard = self.storyboard else {
+            fatalError("Storyboard bulunamadı.")
         }
+        
+        
+        let apiUrl = URL(string: "https://localhost:7134/connect/token")!
+        
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        let authString = "\("ResourceOwnerPrincipal"):\("secret")"
+        let authData = authString.data(using: .utf8)!
+        let authHeader = "Basic \(authData.base64EncodedString())"
+        request.setValue(authHeader, forHTTPHeaderField: "Authorization")
+        
+        let bodyParameters = [
+            "grant_type": "password",
+            "username": username,
+            "password": password
+        ]
+        
+        request.httpBody = bodyParameters
+            .map { "\($0.key)=\($0.value)" }
+            .joined(separator: "&")
+            .data(using: .utf8)
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Geçersiz HTTP yanıtı")
+                return
+            }
+            
+            print("Status code: \(httpResponse.statusCode)")
+            
+            if httpResponse.statusCode == 200
+            {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+                        print("Cevap JSON: \(json)")
+                        if let refreshToken = json["refresh_token"] as? String {
+                            self.saveTokens(refreshToken: refreshToken)
+                        }
+                    }
+                }
+                catch
+                {
+                    print("JSON dönüşüm hatası: \(error.localizedDescription)")
+                }
+                DispatchQueue.main.async {
+                    
+                    
+                    guard let DirectorProfileVC = storyboard.instantiateViewController(withIdentifier: "DirectorProfileVC") as? DirectorProfileViewController else {
+                        fatalError("DirectorProfileViewController bulunamadı veya uygun tipte değil.")
+                    }
+                    
+                    
+                    DirectorProfileVC.modalPresentationStyle = .fullScreen
+                    self.present(DirectorProfileVC, animated: true, completion: nil)
+                 }
+            }
+            else
+            {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Hata", message: "Kullanıcı adı veya şifre hatalı", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
 
-           
-      
+        }
+        task.resume()
     }
     
 
@@ -89,13 +146,8 @@ class DirectorLoginViewController: UIViewController {
                present(alertController, animated: true, completion: nil)
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDirectorProfilePage" {
-            if let destinationVC = segue.destination as? DirectorProfileViewController {
-                destinationVC.director = loggedInDirector
-            }
-        }
+    func saveTokens(refreshToken:String){
+        UserDefaults.standard.set(refreshToken , forKey: "refreshTokenPrincipal")
     }
-
+    
 }
