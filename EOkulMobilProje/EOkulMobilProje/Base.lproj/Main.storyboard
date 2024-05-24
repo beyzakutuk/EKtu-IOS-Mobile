@@ -57,7 +57,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Öğrenci " cornerStyle="capsule"/>
                                         <connections>
-                                            <segue destination="MEJ-dE-Nwn" kind="presentation" modalPresentationStyle="fullScreen" id="x8U-Bv-ykJ"/>
+                                            <action selector="StudentButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0aN-m9-H2b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -138,7 +138,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Giriş Yap" cornerStyle="capsule"/>
                                         <connections>
                                             <action selector="loginButtonClk:" destination="MEJ-dE-Nwn" eventType="touchUpInside" id="zLs-nc-0bF"/>
-                                            <segue destination="H5X-sN-Ytf" kind="presentation" identifier="toStudentProfilePage" modalPresentationStyle="fullScreen" id="AhE-1d-KXC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-5u-KZb">
@@ -1884,6 +1883,9 @@
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="YZd-30-Aao" kind="presentation" modalPresentationStyle="fullScreen" id="w2m-8M-6yz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc4-0T-oxm">
                                         <rect key="frame" x="0.0" y="240" width="333" height="50"/>
@@ -2026,7 +2028,7 @@
         <!--Lesson Addition View Controller-->
         <scene sceneID="YxY-Go-VD4">
             <objects>
-                <viewController id="YZd-30-Aao" userLabel="Lesson Addition View Controller" sceneMemberID="viewController">
+                <viewController id="YZd-30-Aao" userLabel="Lesson Addition View Controller" customClass="LessonAdditionViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vpf-pH-mGo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2038,7 +2040,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="YVT-Pn-yc3">
-                                <rect key="frame" x="1" y="79" width="386" height="40"/>
+                                <rect key="frame" x="1" y="20" width="386" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-QL-9Cz">
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="40"/>
@@ -2057,6 +2059,9 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                     <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="xDr-mv-H52" kind="presentation" identifier="toDirectorProfileaPage" modalPresentationStyle="fullScreen" id="TAp-Q2-o1g"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2072,7 +2077,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nZA-h0-Ee4">
-                                <rect key="frame" x="30" y="307.66666666666669" width="333" height="370.00000000000006"/>
+                                <rect key="frame" x="30" y="248.66666666666663" width="333" height="370"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID Numarası" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoc-iZ-9mQ">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -2083,7 +2088,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="İsim" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-F9-l8d">
-                                        <rect key="frame" x="0.0" y="80" width="333" height="50"/>
+                                        <rect key="frame" x="0.0" y="80.000000000000028" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7DP-47-eQv"/>
                                         </constraints>
@@ -2091,7 +2096,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yıl" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OEa-za-V6c">
-                                        <rect key="frame" x="0.0" y="160" width="333" height="50"/>
+                                        <rect key="frame" x="0.0" y="160.00000000000003" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="g5g-xq-MBb"/>
                                         </constraints>
@@ -2099,7 +2104,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dönem" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Sk-WB-pl5">
-                                        <rect key="frame" x="0.0" y="239.99999999999994" width="333" height="50"/>
+                                        <rect key="frame" x="0.0" y="240" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fhZ-f4-w9R"/>
                                         </constraints>
@@ -2107,7 +2112,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbm-Sp-DlM">
-                                        <rect key="frame" x="0.0" y="319.99999999999994" width="333" height="50"/>
+                                        <rect key="frame" x="0.0" y="320" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Fnv-Sj-MkZ"/>
                                         </constraints>
@@ -2117,7 +2122,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFD-4r-mEd">
-                                <rect key="frame" x="151.33333333333334" y="737" width="90.333333333333343" height="40"/>
+                                <rect key="frame" x="151.33333333333334" y="678" width="90.333333333333343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gaJ-T6-65X"/>
                                 </constraints>
@@ -2141,10 +2146,11 @@
                                 <connections>
                                     <action selector="submitButtonClicked:" destination="bB7-ij-86T" eventType="touchUpInside" id="hiT-4t-ZOI"/>
                                     <action selector="submitButtonClicked:" destination="7UU-Cm-aB7" eventType="touchUpInside" id="oPC-IS-ysk"/>
+                                    <action selector="submitButtonClicked:" destination="YZd-30-Aao" eventType="touchUpInside" id="ucU-o4-r5p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeni Ders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-AR-j8h" userLabel="SınavSonucları">
-                                <rect key="frame" x="30" y="186" width="333" height="42.666666666666657"/>
+                                <rect key="frame" x="30" y="127.00000000000001" width="333" height="42.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="AZ7-io-pho"/>
                                 </constraints>
@@ -2172,6 +2178,14 @@
                             <constraint firstItem="nZA-h0-Ee4" firstAttribute="top" secondItem="2Z9-AR-j8h" secondAttribute="bottom" constant="79" id="y1s-jX-CGk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="donemField" destination="2Sk-WB-pl5" id="TTa-OG-KgF"/>
+                        <outlet property="idField" destination="aoc-iZ-9mQ" id="adS-8k-X8q"/>
+                        <outlet property="isimField" destination="sTD-F9-l8d" id="Kko-vY-J2t"/>
+                        <outlet property="kaydetButton" destination="lFD-4r-mEd" id="b84-ox-Lm0"/>
+                        <outlet property="onayLabel" destination="ZOC-AD-5zg" id="SrD-1V-WLN"/>
+                        <outlet property="yilField" destination="OEa-za-V6c" id="1yD-x3-H4B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhQ-iX-kMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2291,8 +2305,8 @@
                                     <constraint firstAttribute="height" constant="1048" id="B7v-3R-lfm"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-8R-RXe">
-                                <rect key="frame" x="94" y="406" width="204.66666666666663" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-8R-RXe">
+                                <rect key="frame" x="2" y="20" width="208.66666666666666" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svu-f0-ax5" userLabel="Back">
                                         <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
@@ -2309,8 +2323,8 @@
                                             <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devamsızlık Durumu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-sq-cNY" userLabel="SınavSonucları">
-                                        <rect key="frame" x="49.333333333333329" y="0.0" width="155.33333333333337" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sınav Sonuçlandırma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-sq-cNY" userLabel="SınavSonucları">
+                                        <rect key="frame" x="49.333333333333329" y="0.0" width="159.33333333333337" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="4yA-We-I83"/>
                                         </constraints>
@@ -2320,12 +2334,45 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-BP-T8D">
+                                <rect key="frame" x="30" y="241" width="333" height="210"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TC Kimlik Numarası" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xz-zP-SVE">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hYb-Iw-PZG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sınav" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-2F-XVS">
+                                        <rect key="frame" x="0.0" y="80" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Cfp-bD-X9u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Not" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKA-Hp-PKN">
+                                        <rect key="frame" x="0.0" y="160" width="333" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="C1B-4W-DFu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GwW-qT-da4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GwW-qT-da4" firstAttribute="trailing" secondItem="eAa-BP-T8D" secondAttribute="trailing" constant="30" id="LrG-YI-e9H"/>
                             <constraint firstItem="zd8-A4-dDK" firstAttribute="centerX" secondItem="hzH-r3-6mB" secondAttribute="centerX" id="M9i-EO-6gh"/>
+                            <constraint firstItem="eAa-BP-T8D" firstAttribute="leading" secondItem="GwW-qT-da4" secondAttribute="leading" constant="30" id="Q2Q-k8-lRx"/>
                             <constraint firstItem="zd8-A4-dDK" firstAttribute="centerY" secondItem="hzH-r3-6mB" secondAttribute="centerY" id="o5L-jf-QhJ"/>
+                            <constraint firstItem="4j6-8R-RXe" firstAttribute="leading" secondItem="GwW-qT-da4" secondAttribute="leading" constant="2" id="pqf-P0-7bT"/>
+                            <constraint firstItem="4j6-8R-RXe" firstAttribute="top" secondItem="GwW-qT-da4" secondAttribute="top" constant="20" id="sBO-e9-kE8"/>
                             <constraint firstItem="zd8-A4-dDK" firstAttribute="leading" secondItem="GwW-qT-da4" secondAttribute="leading" id="zSB-EN-KfK"/>
                         </constraints>
                     </view>
@@ -2336,12 +2383,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ekt-Jm-L87"/>
-        <segue reference="1dL-nM-BoP"/>
-        <segue reference="gwd-QZ-zbH"/>
-        <segue reference="7pb-XC-FV4"/>
-        <segue reference="qT1-is-H61"/>
-        <segue reference="jjN-bt-TMm"/>
+        <segue reference="s7V-eP-ISO"/>
+        <segue reference="mtR-YS-Ljl"/>
+        <segue reference="KbQ-Kd-VJg"/>
+        <segue reference="vBG-zz-RJp"/>
+        <segue reference="eXt-Gw-wAY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
