@@ -28,6 +28,7 @@ class TeacherProfileViewController: UIViewController {
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
                                           // Giriş sayfasına geri dön
             self.performSegue(withIdentifier: "backToLogin", sender: self)
+            UserDefaults.standard.removeObject(forKey: "refreshTokenTeacher")
                                       }))
         //iptal
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))

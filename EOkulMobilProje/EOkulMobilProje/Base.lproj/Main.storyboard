@@ -33,7 +33,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Müdür " cornerStyle="capsule"/>
                                         <connections>
-                                            <segue destination="Fj9-Wk-9GF" kind="presentation" modalPresentationStyle="fullScreen" id="mtR-YS-Ljl"/>
+                                            <action selector="DirectorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r28-Jg-OGk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qj-G0-UCw">
@@ -45,6 +45,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Öğretmen " cornerStyle="capsule"/>
                                         <connections>
+                                            <action selector="TeacherButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S1k-hi-rHi"/>
                                             <segue destination="hdv-rE-Utx" kind="presentation" modalPresentationStyle="fullScreen" id="KbQ-Kd-VJg"/>
                                         </connections>
                                     </button>
@@ -1058,7 +1059,7 @@
         <!--Teacher Login View Controller-->
         <scene sceneID="162-a8-09u">
             <objects>
-                <viewController id="hdv-rE-Utx" userLabel="Teacher Login View Controller" customClass="TeacherLoginViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeacherLoginVC" id="hdv-rE-Utx" userLabel="Teacher Login View Controller" customClass="TeacherLoginViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Hg-X2-VQC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1097,7 +1098,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Giriş Yap" cornerStyle="capsule"/>
                                         <connections>
                                             <action selector="loginButtonClick:" destination="hdv-rE-Utx" eventType="touchUpInside" id="AiE-mw-W3o"/>
-                                            <segue destination="chN-BL-i0K" kind="presentation" identifier="toTeacherProfilePage" modalPresentationStyle="fullScreen" id="he1-Jp-dcs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjB-lz-IO9">
@@ -1179,7 +1179,7 @@
         <!--Director Login View Controller-->
         <scene sceneID="vzn-nL-Ey6">
             <objects>
-                <viewController id="Fj9-Wk-9GF" userLabel="Director Login View Controller" customClass="DirectorLoginViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DirectorLoginVC" id="Fj9-Wk-9GF" userLabel="Director Login View Controller" customClass="DirectorLoginViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G7R-c2-fID">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1306,10 +1306,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="aZ0-fb-8wZ">
-                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
+                                <rect key="frame" x="0.0" y="-64" width="393" height="980"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTn-ho-LKu">
-                                <rect key="frame" x="-3.6666666666666572" y="29" width="400.33333333333326" height="319"/>
+                                <rect key="frame" x="-3.6666666666666572" y="-5" width="400.33333333333326" height="319"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="NpA-2o-LN3">
                                         <rect key="frame" x="-8" y="-59" width="409" height="390"/>
@@ -1408,7 +1408,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="center" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hOL-9S-Mbb">
-                                <rect key="frame" x="30" y="400" width="333" height="290"/>
+                                <rect key="frame" x="30" y="366" width="333" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ES-NR-KpR">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
@@ -2383,11 +2383,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1dL-nM-BoP"/>
         <segue reference="s7V-eP-ISO"/>
-        <segue reference="mtR-YS-Ljl"/>
         <segue reference="KbQ-Kd-VJg"/>
         <segue reference="vBG-zz-RJp"/>
-        <segue reference="eXt-Gw-wAY"/>
+        <segue reference="znX-mK-xQP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>

@@ -49,7 +49,73 @@ class ViewController: UIViewController {
             
         }
     }
-
+    
+    @IBAction func TeacherButtonClicked(_ sender: Any) {
+        
+        guard let storyboard = self.storyboard else {
+            fatalError("Storyboard bulunamadı.")
+        }
+        
+        
+        var myRefresh:Any?
+        
+        myRefresh = UserDefaults.standard.string(forKey: "refreshTokenTeacher")
+        
+        if myRefresh != nil{
+            
+            guard let TeacherProfileVC = storyboard.instantiateViewController(withIdentifier: "TeacherProfileVC") as? TeacherProfileViewController else {
+                fatalError("TeacherProfileViewController bulunamadı veya uygun tipte değil.")
+            }
+            
+            TeacherProfileVC.modalPresentationStyle = .fullScreen
+            self.present(TeacherProfileVC, animated: true, completion: nil)
+            
+        }
+        else
+        {
+            guard let teacherLoginVC = storyboard.instantiateViewController(withIdentifier: "TeacherLoginVC") as? TeacherLoginViewController else {
+                fatalError("TeacherLoginViewController bulunamadı veya uygun tipte değil.")
+            }
+            
+            teacherLoginVC.modalPresentationStyle = .fullScreen
+            self.present(teacherLoginVC, animated: true, completion: nil)
+            
+        }
+    }
+    
+    @IBAction func DirectorButtonClicked(_ sender: Any) {
+        
+        guard let storyboard = self.storyboard else {
+            fatalError("Storyboard bulunamadı.")
+        }
+        
+        
+        var myRefresh:Any?
+        
+        myRefresh = UserDefaults.standard.string(forKey: "refreshTokenPrincipal")
+        
+        if myRefresh != nil{
+            
+            guard let DirectorProfileVC = storyboard.instantiateViewController(withIdentifier: "DirectorProfileVC") as? DirectorProfileViewController else {
+                fatalError("DirectorProfileViewController bulunamadı veya uygun tipte değil.")
+            }
+            
+            DirectorProfileVC.modalPresentationStyle = .fullScreen
+            self.present(DirectorProfileVC, animated: true, completion: nil)
+            
+        }
+        else
+        {
+            guard let DirectorLoginVC = storyboard.instantiateViewController(withIdentifier: "DirectorLoginVC") as? DirectorLoginViewController else {
+                fatalError("DirectorLoginViewController bulunamadı veya uygun tipte değil.")
+            }
+            
+            DirectorLoginVC.modalPresentationStyle = .fullScreen
+            self.present(DirectorLoginVC, animated: true, completion: nil)
+            
+        }
+    }
+    
     
 }
 
