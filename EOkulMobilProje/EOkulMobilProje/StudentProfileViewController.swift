@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentProfileViewController: UIViewController {
+class StudentProfileViewController: UIViewController , URLSessionDelegate {
     
     // MARK: -VARIABLES
     
@@ -20,8 +20,63 @@ class StudentProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         
+        GetInformation()
         setupProfile()
+    }
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
+    
+    func GetInformation(){
+        
+        
+        guard let token = UserDefaults.standard.string(forKey: "refreshToken") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
+        guard let url = URL(string: "https://localhost:7134/connect/userinfo") else {
+                print("Geçersiz URL")
+                return
+            }
+        var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+        
+        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+            let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+            let task = session.dataTask(with: request) { data, response, error in
+                print("Request tamamlandı")
+                
+                    if let error = error {
+                        print("Hata: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        print("Boş veri")
+                        return
+                    }
+                    
+                    // Response'u parse edin ve kullanın
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            print("Kullanıcı Bilgisi: \(json["name"]!)")
+                            print("Kullanıcı className: \(json["classname"]!)")
+                            
+                        } else {
+                            
+                        }
+                    } catch {
+                        print("JSON parse hatası: \(error.localizedDescription)")
+                    }
+                }
+                
+            task.resume()
+        
+
+        
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
@@ -62,4 +117,6 @@ class StudentProfileViewController: UIViewController {
     }
     
 }
+
+
 

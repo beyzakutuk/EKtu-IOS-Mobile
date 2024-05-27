@@ -90,7 +90,7 @@ class StudentLoginViewController: UIViewController {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
                         print("Cevap JSON: \(json)")
-                        if let refreshToken = json["refresh_token"] as? String {
+                        if let refreshToken = json["access_token"] as? String {
                             self.saveTokens(refreshToken: refreshToken)
                         }
                     }
