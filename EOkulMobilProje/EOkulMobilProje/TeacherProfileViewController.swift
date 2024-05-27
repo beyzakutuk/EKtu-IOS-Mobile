@@ -11,12 +11,10 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     
-    var teacher : TeacherModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       setupProfile()
        GetInformation()
     }
     
@@ -60,6 +58,10 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print("Kullanıcı Bilgisi: \(json["name"]!)")
                     print("Kullanıcı id: \(json["sub"]!)")
+                    
+                    DispatchQueue.main.async {
+                        self.nameLabel.text = json["name"] as? String
+                    }
                             
                 } else {
                             
@@ -89,10 +91,5 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         
         self.present(exitAlert, animated: true, completion: nil)
-    }
-
-    private func setupProfile() {
-            guard let Teacher = teacher else { return }
-            nameLabel.text = "\(Teacher.isim) \(Teacher.soyisim)"
     }
 }
