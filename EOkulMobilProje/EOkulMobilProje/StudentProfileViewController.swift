@@ -22,7 +22,7 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
         super.viewDidLoad()
          
         GetInformation()
-        setupProfile()
+
     }
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
             completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
@@ -65,6 +65,12 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
                             print("Kullanıcı Bilgisi: \(json["name"]!)")
                             print("Kullanıcı className: \(json["classname"]!)")
                             
+                            // Kullanıcı bilgilerini güncelle
+                            DispatchQueue.main.async {
+                                self.nameLabel.text = json["name"] as? String
+                                self.classLabel.text = json["classname"] as? String
+                            }
+                            
                         } else {
                             
                         }
@@ -74,9 +80,7 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
                 }
                 
             task.resume()
-        
 
-        
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
@@ -108,12 +112,6 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         
         self.present(exitAlert, animated: true, completion: nil)
-    }
-    
-    private func setupProfile() {
-            guard let student = student else { return }
-            nameLabel.text = "\(student.isim) \(student.soyisim)"
-            classLabel.text = student.sinifNumarasi
     }
     
 }
