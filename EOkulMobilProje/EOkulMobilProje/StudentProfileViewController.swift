@@ -20,13 +20,21 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-        GetInformation()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           GetInformation()
+       }
+    
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        if let serverTrust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
         }
+    }
     
     func GetInformation(){
         
