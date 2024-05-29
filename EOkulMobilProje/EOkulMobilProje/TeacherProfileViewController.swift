@@ -100,4 +100,20 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
         
         self.present(exitAlert, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func mainButtonClicked(_ sender: UIButton) {
+        
+        let exitAlert = UIAlertController(title: "Ana Sayfaya Dön", message: "Ana sayfaya dönmek istediğinizden emin misiniz?", preferredStyle: .alert)
+        
+        //evet
+        exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
+                                          // Giriş sayfasına geri dön
+            self.performSegue(withIdentifier: "backToMain", sender: self)
+                                      }))
+        //iptal
+        exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
+        
+        self.present(exitAlert, animated: true, completion: nil)
+    }
 }
