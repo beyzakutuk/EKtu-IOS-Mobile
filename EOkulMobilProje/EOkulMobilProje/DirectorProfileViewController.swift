@@ -10,19 +10,24 @@ import UIKit
 class DirectorProfileViewController: UIViewController , URLSessionDelegate{
 
     @IBOutlet weak var nameLabel: UILabel!
-    var director : DirectorModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetInformation()
-        
+
     }
     
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
-        }
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           GetInformation()
+       }
     
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if let serverTrust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
+    }
     
     func GetInformation(){
         
@@ -61,8 +66,9 @@ class DirectorProfileViewController: UIViewController , URLSessionDelegate{
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             print("Kullanıcı Bilgisi: \(json["name"]!)")
 
-                        } else {
-                            
+                            DispatchQueue.main.async {
+                                self.nameLabel.text = json["name"] as? String
+                            }
                         }
                     } catch {
                         print("JSON parse hatası: \(error.localizedDescription)")
@@ -88,9 +94,4 @@ class DirectorProfileViewController: UIViewController , URLSessionDelegate{
         self.present(exitAlert, animated: true, completion: nil)
     }
     
-    private func setupProfile() {
-            guard let director = director else { return }
-            nameLabel.text = "\(director.isim) \(director.soyisim)"
-    }
-
 }
