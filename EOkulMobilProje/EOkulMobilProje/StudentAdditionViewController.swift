@@ -16,10 +16,10 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
     @IBOutlet weak var sifreField: UITextField!
 
     @IBOutlet weak var submitButton: UIButton!
-    
     @IBOutlet weak var onayLabel: UILabel!
     
     var isClassSelected = false
+    var selectedClassId : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,51 +60,136 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
         submitButton.isEnabled = isFormValid
     }
     
+
     @IBAction func showClassID(_ sender: UIButton) {
+
+        let urlString = "https://localhost:7134/connect/token"
+
+        let client_id = "ClientCredentials"
+        let client_secret = "secret"
+        let grant_type = "client_credentials"
+            
+        let parameters = "client_id=\(client_id)&client_secret=\(client_secret)&grant_type=\(grant_type)"
+        let postData = parameters.data(using: .utf8)
         
-        let alertController = UIAlertController(title: "Sınıf", message: "Bir sınıf seçiniz", preferredStyle: .actionSheet)
+        var request = URLRequest(url: URL(string: urlString)!)
+            request.httpMethod = "POST"
+            request.httpBody = postData
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            print("request başarılı")
+            if let error = error {
+                print("Hata: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                print("Boş yanıt")
+                return
+            }
                 
-                // Açılır menü seçeneklerini oluşturun
-                let option1Action = UIAlertAction(title: "1.Sınıf", style: .default) { (action) in
-                    self.sinifButton.setTitle("1.Sınıf", for: UIControl.State.normal)
-                    self.isClassSelected = true
-                    self.validateFields()
-                    print("Seçilen Seçenek: Seçenek 1")
+            // JSON verilerini çözme
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    // Access token alınması
+                    if let accessToken = json["access_token"] as? String {
+                        print("Access Token: \(accessToken)")
+
+                        let urlStringGet = "https://localhost:7253/api/student/getclasslist"
+                               
+                        var request = URLRequest(url: URL(string: urlStringGet)!)
+                        request.httpMethod = "GET"
+                        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+                            
+                           
+                        let task = session.dataTask(with: request) { data, response, error in
+                            print("request başarılı")
+                            if let error = error {
+                                print("Hata: \(error.localizedDescription)")
+                                return
+                            }
+
+                            guard let data = data else {
+                                print("Boş yanıt")
+                                return
+                            }
+                                   
+                            if let httpResponse = response as? HTTPURLResponse {
+                                if httpResponse.statusCode == 200 {
+                                    
+                                    do {
+                                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                            print("Alınan veri: \(json)")
+                                                   
+                                            var Classes = [Class]()
+                                                
+                                            if let classDatas = json["Data"] as? [[String: Any]] {
+                                                for classData in classDatas {
+                                                
+                                                    if let classId = classData["ClassId"] as? Int,
+                                                       let className = classData["ClassName"] as? String {
+                                                        let classs = Class(classId: classId, className: className)
+                                                                              Classes.append(classs)
+                                                        }
+                                                    }
+                                                }
+                                                DispatchQueue.main.async {
+                                                    let alertController = UIAlertController(title: "Sınıf Seç", message: "Bir sınıf seçiniz", preferredStyle: .actionSheet)
+                                                    for classItem in Classes {
+                                                        let action = UIAlertAction(title: classItem.className, style: .default) { _ in
+                                                            
+                                                            self.sinifButton.setTitle(classItem.className, for: UIControl.State.normal)
+                                                            self.sinifButton.titleLabel?.textColor = .black
+                                                            self.isClassSelected = true
+                                                            self.validateFields()
+             
+                                                            self.selectedClassId = classItem.classId
+                                                            print("Seçilen Sınıf: \(self.selectedClassId!)")
+                                                            
+                                                        }
+                                                        alertController.addAction(action)
+                                                    }
+                                                    self.present(alertController, animated: true, completion: nil)
+                                                }
+                                            } else {
+                                                   print("Geçersiz JSON formatı.")
+                                               }
+                                    } catch {
+                                            print("JSON çözümleme hatası: \(error)")
+                                        }
+                                } else {
+                                    print("Sunucudan hata kodu alındı: \(httpResponse.statusCode)")
+                                    }
+                            }
+                        }
+                               
+                    // İsteği başlatma
+                    task.resume()
+                               
+                } else {
+                    print("Access Token alınamadı.")
+                    }
+            } else {
+                print("Geçersiz JSON formatı.")
                 }
-                
-                let option2Action = UIAlertAction(title: "2.Sınıf", style: .default) { (action) in
-                    self.sinifButton.setTitle("2.Sınıf", for: UIControl.State.normal)
-                    self.isClassSelected = true
-                    self.validateFields()
-                    print("Seçilen Seçenek: Seçenek 2")
-                }
-                
-                let option3Action = UIAlertAction(title: "3.Sınıf", style: .default) { (action) in
-                    self.sinifButton.setTitle("3.Sınıf", for: UIControl.State.normal)
-                    self.isClassSelected = true
-                    self.validateFields()
-                    print("Seçilen Seçenek: Seçenek 3")
-                }
-        let option4Action = UIAlertAction(title: "4.Sınıf", style: .default) { (action) in
-            self.sinifButton.setTitle("4.Sınıf", for: UIControl.State.normal)
-            self.isClassSelected = true
-            self.validateFields()
-            print("Seçilen Seçenek: Seçenek 4")
-        }
-                
-                // Açılır menüye seçenekleri ekle
-                alertController.addAction(option1Action)
-                alertController.addAction(option2Action)
-                alertController.addAction(option3Action)
-        alertController.addAction(option4Action)
-                
+        } catch {
+            print("JSON çözümleme hatası: \(error)")
+            }
+    }
+            
+    task.resume()
+        
+        /*
+
                 // UIAlertController'i göster
                 if let popoverController = alertController.popoverPresentationController {
                     popoverController.sourceView = sender as? UIView
                     popoverController.sourceRect = (sender as AnyObject).bounds
                 }
                 
-                present(alertController, animated: true, completion: nil)
+                present(alertController, animated: true, completion: nil)*/
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
@@ -117,60 +202,104 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
             return
         }
 
-        guard let url = URL(string: "https://localhost:7134/connect/token") else {
-                    print("Geçersiz URL")
-                    return
-                }
+        let urlString = "https://localhost:7134/connect/token"
 
-        var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                
-                // POST parametrelerini oluşturun
-                let parameters: [String: String] = [
-                    "client_id": "ClientCredentials",
-                    "grant_type": "client_credentials",
-                    "client_secret": "secret"
-                ]
-        
-        request.httpBody = parameters
-                   .map { "\($0.key)=\($0.value)" }
-                   .joined(separator: "&")
-                   .data(using: .utf8)
-        
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        let client_id = "ClientCredentials"
+        let client_secret = "secret"
+        let grant_type = "client_credentials"
+            
 
-        let session = URLSession.shared
+        let parameters = "client_id=\(client_id)&client_secret=\(client_secret)&grant_type=\(grant_type)"
+        let postData = parameters.data(using: .utf8)
+        
+        
+        var request = URLRequest(url: URL(string: urlString)!)
+            request.httpMethod = "POST"
+            request.httpBody = postData
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
         let task = session.dataTask(with: request) { data, response, error in
+            
             if let error = error {
-                print("Hata: \(error.localizedDescription)")
+                print("Hata: \(error)")
                 return
             }
-            
+                
             guard let data = data else {
-                print("Boş veri")
+                print("Boş yanıt")
                 return
             }
-            
-            // Yanıtı parse edin ve kullanın
+                
+            // JSON verilerini çözme
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let accessToken = json["access_token"] as? String {
-                    DispatchQueue.main.async {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    // Access token alınması
+                    if let accessToken = json["access_token"] as? String {
                         print("Access Token: \(accessToken)")
-                        // Token'ı ekrana bastırabilir ya da UI'da gösterebilirsiniz
+                            
+                        guard let url = URL(string: "https://localhost:7253/api/student/addstudent") else {    print("Invalid URL")
+                            return
+                        }
+                            
+                        let studentData: [String: Any] = [
+                                "StudentName": isim,
+                                "StudentLastName": soyisim,
+                                "Email": "--",
+                                "StudentPassword": sifre,
+                                "StudentTckNo": tcKimlikNo,
+                                "ClassId": self.selectedClassId!
+                            ]
+                            
+                        guard let jsonData = try? JSONSerialization.data(withJSONObject: studentData) else {
+                            print("Error encoding student data")
+                            return
+                        }
+                            
+                            
+                        var request = URLRequest(url: url)
+                            request.httpMethod = "POST"
+                            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+                            request.httpBody = jsonData
+                                
+                        let task = session.dataTask(with: request) { data, response, error in
+                            
+                            if let error = error {
+                                print("Error: \(error)")
+                                return
+                            }
+                                    
+                            guard let data = data else {
+                                print("No data received")
+                                return
+                            }
+                                    
+                            do {
+                                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                    print("Response: \(json)")
+                                }
+                            } catch {
+                                print("Error parsing response: \(error)")
+                                }
+                        }
+
+                        task.resume()
+   
+                    } else {
+                        print("Access Token alınamadı.")
                     }
                 } else {
-                    let responseString = String(data: data, encoding: .utf8)
-                    print("Response String: \(responseString ?? "")")
+                    print("Geçersiz JSON formatı.")
                 }
             } catch {
-                print("JSON parse hatası: \(error.localizedDescription)")
+                print("JSON çözümleme hatası: \(error)")
             }
         }
-        
+
         task.resume()
-    
-        
+
         // Onay mesajını güncelle
         onayLabel.text = "Kaydedildi"
         onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
@@ -195,18 +324,15 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
         let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
             self.performSegue(withIdentifier: "toDirectorProfilePage", sender: self)
         }
-            
-        let yeniOgrenciEkleAction = UIAlertAction(title: "Yeni Öğrenci Ekle", style: .default) { _ in
-            // ViewController'ı yeniden yükleme
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "StudentAdditionViewController") as? StudentAdditionViewController {
-                    self.navigationController?.pushViewController(viewController, animated: true)
-            }
-        }
-            
+
         alertController.addAction(anaSayfayaDonAction)
-        alertController.addAction(yeniOgrenciEkleAction)
             
         present(alertController, animated: true, completion: nil)
     }
     
+}
+
+struct Class {
+    let classId: Int
+    let className: String
 }
