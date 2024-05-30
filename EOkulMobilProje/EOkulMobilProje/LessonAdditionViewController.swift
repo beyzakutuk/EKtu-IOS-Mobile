@@ -206,7 +206,92 @@ class LessonAdditionViewController: UIViewController {
             return
         }
         
+        let urlString = "https://localhost:7134/connect/token"
 
+        let client_id = "ClientCredentials"
+        let client_secret = "secret"
+        let grant_type = "client_credentials"
+            
+
+        let parameters = "client_id=\(client_id)&client_secret=\(client_secret)&grant_type=\(grant_type)"
+        let postData = parameters.data(using: .utf8)
+        
+        var request = URLRequest(url: URL(string: urlString)!)
+            request.httpMethod = "POST"
+            request.httpBody = postData
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                print("Hata: \(error)")
+                return
+            }
+                
+            guard let data = data else {
+                print("Boş yanıt")
+                return
+            }
+            
+            // JSON verilerini çözme
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    // Access token alınması
+                    if let accessToken = json["access_token"] as? String {
+                        print("Access Token: \(accessToken)")
+                            
+                        guard let url = URL(string: "https://localhost:7253/api/principal/addlessons") else {    print("Invalid URL")
+                            return
+                        }
+                            
+                        let lessonData: [String: Any] = [
+                              "lessonName": isim,
+                              "hasOptional": self.hasOptional,
+                              "optionalLessonId": self.selectedSecmeliId!,
+                              "grade": self.DonemID!,
+                              "term": self.selectedDonem!
+                            ]
+                            
+                        guard let jsonData = try? JSONSerialization.data(withJSONObject: lessonData) else {
+                            print("Error encoding teacher data")
+                            return
+                        }
+                        
+                        var request = URLRequest(url: url)
+                            request.httpMethod = "POST"
+                            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+                            request.httpBody = jsonData
+                                
+                        let task = session.dataTask(with: request) { data, response, error in
+                            
+                            if let error = error {
+                                print("Error: \(error)")
+                                return
+                            }
+                                    
+                            guard data != nil else {
+                                print("No data received")
+                                return
+                            }
+                                    
+                        }
+
+                        task.resume()
+   
+                    } else {
+                        print("Access Token alınamadı.")
+                    }
+                } else {
+                    print("Geçersiz JSON formatı.")
+                }
+            } catch {
+                print("JSON çözümleme hatası: \(error)")
+            }
+        }
+
+        task.resume()
 
 
         // Onay mesajını güncelle
