@@ -86,12 +86,43 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                            self.lessons.append(lesson)
                                        }
                                    }
-                                   DispatchQueue.main.async {
-                                        self.lessonsTableView.reloadData() // TableView'i yeniden yükle
+                                   
+                                   if let jsonData = json["data"] as? [String: Any],
+                                      let secmeliDersData = jsonData["secmeliDers"] as? [[String: Any]] {
+                                       if secmeliDersData != nil
+                                       {
+                                           for lessonData in secmeliDersData {
+                                               if let lessonId = lessonData["lessonId"] as? Int,
+                                                  let optionalLessonId = lessonData["optionalLessonId"] as? Int,
+                                                  let lessonName = lessonData["lessonName"] as? String{
+                                                   
+                                                   if optionalLessonId == 1
+                                                   {
+                                                       OptionalModel.Secmeli1Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                       
+
+                                                   }
+                                                   if optionalLessonId == 2{
+                                                       OptionalModel.Secmeli2Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                   }
+                                                   if optionalLessonId == 3{
+                                                       OptionalModel.Secmeli3Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                   }
+                                                        
+                                                   
+                                               }
+                                               }
+                                           }
+                                           
+                                       }
+                                       
+                                       DispatchQueue.main.async {
+                                           self.lessonsTableView.reloadData() // TableView'i yeniden yükle
+                                       }
                                    }
                                }
                            }
-                       } catch {
+                       catch {
                            print("JSON parse hatası: \(error.localizedDescription)")
                        }
                    }

@@ -7,63 +7,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0CB459BE-E1AB-419E-A02B-A2CE2F2DEC40"
+            uuid = "856C9A50-9C14-46D1-8889-5A18737481C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EOkulMobilProje/StudentCourseSelectionViewController.swift"
+            filePath = "EOkulMobilProje/StudentLoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "StudentCourseSelectionViewController"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "StudentLoginViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688"
+            uuid = "DC26B0D8-7B81-44B5-ADE3-9D4F7A8FEC0F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EOkulMobilProje/StudentProfileViewController.swift"
+            filePath = "EOkulMobilProje/StudentLoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "updateStudentInfo()"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "loginButtonClk(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688 - fbe503f6272a30fd"
+                  uuid = "DC26B0D8-7B81-44B5-ADE3-9D4F7A8FEC0F - 621bc3d65d05443b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "EOkulMobilProje.StudentProfileViewController.updateStudentInfo() -&gt; ()"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
                   moduleName = "EOkulMobilProje"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "144">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "2036">
                </Location>
                <Location
-                  uuid = "B9A4219C-F0B3-4871-A268-ED391C7F5688 - fbe503f6272a30fd"
+                  uuid = "DC26B0D8-7B81-44B5-ADE3-9D4F7A8FEC0F - 621bc3d65d05443b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "EOkulMobilProje.StudentProfileViewController.updateStudentInfo() -&gt; ()"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
                   moduleName = "EOkulMobilProje"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "224">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "2308">
+               </Location>
+               <Location
+                  uuid = "DC26B0D8-7B81-44B5-ADE3-9D4F7A8FEC0F - 621bc3d65d054486"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+               <Location
+                  uuid = "DC26B0D8-7B81-44B5-ADE3-9D4F7A8FEC0F - 621bc3d65d054486"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "2324">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -71,17 +101,1811 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9EEAF77C-E9ED-440E-90C3-BBDC53E997E6"
+            uuid = "0FC4410B-12E2-4CBD-85DF-FEA0AECA2213"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentLoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "loginButtonClk(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0FC4410B-12E2-4CBD-85DF-FEA0AECA2213 - 35c36fc9bd2aeae4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "4240">
+               </Location>
+               <Location
+                  uuid = "0FC4410B-12E2-4CBD-85DF-FEA0AECA2213 - 621bc3d65d054458"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1116">
+               </Location>
+               <Location
+                  uuid = "0FC4410B-12E2-4CBD-85DF-FEA0AECA2213 - 621bc3d65d054458"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentLoginViewController.loginButtonClk(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentLoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5985B1F1-FB87-4D1E-A972-882E258A07F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "StudentButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EOkulMobilProje/StudentProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "StudentProfileViewController"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "GetInformation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1808">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "F725B316-CE24-4610-9A7E-4EE2F847D473 - fc94c555bf614db6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8052A73-9FBE-4CB4-8CCB-2BB74121D27B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/DirectorProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "GetInformation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F8052A73-9FBE-4CB4-8CCB-2BB74121D27B - 441179db2d7ae932"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "F8052A73-9FBE-4CB4-8CCB-2BB74121D27B - 441179db2d7ae953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "F8052A73-9FBE-4CB4-8CCB-2BB74121D27B - 441179db2d7ae953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "F8052A73-9FBE-4CB4-8CCB-2BB74121D27B - 441179db2d7ae953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B1C91F9-84C4-44EE-A70E-FFF6B72D7091"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/DirectorProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "GetInformation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B1C91F9-84C4-44EE-A70E-FFF6B72D7091 - 441179db2d7aea99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+               <Location
+                  uuid = "6B1C91F9-84C4-44EE-A70E-FFF6B72D7091 - 441179db2d7aeae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+               <Location
+                  uuid = "6B1C91F9-84C4-44EE-A70E-FFF6B72D7091 - 441179db2d7aeae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  uuid = "6B1C91F9-84C4-44EE-A70E-FFF6B72D7091 - 441179db2d7aeae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2776634D-946D-4634-A6ED-A593AC9C28D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/DirectorProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "GetInformation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2776634D-946D-4634-A6ED-A593AC9C28D5 - 441179db2d7aeb25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2300">
+               </Location>
+               <Location
+                  uuid = "2776634D-946D-4634-A6ED-A593AC9C28D5 - 37a85deca31f2f38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.DirectorProfileViewController.GetInformation() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/DirectorProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD3681E3-6222-44B9-9A38-430BCE716525"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/DirectorProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "GetInformation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24AB2E68-B2C2-485E-8FAA-DA90D3F60284"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EA3C7B4-9B27-4FB7-A919-83C4C0F9A18A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8EA3C7B4-9B27-4FB7-A919-83C4C0F9A18A - ab9033ee989cf7d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "8EA3C7B4-9B27-4FB7-A919-83C4C0F9A18A - ab9033ee989cf79a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "8EA3C7B4-9B27-4FB7-A919-83C4C0F9A18A - ab9033ee989cf79a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "392">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA - c8cabb2970dcda2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1544">
+               </Location>
+               <Location
+                  uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA - ab9033ee989cf7d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA - c8cabb2970dcdbe8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "1664">
+               </Location>
+               <Location
+                  uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA - ab9033ee989cf79a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "B047B609-495A-40B2-91F3-C5ECBE14F8EA - ab9033ee989cf79a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "392">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6460054F-F74E-4FDF-975F-7A59A997B517"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6460054F-F74E-4FDF-975F-7A59A997B517 - ab9033ee989ce9eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+               <Location
+                  uuid = "6460054F-F74E-4FDF-975F-7A59A997B517 - ab9033ee989ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+               <Location
+                  uuid = "6460054F-F74E-4FDF-975F-7A59A997B517 - ab9033ee989ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A42C1C62-519A-4E71-8F88-25C21E4D047D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A42C1C62-519A-4E71-8F88-25C21E4D047D - ab9033ee989ceae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "2672">
+               </Location>
+               <Location
+                  uuid = "A42C1C62-519A-4E71-8F88-25C21E4D047D - 7f97afba35b77fb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "380">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103 - 7f97afba35b77bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "2664">
+               </Location>
+               <Location
+                  uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103 - 7f97afba35b77bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "2260">
+               </Location>
+               <Location
+                  uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103 - 7f97afba35b77bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "2492">
+               </Location>
+               <Location
+                  uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103 - 7f97afba35b77bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "2272">
+               </Location>
+               <Location
+                  uuid = "91BEFA16-3E9B-49D2-A7AF-7759BE24A103 - 7f97afba35b77bd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "2504">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F737857-36D1-4164-9C8C-424CA8D69FE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F737857-36D1-4164-9C8C-424CA8D69FE4 - 7f97afba35b778bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  uuid = "4F737857-36D1-4164-9C8C-424CA8D69FE4 - 7f97afba35b778bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  uuid = "4F737857-36D1-4164-9C8C-424CA8D69FE4 - 7f97afba35b778bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "4F737857-36D1-4164-9C8C-424CA8D69FE4 - 7f97afba35b778bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D416F46E-B14C-4E75-AB2D-94BF57B4A38C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D416F46E-B14C-4E75-AB2D-94BF57B4A38C - 7f97afba35b77b75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "2988">
+               </Location>
+               <Location
+                  uuid = "D416F46E-B14C-4E75-AB2D-94BF57B4A38C - 7f97afba35b77b75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "3256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "2704">
+               </Location>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "2952">
+               </Location>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "2692">
+               </Location>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "2944">
+               </Location>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "2760">
+               </Location>
+               <Location
+                  uuid = "BEC40FE8-7197-4B89-951A-EC5263134A2B - 7f97afba35b77b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "3012">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14BF9684-7620-4DD6-89F2-3B17E5E821BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "14BF9684-7620-4DD6-89F2-3B17E5E821BB - c8cabb2970dcdab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "14BF9684-7620-4DD6-89F2-3B17E5E821BB - c8cabb2970dcdab7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25CD0E56-9660-4AE3-BC48-EDD6A202AA86"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25CD0E56-9660-4AE3-BC48-EDD6A202AA86 - 7f97afba35b77927"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "25CD0E56-9660-4AE3-BC48-EDD6A202AA86 - 7f97afba35b779c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "2552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E97F1FE1-153C-4F9A-A563-2F92C58CC84B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E97F1FE1-153C-4F9A-A563-2F92C58CC84B - ab9033ee989ceb5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "3232">
+               </Location>
+               <Location
+                  uuid = "E97F1FE1-153C-4F9A-A563-2F92C58CC84B - 7f97afba35b77e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.StudentAdditionViewController.showClassID(__C.UIButton) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/StudentAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "380">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B071C3E-30DA-42B9-B759-A08D607E7C75"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/StudentAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "showClassID(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2BA0ABE-AA22-43F8-9C8A-21301CA06809"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2BA0ABE-AA22-43F8-9C8A-21301CA06809 - 1c3788e94721c8eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "2864">
+               </Location>
+               <Location
+                  uuid = "F2BA0ABE-AA22-43F8-9C8A-21301CA06809 - 1c3788e94721c8ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "2864">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE89E6D2-45AA-44D1-911B-7B446AFA5DED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE89E6D2-45AA-44D1-911B-7B446AFA5DED - deba7b5e5c2b7e12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "2616">
+               </Location>
+               <Location
+                  uuid = "BE89E6D2-45AA-44D1-911B-7B446AFA5DED - deba7b5e5c2b7e12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "2564">
+               </Location>
+               <Location
+                  uuid = "BE89E6D2-45AA-44D1-911B-7B446AFA5DED - deba7b5e5c2b7e12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "2556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E6C1044-0146-407E-B86B-972BB8668581"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E6C1044-0146-407E-B86B-972BB8668581 - 1c3788e94721c9b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "1716">
+               </Location>
+               <Location
+                  uuid = "1E6C1044-0146-407E-B86B-972BB8668581 - 1c3788e94721d651"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "1132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49C36812-41A9-4448-A7C1-98DAEC7F14E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E8F8E92-B3BF-45FB-BCCA-81C86017B7B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4130250-A81D-430F-88ED-4B53B4DCD7F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A4130250-A81D-430F-88ED-4B53B4DCD7F9 - 94e3f78b0a46a01e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "A4130250-A81D-430F-88ED-4B53B4DCD7F9 - 94e3f78b0a46a01e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.LessonAdditionViewController.submitButtonClicked(Any) -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/LessonAdditionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D25D221D-CCB3-4B2C-BA3D-DFDD7A0148D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4E41EC9-7E17-4C90-9611-A98852C898B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/LessonAdditionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "submitButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEA9846A-FCF9-4E66-A784-F66DC6F689C5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/MainLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CEA9846A-FCF9-4E66-A784-F66DC6F689C5 - e2a640d31560a1e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.MainLessonsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "CEA9846A-FCF9-4E66-A784-F66DC6F689C5 - e2a640d31560a119"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.MainLessonsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "824">
+               </Location>
+               <Location
+                  uuid = "CEA9846A-FCF9-4E66-A784-F66DC6F689C5 - e2a640d315609d18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.MainLessonsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "824">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26623836-325D-497F-80F5-18860DD9C971"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/MainLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getUrl()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "26623836-325D-497F-80F5-18860DD9C971 - 624ae82300942815"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.MainLessonsViewController.getUrl() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "4480">
+               </Location>
+               <Location
+                  uuid = "26623836-325D-497F-80F5-18860DD9C971 - 75604dad4ef565d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.MainLessonsViewController.getUrl() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0D479AA-0EF5-4E16-A8B0-A8AE0CD6994C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/MainLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "getUrl()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/OptionalLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "OptionalLessonsViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - 247fec76bf30cac6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.elective1Courses.getter : Swift.Array&lt;EOkulMobilProje.CourseModels&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - 7b16595bbdeead2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.elective1Courses.setter : Swift.Array&lt;EOkulMobilProje.CourseModels&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - e384967a4b9022c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.elective1Courses.modify : Swift.Array&lt;EOkulMobilProje.CourseModels&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - 6df50a3c40f803e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.elective1Courses.modify : Swift.Array&lt;EOkulMobilProje.CourseModels&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - 94468000595ebab3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EOkulMobilProje.OptionalLessonsViewController"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "9C9B9763-3312-45B2-9725-E38A6BE311B6 - 1c856beb182b91ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EOkulMobilProje.OptionalLessonsViewController&gt;"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "139EC451-C0D4-4173-B78C-CD0964814E49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/MainLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "959B46A5-963D-416F-961F-5891293EDB9D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/MainLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "getUrl()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "959B46A5-963D-416F-961F-5891293EDB9D - 624ae82300942b69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.MainLessonsViewController.getUrl() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1424">
+               </Location>
+               <Location
+                  uuid = "959B46A5-963D-416F-961F-5891293EDB9D - 624ae82300942b69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EOkulMobilProje.MainLessonsViewController.getUrl() -&gt; ()"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/MainLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1612">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29052E42-8E74-4A51-8415-F49D91361751"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOkulMobilProje/OptionalLessonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29052E42-8E74-4A51-8415-F49D91361751 - b6f2214fdf786816"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "3756">
+               </Location>
+               <Location
+                  uuid = "29052E42-8E74-4A51-8415-F49D91361751 - b6f2214fdf786816"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EOkulMobilProje.OptionalLessonsViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "EOkulMobilProje"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beyzakutuk/Desktop/Github/EKtu-IOS-Mobile/EOkulMobilProje/EOkulMobilProje/OptionalLessonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "3268">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
