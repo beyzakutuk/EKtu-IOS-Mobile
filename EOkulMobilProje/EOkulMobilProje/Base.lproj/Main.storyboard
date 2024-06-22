@@ -3042,7 +3042,7 @@
         <!--Update Grades View Controller-->
         <scene sceneID="hUR-mK-pFA">
             <objects>
-                <viewController id="8Yq-ca-PnI" userLabel="Update Grades View Controller" sceneMemberID="viewController">
+                <viewController id="8Yq-ca-PnI" userLabel="Update Grades View Controller" customClass="UpdateGradesViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GW6-Ot-DUv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3119,6 +3119,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="8Yq-ca-PnI" eventType="touchUpInside" id="UYe-2m-hpZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qjg-Rv-b1l"/>
@@ -3139,6 +3142,11 @@
                             <constraint firstItem="MEF-b7-ufw" firstAttribute="centerY" secondItem="GW6-Ot-DUv" secondAttribute="centerY" id="xYI-hL-ak2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finalGradesTextField" destination="c1n-fv-Bpa" id="DiJ-8U-iei"/>
+                        <outlet property="midtermGradesTextField" destination="qej-qM-Zcx" id="b2C-fe-DhZ"/>
+                        <outlet property="submitButton" destination="2gt-RN-9SG" id="Mzd-oK-H7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Av8-LH-UCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

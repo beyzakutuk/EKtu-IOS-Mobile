@@ -46,6 +46,7 @@
 		B1B8FD962BE673A7005C7AF5 /* StudentExamResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8FD952BE673A7005C7AF5 /* StudentExamResultsViewController.swift */; };
 		B1BAD8742C274E9000490D1A /* StudentExamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */; };
 		B1BAD8762C274F6B00490D1A /* StudentExamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */; };
+		B1BAD8782C2754C300490D1A /* UpdateGradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD8772C2754C300490D1A /* UpdateGradesViewController.swift */; };
 		B1D124192BF93FA2003A04A7 /* StudentDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D124182BF93DC8003A04A7 /* StudentDatabase.swift */; };
 		B1D1241D2BF95D6B003A04A7 /* TeacherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1241C2BF95D6B003A04A7 /* TeacherModel.swift */; };
 		B1D1241F2BF95E12003A04A7 /* TeacherDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1241E2BF95E12003A04A7 /* TeacherDatabase.swift */; };
@@ -98,6 +99,7 @@
 		B1B8FD952BE673A7005C7AF5 /* StudentExamResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamResultsViewController.swift; sourceTree = "<group>"; };
 		B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamListViewController.swift; sourceTree = "<group>"; };
 		B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamListTableViewCell.swift; sourceTree = "<group>"; };
+		B1BAD8772C2754C300490D1A /* UpdateGradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGradesViewController.swift; sourceTree = "<group>"; };
 		B1D124182BF93DC8003A04A7 /* StudentDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDatabase.swift; sourceTree = "<group>"; };
 		B1D1241C2BF95D6B003A04A7 /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		B1D1241E2BF95E12003A04A7 /* TeacherDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDatabase.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				B11ADF002C21D4A7008F892C /* ExamFinalizationViewController.swift */,
 				B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */,
 				B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */,
+				B1BAD8772C2754C300490D1A /* UpdateGradesViewController.swift */,
 			);
 			path = EOkulMobilProje;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				B1D124232BF96406003A04A7 /* DirectorDatabase.swift in Sources */,
 				B1A204B42BE8FC93009FE84C /* StudentCourseSelectionViewController.swift in Sources */,
 				B122A83E2BF02EBB008613E1 /* AbsencesModel.swift in Sources */,
+				B1BAD8782C2754C300490D1A /* UpdateGradesViewController.swift in Sources */,
 				B1B8FD962BE673A7005C7AF5 /* StudentExamResultsViewController.swift in Sources */,
 				B122900F2BEA651E00C29D73 /* TranscriptCollectionViewCell.swift in Sources */,
 				B1A204B22BE8FA1C009FE84C /* CourseModel.swift in Sources */,
