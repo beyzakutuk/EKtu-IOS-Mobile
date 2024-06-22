@@ -2916,7 +2916,7 @@
         <!--Student Exam List View Controller-->
         <scene sceneID="PVg-J3-fEo">
             <objects>
-                <viewController id="3El-bf-TlJ" userLabel="Student Exam List View Controller" sceneMemberID="viewController">
+                <viewController id="3El-bf-TlJ" userLabel="Student Exam List View Controller" customClass="StudentExamListViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fSb-zN-8Ag">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2934,7 +2934,7 @@
                                     <constraint firstAttribute="height" constant="720" id="jWA-80-u9u"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="141" id="Kui-UR-1Az">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="141" id="Kui-UR-1Az" customClass="StudentExamListTableViewCell" customModule="EOkulMobilProje" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kui-UR-1Az" id="aac-Y1-OMD">
@@ -2953,6 +2953,9 @@
                                                     <buttonConfiguration key="configuration" style="plain">
                                                         <imageReference key="image" image="arrow.right.square.fill" catalog="system" symbolScale="large" variableValue="1"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="updateButton:" destination="Kui-UR-1Az" eventType="touchUpInside" id="vYt-Nn-GDC"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arasınav Notu: G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPJ-xa-XRA">
                                                     <rect key="frame" x="20" y="47" width="128" height="21"/>
@@ -2976,6 +2979,12 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="P3r-ii-0ok" secondAttribute="trailing" constant="-9" id="i6R-3j-Mqm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="finalGrades" destination="O2R-Dx-DAX" id="81Q-37-9Wr"/>
+                                            <outlet property="midtermGrades" destination="gPJ-xa-XRA" id="v88-wh-R0d"/>
+                                            <outlet property="studentNameLabel" destination="oKr-1h-HUE" id="6c6-xh-RqM"/>
+                                            <outlet property="updateButton" destination="P3r-ii-0ok" id="8j8-Ih-odO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -3022,6 +3031,9 @@
                             <constraint firstItem="T4q-tq-hH8" firstAttribute="leading" secondItem="rUQ-If-a0k" secondAttribute="leading" id="yvE-pm-Joy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="StudentListTableView" destination="T4q-tq-hH8" id="695-fW-fkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MU4-rI-G30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

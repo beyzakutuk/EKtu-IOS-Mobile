@@ -44,6 +44,8 @@
 		B1A204B92BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A204B82BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift */; };
 		B1B8FD942BE67197005C7AF5 /* StudentsCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8FD932BE67197005C7AF5 /* StudentsCourses.swift */; };
 		B1B8FD962BE673A7005C7AF5 /* StudentExamResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8FD952BE673A7005C7AF5 /* StudentExamResultsViewController.swift */; };
+		B1BAD8742C274E9000490D1A /* StudentExamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */; };
+		B1BAD8762C274F6B00490D1A /* StudentExamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */; };
 		B1D124192BF93FA2003A04A7 /* StudentDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D124182BF93DC8003A04A7 /* StudentDatabase.swift */; };
 		B1D1241D2BF95D6B003A04A7 /* TeacherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1241C2BF95D6B003A04A7 /* TeacherModel.swift */; };
 		B1D1241F2BF95E12003A04A7 /* TeacherDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1241E2BF95E12003A04A7 /* TeacherDatabase.swift */; };
@@ -94,6 +96,8 @@
 		B1A204B82BE90C41009FE84C /* StudentSelectedCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSelectedCourseTableViewCell.swift; sourceTree = "<group>"; };
 		B1B8FD932BE67197005C7AF5 /* StudentsCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsCourses.swift; sourceTree = "<group>"; };
 		B1B8FD952BE673A7005C7AF5 /* StudentExamResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamResultsViewController.swift; sourceTree = "<group>"; };
+		B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamListViewController.swift; sourceTree = "<group>"; };
+		B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamListTableViewCell.swift; sourceTree = "<group>"; };
 		B1D124182BF93DC8003A04A7 /* StudentDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDatabase.swift; sourceTree = "<group>"; };
 		B1D1241C2BF95D6B003A04A7 /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		B1D1241E2BF95E12003A04A7 /* TeacherDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDatabase.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				B1557E2C2C10AB9100E70F08 /* OptionalCourse2SelectionTableViewCell.swift */,
 				B1557E2E2C10ABAD00E70F08 /* OptionalCourse3SelectionTableViewCell.swift */,
 				B11ADF002C21D4A7008F892C /* ExamFinalizationViewController.swift */,
+				B1BAD8732C274E9000490D1A /* StudentExamListViewController.swift */,
+				B1BAD8752C274F6B00490D1A /* StudentExamListTableViewCell.swift */,
 			);
 			path = EOkulMobilProje;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				B1D124192BF93FA2003A04A7 /* StudentDatabase.swift in Sources */,
 				B17B26782BFB7BE3008A052C /* TeacherAdditionViewController.swift in Sources */,
 				B11ADF012C21D4A7008F892C /* ExamFinalizationViewController.swift in Sources */,
+				B1BAD8742C274E9000490D1A /* StudentExamListViewController.swift in Sources */,
 				B197017E2C0B889200789D0C /* OptionalCourseSelectionTableViewCell.swift in Sources */,
 				B15DF8332BE0066900C170F7 /* SceneDelegate.swift in Sources */,
 				B15BB0572BE15B73009AF244 /* DirectorProfileViewController.swift in Sources */,
@@ -300,6 +307,7 @@
 				B1A204B22BE8FA1C009FE84C /* CourseModel.swift in Sources */,
 				B15BB0492BE13A6B009AF244 /* StudentModel.swift in Sources */,
 				B1924BAF2BF2247B00539F1A /* AbsencesTableViewCell.swift in Sources */,
+				B1BAD8762C274F6B00490D1A /* StudentExamListTableViewCell.swift in Sources */,
 				B19701802C0B88AE00789D0C /* OptionalLessonsViewController.swift in Sources */,
 				B15BB04B2BE13CA3009AF244 /* NetworkService.swift in Sources */,
 				B15BB0472BE138F1009AF244 /* StudentLoginViewController.swift in Sources */,
