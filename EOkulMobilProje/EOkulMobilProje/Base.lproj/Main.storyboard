@@ -2812,6 +2812,9 @@
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ClassSelectionButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="PiX-AB-bgL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2844,6 +2847,9 @@
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="LessonSelectionButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="hy2-gi-G0B"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2873,6 +2879,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="GetStudentListButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="DG9-IN-iJe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2895,6 +2904,10 @@
                             <constraint firstItem="zd8-A4-dDK" firstAttribute="leading" secondItem="GwW-qT-da4" secondAttribute="leading" id="zSB-EN-KfK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="className" destination="ILz-Pa-ml2" id="R2e-dI-hId"/>
+                        <outlet property="lessonName" destination="UHa-Ka-DK6" id="dB6-kP-CHi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMA-r6-e0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2935,7 +2948,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3r-ii-0ok">
-                                                    <rect key="frame" x="333" y="4" width="49" height="35"/>
+                                                    <rect key="frame" x="333" y="4" width="49" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain">
                                                         <imageReference key="image" image="arrow.right.square.fill" catalog="system" symbolScale="large" variableValue="1"/>
