@@ -6,19 +6,19 @@
 //
 import UIKit
 
-class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDelegate {
+class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDelegate, StudentCourseSelectionDelegate {
 
 
     @IBOutlet weak var lessonsTableView: UITableView!
     
-    var lessons: [CourseModels] = []
-    var selectedCourses: [CourseModels] = []
+    var lessons: [MainLessonModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
-
         getUrl()
+        
+        lessons = MainLessonModel.getAllMainLessons()
     }
 
     func setInitViews() {
@@ -82,8 +82,9 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                    for lessonData in anaDersData {
                                        if let lessonId = lessonData["lessonId"] as? Int,
                                           let lessonName = lessonData["lessonName"] as? String {
-                                           let lesson = CourseModels(lessonId: lessonId, lessonName: lessonName)
+                                           let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
                                            self.lessons.append(lesson)
+                                           MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
                                        }
                                    }
                                    
@@ -98,15 +99,15 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                                    
                                                    if optionalLessonId == 1
                                                    {
-                                                       OptionalModel.Secmeli1Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                       OptionalModel.Secmeli1Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 1)
                                                        
 
                                                    }
                                                    if optionalLessonId == 2{
-                                                       OptionalModel.Secmeli2Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                       OptionalModel.Secmeli2Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 2)
                                                    }
                                                    if optionalLessonId == 3{
-                                                       OptionalModel.Secmeli3Ekle(lessonId: lessonId, lessonName: lessonName)
+                                                       OptionalModel.Secmeli3Ekle(lessonId: lessonId, lessonName: lessonName, optionalNumber: 3)
                                                    }
                                                         
                                                    
@@ -143,14 +144,24 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
             let course = self.lessons[indexPath.row]
             cell.lessonNameLabel.text = course.lessonName
 
-            // "selectionCell" hücresinde + butonuna tıklandığında yapılacak işlem
-            cell.addCourseAction = { [weak self] in
-                guard let self = self else { return }
-                let selectedCourse = self.lessons.remove(at: indexPath.row) // Dersi genel listeden kaldır
-                self.selectedCourses.append(selectedCourse) // Dersi seçilenler listesine ekle
-                self.lessonsTableView.reloadData() // TableView'i yeniden yükle
-            }
+            cell.delegate = self
+            cell.configureCell()
             return cell
+        }
+    }
+    
+    func didTapAddButton(cell: StudentCourseSelectionTableViewCell) {
+        if let indexPath = lessonsTableView.indexPath(for: cell) {
+            let selectedCourse = self.lessons.remove(at: indexPath.row) // Dersi genel listeden kaldır
+            SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: false , optionalNumber: 0)
+            
+            
+            
+            //BURADA LESSONS DİZİSİNDEN ÇIKARMA İŞLEMİ YAP (KONTROLLERDEN SONRA)
+            
+            
+            
+            lessonsTableView.reloadData() // TableView'i yeniden yükle
         }
     }
 
