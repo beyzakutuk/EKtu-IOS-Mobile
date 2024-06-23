@@ -12,20 +12,25 @@ class StudentSelectedCourseTableViewCell: UITableViewCell {
     @IBOutlet weak var selectedLessonName: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     
-    var removeCourseAction: (() -> Void)?
+    weak var delegate: StudentSelectedCourseDelegate?
 
-        override func awakeFromNib() {
-            super.awakeFromNib()
-            removeButton.addTarget(self, action: #selector(removeButtonTapped(_:)), for: .touchUpInside)
-        }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 
-        @objc func removeButtonTapped(_ sender: UIButton) {
-            removeCourseAction?()
-        }
+    @objc func removeButtonTapped(_ sender: UIButton) {
+        delegate?.didTapRemoveButton(cell: self)
+    }
+        
+    func configureCell() {
+            removeButton.addTarget(self, action: #selector(removeButtonTapped), for: .touchUpInside)
+    }
+}
 
-        override func setSelected(_ selected: Bool, animated: Bool) {
-            super.setSelected(selected, animated: animated)
-            // Configure the view for the selected state
-        }
-
+protocol StudentSelectedCourseDelegate: AnyObject {
+    func didTapRemoveButton(cell: StudentSelectedCourseTableViewCell)
 }

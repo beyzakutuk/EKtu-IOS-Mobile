@@ -14,10 +14,7 @@ class StudentCourseSelectionTableViewCell: UITableViewCell {
     @IBOutlet weak var addButton: UIButton!
     
     weak var delegate: StudentCourseSelectionDelegate?
-    
-    var addCourseAction: (() -> Void)? // Bu satır doğru şekilde tanımlanmış
 
-      
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,8 +33,6 @@ class StudentCourseSelectionTableViewCell: UITableViewCell {
         delegate?.didTapAddButton(cell: self)
     }
       
-
-
 }
 
 
