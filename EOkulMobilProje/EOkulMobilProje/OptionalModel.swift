@@ -16,15 +16,14 @@ class OptionalModel
     static var optional2: [OptionalModel] = []
     static var optional3: [OptionalModel] = []
     
-    // Tüm devamsızlıkları almak için
     static func getAllOptional2() -> [OptionalModel] {
         return optional2
     }
-    // Tüm devamsızlıkları almak için
+    
     static func getAllOptional1() -> [OptionalModel] {
         return optional1
     }
-    // Tüm devamsızlıkları almak için
+
     static func getAllOptional3() -> [OptionalModel] {
         return optional3
     }
@@ -51,5 +50,26 @@ class OptionalModel
         let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName)
         optional3.append(lesson)
     }
+    
+    // Bu metot, lessonId'ye göre bir elemanı optional1 dizisinden çıkarır
+    static func Secmeli1Cikar(lessonId: Int) {
+        if let index = optional1.firstIndex(where: { $0.lessonId == lessonId }) {
+            optional1.remove(at: index)
+        }
+    }
+    
+    static func Secmeli2Cikar(lessonId: Int) {
+        if let index = optional2.firstIndex(where: { $0.lessonId == lessonId }) {
+            optional2.remove(at: index)
+        }
+    }
+    
+    static func Secmeli3Cikar(lessonId: Int) {
+        if let index = optional3.firstIndex(where: { $0.lessonId == lessonId }) {
+            optional3.remove(at: index)
+        }
+    }
+    
+    
     
 }
