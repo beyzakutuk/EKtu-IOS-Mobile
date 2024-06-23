@@ -2,33 +2,45 @@
 //  StudentCourseSelectionTableViewCell.swift
 //  EOkulMobilProje
 //
-//  Created by Beyza Kütük on 6.05.2024.
+//  Created by Beyza Kütük on 1.06.2024.
 //
 
 import UIKit
 
 class StudentCourseSelectionTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var lessonNameLabel: UILabel!
+    
     @IBOutlet weak var addButton: UIButton!
     
+    weak var delegate: StudentCourseSelectionDelegate?
     
-    var addCourseAction: (() -> Void)?
+    var addCourseAction: (() -> Void)? // Bu satır doğru şekilde tanımlanmış
 
+      
+    
     override func awakeFromNib() {
-    super.awakeFromNib()
-    addButton.addTarget(self, action: #selector(addButtonTapped(_:)), for: .touchUpInside)
+        super.awakeFromNib()
     }
-    
-    @objc func addButtonTapped(_ sender: UIButton) {
-        addCourseAction?()
-    }
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configureCell() {
+            addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
 
+     
+    @objc func addButtonTapped(_ sender: UIButton) {
+        delegate?.didTapAddButton(cell: self)
+    }
+      
+
+
+}
+
+
+protocol StudentCourseSelectionDelegate: AnyObject {
+    func didTapAddButton(cell: StudentCourseSelectionTableViewCell)
 }
