@@ -7,8 +7,8 @@
 
 import UIKit
 
-class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
-    
+class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource , StudentSelectedCourseDelegate {
+
     // MARK: -VARIABLES
 
     @IBOutlet weak var selectedLessonsTableView: UITableView!
@@ -47,8 +47,47 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
                 let selectedCourse = selectedCourses[indexPath.row]
                 cell.selectedLessonName.text = selectedCourse.lessonName
                 
+                cell.delegate = self
+                cell.configureCell()
+                
                 return cell
             }
     }
+    
+    
+    func didTapRemoveButton(cell: StudentSelectedCourseTableViewCell) {
+        
+        if let indexPath = selectedLessonsTableView.indexPath(for: cell) {
+            let selectedCourse = self.selectedCourses.remove(at: indexPath.row) // Dersi genel listeden kaldır
+            SelectedLessonModel.SecilenlerdenKaldır(lessonId: selectedCourse.lessonId)
+            
+            if(selectedCourse.isOptional)
+            {
+                if(selectedCourse.optionalNumber == 1)
+                {
+                    OptionalModel.Secmeli1Ekle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, optionalNumber: selectedCourse.optionalNumber)
+                }
+                
+                else if(selectedCourse.optionalNumber == 2)
+                {
+                    OptionalModel.Secmeli2Ekle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, optionalNumber: selectedCourse.optionalNumber)
+                }
+                
+                else
+                {
+                    OptionalModel.Secmeli3Ekle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, optionalNumber: selectedCourse.optionalNumber)
+                }
+            }
+            else
+            {
+                MainLessonModel.dersEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName)
+            }
+
+            
+            selectedLessonsTableView.reloadData() // TableView'i yeniden yükle
+        }
+    }
+    
+    
 }
 

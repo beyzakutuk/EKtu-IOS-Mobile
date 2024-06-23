@@ -11,6 +11,7 @@ class OptionalModel
 {
     var lessonId : Int
     var lessonName : String
+    var optionalNumber : Int
     
     static var optional1: [OptionalModel] = []
     static var optional2: [OptionalModel] = []
@@ -28,26 +29,27 @@ class OptionalModel
         return optional3
     }
     
-    init(lessonId: Int, lessonName: String) {
+    init(lessonId: Int, lessonName: String , optionalNumber: Int) {
         self.lessonId = lessonId
         self.lessonName = lessonName
+        self.optionalNumber = optionalNumber
 
     }
     
     // Yeni ders ekleme fonksiyonu
-    static func Secmeli1Ekle(lessonId: Int, lessonName: String) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName)
+    static func Secmeli1Ekle(lessonId: Int, lessonName: String, optionalNumber: Int) {
+        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName , optionalNumber: optionalNumber)
         optional1.append(lesson)
     }
     
     // Yeni ders ekleme fonksiyonu
-    static func Secmeli2Ekle(lessonId: Int, lessonName: String) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName)
+    static func Secmeli2Ekle(lessonId: Int, lessonName: String , optionalNumber: Int) {
+        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
         optional2.append(lesson)
     }
     // Yeni ders ekleme fonksiyonu
-    static func Secmeli3Ekle(lessonId: Int, lessonName: String) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName)
+    static func Secmeli3Ekle(lessonId: Int, lessonName: String, optionalNumber: Int) {
+        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
         optional3.append(lesson)
     }
     

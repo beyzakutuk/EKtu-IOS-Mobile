@@ -111,7 +111,7 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
             let selectedCourse = self.optional1.remove(at: indexPath.row) 
             OptionalModel.Secmeli1Cikar(lessonId: selectedCourse.lessonId)
             
-            SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true)
+            SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true , optionalNumber: 1)
             
             optional1TableView.reloadData()
         }
@@ -123,7 +123,7 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
             let selectedCourse = self.optional2.remove(at: indexPath.row)
             OptionalModel.Secmeli2Cikar(lessonId: selectedCourse.lessonId)
 
-            SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true)
+            SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true , optionalNumber: 2)
             
             optional2TableView.reloadData()
         }
@@ -135,7 +135,7 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
                 let selectedCourse = self.optional3.remove(at: indexPath.row)
                 OptionalModel.Secmeli3Cikar(lessonId: selectedCourse.lessonId)
                 
-                SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true)
+                SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: true , optionalNumber: 3)
                 
                 optional3TableView.reloadData()
             }
