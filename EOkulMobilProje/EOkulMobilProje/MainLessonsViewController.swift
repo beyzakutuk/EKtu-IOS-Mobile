@@ -79,12 +79,19 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                
                                if let jsonData = json["data"] as? [String: Any],
                                   let anaDersData = jsonData["anaDers"] as? [[String: Any]] {
-                                   for lessonData in anaDersData {
-                                       if let lessonId = lessonData["lessonId"] as? Int,
-                                          let lessonName = lessonData["lessonName"] as? String {
-                                           let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
-                                           self.lessons.append(lesson)
-                                           MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                   
+                                   if MainLessonModel.mainLessons.isEmpty
+                                   {
+                                       if SelectedLessonModel.selectedCourse.isEmpty
+                                       {
+                                           for lessonData in anaDersData {
+                                               if let lessonId = lessonData["lessonId"] as? Int,
+                                                  let lessonName = lessonData["lessonName"] as? String {
+                                                   let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
+                                                   self.lessons.append(lesson)
+                                                   MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                               }
+                                           }
                                        }
                                    }
                                    
@@ -92,27 +99,35 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                       let secmeliDersData = jsonData["secmeliDers"] as? [[String: Any]] {
                                        if secmeliDersData != nil
                                        {
-                                           for lessonData in secmeliDersData {
-                                               if let lessonId = lessonData["lessonId"] as? Int,
-                                                  let optionalLessonId = lessonData["optionalLessonId"] as? Int,
-                                                  let lessonName = lessonData["lessonName"] as? String{
-                                                   
-                                                   if optionalLessonId == 1
-                                                   {
-                                                       OptionalModel.Secmeli1Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 1)
+                                           if OptionalModel.optional1.isEmpty
+                                           {
+                                               for lessonData in secmeliDersData {
+                                                   if let lessonId = lessonData["lessonId"] as? Int,
+                                                      let optionalLessonId = lessonData["optionalLessonId"] as? Int,
+                                                      let lessonName = lessonData["lessonName"] as? String{
                                                        
+                                                       if optionalLessonId == 1
+                                                       {
+                                                            OptionalModel.Secmeli1Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 1)
+                                                           
+                                                       }
+                                                       if optionalLessonId == 2
+                                                       {
+                                                            OptionalModel.Secmeli2Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 2)
+                                                       }
+                                                       if optionalLessonId == 3
+                                                       {
+                                                            OptionalModel.Secmeli3Ekle(lessonId: lessonId, lessonName: lessonName, optionalNumber: 3)
 
+                                                       }
+                                                            
+                                                       
                                                    }
-                                                   if optionalLessonId == 2{
-                                                       OptionalModel.Secmeli2Ekle(lessonId: lessonId, lessonName: lessonName , optionalNumber: 2)
                                                    }
-                                                   if optionalLessonId == 3{
-                                                       OptionalModel.Secmeli3Ekle(lessonId: lessonId, lessonName: lessonName, optionalNumber: 3)
-                                                   }
-                                                        
-                                                   
-                                               }
-                                               }
+                                               
+                                           }
+                                           
+                                           
                                            }
                                            
                                        }
@@ -155,12 +170,9 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
             let selectedCourse = self.lessons.remove(at: indexPath.row) // Dersi genel listeden kaldır
             SelectedLessonModel.SecilenlereEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName, isOptional: false , optionalNumber: 0)
             
+            MainLessonModel.anaderslerdenKaldır(lessonId: selectedCourse.lessonId)
             
-            
-            //BURADA LESSONS DİZİSİNDEN ÇIKARMA İŞLEMİ YAP (KONTROLLERDEN SONRA)
-            
-            
-            
+         
             lessonsTableView.reloadData() // TableView'i yeniden yükle
         }
     }
