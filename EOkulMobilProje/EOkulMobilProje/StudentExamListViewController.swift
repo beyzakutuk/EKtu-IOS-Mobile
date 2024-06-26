@@ -47,7 +47,8 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
+        
            
             let parameters: [String: Any] = [
                 "classId": StudentFilterModel.getClassId(),
@@ -89,14 +90,14 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                                         print("Öğrenci Adı: \(decodedName)")
                                         let student = ExamNoteStudentList(studentId: studentId, studentName: decodedName, midtermNote: midterm, finalNote: final)
                                         
-                                        ExamNoteStudentList.ogrenci(studentId: studentId, studentName: decodedName, midtermNote: midterm, finalNote: final)
+                                        ExamNoteStudentList.addStudent(studentId: studentId, studentName: decodedName, midtermNote: midterm, finalNote: final)
                                         
                                     }
                                     else
                                     {
                                         let student = ExamNoteStudentList(studentId: studentId, studentName: studentName, midtermNote: midterm, finalNote: final)
                                         
-                                        ExamNoteStudentList.ogrenci(studentId: studentId, studentName: studentName, midtermNote: midterm, finalNote: final)
+                                        ExamNoteStudentList.addStudent(studentId: studentId, studentName: studentName, midtermNote: midterm, finalNote: final)
                                     }
                                     
                                     self.students = ExamNoteStudentList.getAllStudents()
@@ -136,8 +137,25 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
             
 
             cell.studentNameLabel.text = student.studentName
-            cell.midtermGrades.text = "\(student.midtermNote)"
-            cell.finalGrades.text = "\(student.finalNote)"
+            
+            if student.midtermNote == 0
+            {
+                cell.midtermGrades.text = "Arasınav Notu: G"
+            }
+            else
+            {
+                cell.midtermGrades.text = "Arasınav Notu: \(student.midtermNote)"
+            }
+            
+            if student.finalNote == 0
+            {
+                cell.finalGrades.text = "Final Notu: G"
+            }
+            else
+            {
+                cell.finalGrades.text = "Final Notu: \(student.finalNote)"
+            }
+
             
             cell.delegate = self
             cell.configureCell()
@@ -175,11 +193,16 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
         guard let url = URL(string: "https://localhost:7253/api/teacher/EnteringStudentGrades") else {
                 fatalError("Geçersiz URL")
             }
+        guard let token = UserDefaults.standard.string(forKey: "refreshTokenTeacher") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
 
             // URLRequest oluşturma
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         // Query parametresi oluşturma
         let classIdQueryItem = URLQueryItem(name: "classId", value: "\(StudentFilterModel.getClassId())")
@@ -195,8 +218,8 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                 return [
                     "studentId": person.studentId,
                     "lessonId": person.lessonId,
-                    "midterm": person.midterm,
-                    "final": person.final
+                    "exam_1": person.midterm,
+                    "exam_2": person.final
                 ]
             }, options: .prettyPrinted)
             
@@ -214,8 +237,8 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
             print("JSON Serialization Error: \(error.localizedDescription)")
         }
         
-        let session = URLSession.shared
-           let task = session.dataTask(with: request) { data, response, error in
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
                if let error = error {
                    print("İstek hatası: \(error.localizedDescription)")
                    return
