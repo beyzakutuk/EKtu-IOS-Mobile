@@ -36,23 +36,42 @@ class OptionalModel
 
     }
     
-    // Yeni ders ekleme fonksiyonu
     static func Secmeli1Ekle(lessonId: Int, lessonName: String, optionalNumber: Int) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName , optionalNumber: optionalNumber)
-        optional1.append(lesson)
+        // Mevcut seçmeli dersleri kontrol et
+        if !optional1.contains(where: { $0.lessonId == lessonId }) {
+            // Ders listede yoksa ekle
+            let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
+            optional1.append(lesson)
+        } else {
+            print("Ders zaten seçili.")
+            // İsterseniz burada bir hata işlemesi veya geri bildirim yapabilirsiniz.
+        }
     }
-    
-    // Yeni ders ekleme fonksiyonu
-    static func Secmeli2Ekle(lessonId: Int, lessonName: String , optionalNumber: Int) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
-        optional2.append(lesson)
+
+    static func Secmeli2Ekle(lessonId: Int, lessonName: String, optionalNumber: Int) {
+        // Mevcut seçmeli dersleri kontrol et
+        if !optional2.contains(where: { $0.lessonId == lessonId }) {
+            // Ders listede yoksa ekle
+            let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
+            optional2.append(lesson)
+        } else {
+            print("Ders zaten seçili.")
+            // İsterseniz burada bir hata işlemesi veya geri bildirim yapabilirsiniz.
+        }
     }
-    // Yeni ders ekleme fonksiyonu
+
     static func Secmeli3Ekle(lessonId: Int, lessonName: String, optionalNumber: Int) {
-        let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
-        optional3.append(lesson)
+        // Mevcut seçmeli dersleri kontrol et
+        if !optional3.contains(where: { $0.lessonId == lessonId }) {
+            // Ders listede yoksa ekle
+            let lesson = OptionalModel(lessonId: lessonId, lessonName: lessonName, optionalNumber: optionalNumber)
+            optional3.append(lesson)
+        } else {
+            print("Ders zaten seçili.")
+            // İsterseniz burada bir hata işlemesi veya geri bildirim yapabilirsiniz.
+        }
     }
-    
+
     // Bu metot, lessonId'ye göre bir elemanı optional1 dizisinden çıkarır
     static func Secmeli1Cikar(lessonId: Int) {
         if let index = optional1.firstIndex(where: { $0.lessonId == lessonId }) {

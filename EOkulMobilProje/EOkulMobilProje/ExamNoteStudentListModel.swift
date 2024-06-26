@@ -45,10 +45,17 @@ class ExamNoteStudentList
     }
     
     static var studentList : [ExamNoteStudentList] = []
-
-    static func ogrenci(studentId: Int, studentName: String , midtermNote : Int , finalNote : Int) {
-        let ogrenci = ExamNoteStudentList(studentId: studentId, studentName: studentName , midtermNote : midtermNote , finalNote : finalNote)
-        studentList.append(ogrenci)
+    
+    static func addStudent(studentId: Int, studentName: String, midtermNote: Int, finalNote: Int) {
+        // Eğer öğrenci zaten listede varsa ekleme yapma
+        guard findStudentById(studentId: studentId) == nil else {
+            print("Bu öğrenci zaten listede var.")
+            return
+        }
+            
+        let newStudent = ExamNoteStudentList(studentId: studentId, studentName: studentName, midtermNote: midtermNote, finalNote: finalNote)
+        studentList.append(newStudent)
+        print("Öğrenci başarıyla eklendi.")
     }
     
     static func getAllStudents() -> [ExamNoteStudentList] {

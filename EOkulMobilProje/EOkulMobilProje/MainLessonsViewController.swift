@@ -79,28 +79,22 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                
                                if let jsonData = json["data"] as? [String: Any],
                                   let anaDersData = jsonData["anaDers"] as? [[String: Any]] {
-                                   
-                                   if MainLessonModel.mainLessons.isEmpty
-                                   {
-                                       if SelectedLessonModel.selectedCourse.isEmpty
-                                       {
+                            
                                            for lessonData in anaDersData {
                                                if let lessonId = lessonData["lessonId"] as? Int,
                                                   let lessonName = lessonData["lessonName"] as? String {
                                                    let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
-                                                   self.lessons.append(lesson)
                                                    MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
                                                }
-                                           }
-                                       }
+                                               
+                                               self.lessons = MainLessonModel.getAllMainLessons()
                                    }
                                    
                                    if let jsonData = json["data"] as? [String: Any],
                                       let secmeliDersData = jsonData["secmeliDers"] as? [[String: Any]] {
                                        if secmeliDersData != nil
                                        {
-                                           if OptionalModel.optional1.isEmpty
-                                           {
+                                           
                                                for lessonData in secmeliDersData {
                                                    if let lessonId = lessonData["lessonId"] as? Int,
                                                       let optionalLessonId = lessonData["optionalLessonId"] as? Int,
@@ -122,7 +116,7 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                                        }
                                                             
                                                        
-                                                   }
+                                                   
                                                    }
                                                
                                            }

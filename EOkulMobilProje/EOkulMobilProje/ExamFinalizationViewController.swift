@@ -142,14 +142,18 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                     // `data` alanındaki diziyi al
                     if let dataArray = jsonResponse["data"] as? [[String: Any]] {
                         // Her bir öğeyi işleyin
-                        for lesson in dataArray {
-                            if let lessonId = lesson["lessonId"] as? Int,
-                               let lessonName = lesson["lessonName"] as? String {
-                                print("Ders ID: \(lessonId), Ders Adı: \(lessonName)")
-                                
-                                let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
-                                TeacherClassLessonListModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
-                                
+                        
+                        if TeacherClassLessonListModel.teacherslesson.isEmpty
+                        {
+                            for lesson in dataArray {
+                                if let lessonId = lesson["lessonId"] as? Int,
+                                   let lessonName = lesson["lessonName"] as? String {
+                                    print("Ders ID: \(lessonId), Ders Adı: \(lessonName)")
+                                    
+                                    let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
+                                    TeacherClassLessonListModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                    
+                                }
                             }
                         }
                         
@@ -164,6 +168,7 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                                 let action = UIAlertAction(title: lessonItem.lessonName, style: .default) { _ in
                                     print("Seçilen Ders: \(lessonItem.lessonName)")
                                     self.secilenDersId = lessonItem.lessonId
+                                    self.lessonName.setTitle(lessonItem.lessonName, for: UIControl.State.normal)
                                     StudentFilterModel.updateLessonId(newValue: lessonItem.lessonId)
                                 }
                                 alertController.addAction(action)
@@ -186,20 +191,32 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
 
     
     @IBAction func GetStudentListButton(_ sender: Any) {
+        
+        // Sınıf seçilmemişse uyarı ver
+        guard isYilSelected else {
+            showAlert(title: "Uyarı", message: "Lütfen önce bir sınıf seçiniz.")
+            return
+        }
+           
+        // Ders seçilmemişse uyarı ver
+        guard secilenDersId != nil else {
+            showAlert(title: "Uyarı", message: "Lütfen önce bir ders seçiniz.")
+            return
+        }
+           
   
-        /*
-                // Storyboard'u yükle
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                // Storyboard ID'si ile ViewController'ı tanımla
-                guard let studentExamList = storyboard.instantiateViewController(withIdentifier: "StudentExamList") as? StudentExamListViewController else {
-                    fatalError("StudentExamListViewController bulunamadı veya uygun tipte değil.")
-                }
-                
-                // Modal presentation stilini tam ekran olarak ayarla
-                studentExamList.modalPresentationStyle = .fullScreen
-                
-         */
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let studentExamList = storyboard.instantiateViewController(withIdentifier: "StudentExamList") as? StudentExamListViewController {
+            studentExamList.modalPresentationStyle = .fullScreen
+            self.present(studentExamList, animated: true, completion: nil)
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 
     

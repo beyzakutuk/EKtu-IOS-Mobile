@@ -23,10 +23,15 @@ class MainLessonModel
         return mainLessons
     }
     
-    // Yeni ders ekleme fonksiyonu
     static func dersEkle(lessonId: Int, lessonName: String) {
-        let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
-        mainLessons.append(lesson)
+        // Mevcut dersleri kontrol et
+        if !mainLessons.contains(where: { $0.lessonId == lessonId }) {
+            // Ders listede yoksa ekle
+            let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
+            mainLessons.append(lesson)
+        } else {
+            print("Ders zaten listeye ekli.")
+        }
     }
     
     static func anaderslerdenKaldır(lessonId: Int){
