@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StudentExamResultsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class StudentExamResultsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, URLSessionDelegate {
     
     // MARK: -VARIABLES
     
@@ -17,21 +17,24 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     
     let Donemler = ["Güz Dönemi", "Bahar Dönemi"]
     var seciliDonemIndisi: Int?
+
+    var term = 0
     
-    var courses: [StudentsCourses] = []
-    // Örnek dersler ekleyelim
+    var lessons: [StudentExamsModel] = []
     
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getUrl()
+        
         // Butona bir dokunma olayı ekleyin
         DonemSecimButton.addTarget(self, action: #selector(showDropdownMenu), for: .touchUpInside)
 
         setInitViews()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CourseCell")
-
         tableView.reloadData()
     }
     
@@ -39,55 +42,149 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     {
         tableView.dataSource = self
         tableView.delegate = self
-        
-        /*
-        courses.append(StudentsCourses(course: (Courses(courseId: "1", courseName: "Matematik")), midtermResult: 85, finalResult: 90))
-        courses.append(StudentsCourses(course:(Courses(courseId: "2", courseName: "Fizik")), midtermResult: 90, finalResult: 85))
-         */
     }
     
-    // Dropdown menüyü gösteren eylem fonksiyonu
+    func getUrl()
+    {
+        
+        guard let token = UserDefaults.standard.string(forKey: "refreshToken") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
+        guard let url = URL(string: "https://localhost:7253/api/student/studentlistexamgrande") else {
+                print("Geçersiz URL")
+                return
+            }
+        var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+        
+        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+    
+        
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            print("Request tamamlandı")
+            
+                if let error = error {
+                    print("Hata: \(error.localizedDescription)")
+                    return
+                }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Geçersiz yanıt")
+                return
+            }
+            
+            print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+                
+                guard let data = data else {
+                    print("Boş veri")
+                    return
+                }
+            
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    print(json)
+                    
+                    if let firstName = json["firstName"] as? String,
+                       let lastName = json["lastName"] as? String,
+                       let studentChooseExamGrande = json["studentChooseExamGrande"] as? [[String: Any]] {
+                        
+                        print("First Name: \(firstName)")
+                        print("Last Name: \(lastName)")
+                        
+                        for examData in studentChooseExamGrande {
+                            if let lessonName = examData["lessonName"] as? String,
+                               let exam1 = examData["exam1"] as? Int,
+                               let exam2 = examData["exam2"] as? Int {
+                                
+                                print("Lesson Name: \(lessonName)")
+                                print("Exam 1: \(exam1)")
+                                print("Exam 2: \(exam2)")
+                                
+                                // Örnek olarak StudentExamsModel'e ekleme yapabiliriz
+                                StudentExamsModel.addLessons(lessonName: lessonName, midterm: exam1, final: exam2, term: self.term)
+                            }
+                        }
+                        
+                        // Tüm dersleri yeniden yükle ve tabloyu güncelle
+                        self.lessons = StudentExamsModel.getAllLessons()
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }catch {
+                print("JSON parse hatası: \(error.localizedDescription)")
+            }
+        }
+        
+    task.resume()
+    }
+    
+
     @objc func showDropdownMenu() {
         let alertController = UIAlertController(title: "Dönem Seçiniz", message: nil, preferredStyle: .actionSheet)
         
         // Güz dönemi seçeneği
         let fallAction = UIAlertAction(title: "Güz Dönemi", style: .default) { _ in
-            // Güz dönemi seçildiğinde yapılacak işlemler
+
             print("Güz Dönemi Seçildi")
             self.Donem.text = "Güz"
+            self.seciliDonemIndisi = 0
+            self.tableView.reloadData()
         }
+        
         alertController.addAction(fallAction)
         
         // Bahar dönemi seçeneği
         let springAction = UIAlertAction(title: "Bahar Dönemi", style: .default) { _ in
-            // Bahar dönemi seçildiğinde yapılacak işlemler
+
             print("Bahar Dönemi Seçildi")
             self.Donem.text = "Bahar"
+            self.seciliDonemIndisi = 1
+            self.tableView.reloadData()
+            
         }
-        alertController.addAction(springAction)
         
-        // İptal seçeneği
+        alertController.addAction(springAction)
+
         let cancelAction = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        // Butonların fontunu ve rengini güncelleme
         alertController.view.tintColor = UIColor.blue
-        
-        // UIAlertController'ı görüntüleme
         present(alertController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        return lessons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentsCoursesTableViewCell
-        let course = courses[indexPath.row] // Doğru dersi almak için indexPath.row kullanın
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentsCoursesTableViewCell
+        let allLessons = StudentExamsModel.getAllLessons()
             
-        cell.titleLabel.text = course.course.courseName
-        cell.midtermResult.text = "Ara Sınav: \(course.midtermResult)" // course değişkenine erişin
-        cell.finalResult.text = "Final: \(course.finalResult)" // course değişkenine erişin
+        // İstenen döneme göre dersleri filtreleyin
+        var filteredLessons: [StudentExamsModel] = []
+        if let selectedTermIndex = seciliDonemIndisi {
+            filteredLessons = allLessons.filter { $0.term == selectedTermIndex }
+        } else {
+            // Eğer herhangi bir dönem seçilmediyse tüm dersleri gösterin
+            filteredLessons = allLessons
+        }
+
+        
+        let lesson = filteredLessons[indexPath.row]
+        
+        cell.titleLabel.text = lesson.lessonName
+        cell.midtermResult.text = "Ara Sınav: \(lesson.midterm)"
+        cell.finalResult.text = "Final: \(lesson.final)"
             
         return cell
     }
@@ -96,22 +193,6 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         return 100
     }
 
-   
-
-    
 
 }
   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
