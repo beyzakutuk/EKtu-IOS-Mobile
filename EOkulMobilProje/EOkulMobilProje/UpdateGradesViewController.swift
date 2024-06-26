@@ -31,7 +31,7 @@ class UpdateGradesViewController: UIViewController {
             textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         }
         
-        validateFields() // Başlangıçta butonu pasif hale getirmek için
+        //validateFields() // Başlangıçta butonu pasif hale getirmek için
     }
     
     @objc private func validateFields()
@@ -53,39 +53,36 @@ class UpdateGradesViewController: UIViewController {
             return
         }
     
+        ExamNoteStudentList.setIsUpdate(newValue: true)
         
+        if let student = ExamNoteStudentList.findStudentById(studentId: 1) {
+            student.setMidterm(midtermNote: Int(midtermGrade) ?? 0)
+            student.setFinal(final: Int(finalGrade) ?? 0)
+            
+        }
         
-        
-        
-        //burada veritabanı işlemleri yapılacak notların girilmesi ve aktarılması
-        
-        
-        
-        
-        
-        
+        StudentUpdateExamNoteModel.updateNote(studentId: ExamNoteStudentList.getId(), lessonId: StudentFilterModel.getLessonId(), midtermNote: Int(midtermGrade) ?? 0, finalNote: Int(finalGrade) ?? 0)
         
         
         // TextField'lerin içeriğini temizle
         midtermGradesTextField.text = ""
         finalGradesTextField.text = ""
             
-        validateFields() // Alanları temizledikten sonra tekrar doğrula
+        //validateFields() // Alanları temizledikten sonra tekrar doğrula
         
-        showAlert()
+        
+        // Öğrencinin notlarının güncelleneceği sayfaya yönlendir
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "StudentExamList") as? StudentExamListViewController {
+
+            
+            // Present modally olarak göster
+            examUpdateViewController.modalPresentationStyle = .fullScreen
+            self.present(examUpdateViewController, animated: true, completion: nil)
+        }
         
     }
     
-    private func showAlert() {
-        let alertController = UIAlertController(title: "Başarılı", message: "Not sisteme başarıyla kaydedildi.", preferredStyle: .alert)
-        /*
-        let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
-            self.performSegue(withIdentifier: "toTeacherProfilePage", sender: self)
-        }
 
-        alertController.addAction(anaSayfayaDonAction)
-          */
-        present(alertController, animated: true, completion: nil)
-    }
     
 }
