@@ -12,20 +12,22 @@ class StudentExamsModel
     var lessonName : String
     var midterm :Int
     var final: Int
-    var term : Int
     
     static var lessons  : [StudentExamsModel] = []
     
-    init(lessonName: String, midterm: Int, final: Int, term: Int) {
+    init(lessonName: String, midterm: Int, final: Int) {
         self.lessonName = lessonName
         self.midterm = midterm
         self.final = final
-        self.term = term
     }
     
-    static func addLessons(lessonName : String , midterm:Int , final: Int , term : Int)
-    {
-        let lesson = StudentExamsModel(lessonName: lessonName, midterm: midterm, final: final, term: term)
+    static func addLessons(lessonName: String, midterm: Int, final: Int) {
+        if let existingLessonIndex = lessons.firstIndex(where: { $0.lessonName == lessonName }) {
+            print("Lesson '\(lessonName)' already exists.")
+            return
+        }
+        
+        let lesson = StudentExamsModel(lessonName: lessonName, midterm: midterm, final: final)
         lessons.append(lesson)
     }
     
@@ -34,8 +36,8 @@ class StudentExamsModel
         return lessons
     }
     
-    static func getLessons(forTerm term: Int) -> [StudentExamsModel] {
-            return lessons.filter { $0.term == term }
+    static func removeAllLessons() {
+            lessons.removeAll()
         }
     
 }

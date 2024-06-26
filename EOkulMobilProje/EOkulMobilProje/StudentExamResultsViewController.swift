@@ -16,9 +16,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     @IBOutlet weak var Donem: UILabel!
     
     let Donemler = ["Güz Dönemi", "Bahar Dönemi"]
-    var seciliDonemIndisi: Int?
-
-    var term = 0
+    var seciliDonemIndisi: Int = 0
     
     var lessons: [StudentExamsModel] = []
     
@@ -33,8 +31,8 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         DonemSecimButton.addTarget(self, action: #selector(showDropdownMenu), for: .touchUpInside)
 
         setInitViews()
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CourseCell")
+
+         
         tableView.reloadData()
     }
     
@@ -51,7 +49,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
                    print("Token yok veya geçersiz")
                    return
                }
-        guard let url = URL(string: "https://localhost:7253/api/student/studentlistexamgrande") else {
+        guard let url = URL(string: "https://localhost:7253/api/student/StudentListExamGrande") else {
                 print("Geçersiz URL")
                 return
             }
@@ -61,8 +59,17 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-    
+        if seciliDonemIndisi == 0
+        {
+            request.setValue("false", forHTTPHeaderField: "term")
+        }
         
+        else
+        {
+            request.setValue("true", forHTTPHeaderField: "term")
+        }
+        
+        StudentExamsModel.removeAllLessons()
         
         let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
         let task = session.dataTask(with: request) { data, response, error in
@@ -90,24 +97,18 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print(json)
                     
-                    if let firstName = json["firstName"] as? String,
-                       let lastName = json["lastName"] as? String,
-                       let studentChooseExamGrande = json["studentChooseExamGrande"] as? [[String: Any]] {
-                        
-                        print("First Name: \(firstName)")
-                        print("Last Name: \(lastName)")
-                        
-                        for examData in studentChooseExamGrande {
-                            if let lessonName = examData["lessonName"] as? String,
-                               let exam1 = examData["exam1"] as? Int,
-                               let exam2 = examData["exam2"] as? Int {
+                    if let dataArray = json["data"] as? [[String: Any]] {
+                        for item in dataArray {
+                            if let lessonName = item["lessonName"] as? String,
+                               let exam1 = item["exam1"] as? Int,
+                               let exam2 = item["exam2"] as? Int {
                                 
                                 print("Lesson Name: \(lessonName)")
                                 print("Exam 1: \(exam1)")
                                 print("Exam 2: \(exam2)")
                                 
                                 // Örnek olarak StudentExamsModel'e ekleme yapabiliriz
-                                StudentExamsModel.addLessons(lessonName: lessonName, midterm: exam1, final: exam2, term: self.term)
+                                StudentExamsModel.addLessons(lessonName: lessonName, midterm: exam1, final: exam2)
                             }
                         }
                         
@@ -118,6 +119,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
                             self.tableView.reloadData()
                         }
                     }
+                    
                 }
             }catch {
                 print("JSON parse hatası: \(error.localizedDescription)")
@@ -137,6 +139,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
             print("Güz Dönemi Seçildi")
             self.Donem.text = "Güz"
             self.seciliDonemIndisi = 0
+            self.getUrl()
             self.tableView.reloadData()
         }
         
@@ -148,6 +151,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
             print("Bahar Dönemi Seçildi")
             self.Donem.text = "Bahar"
             self.seciliDonemIndisi = 1
+            self.getUrl()
             self.tableView.reloadData()
             
         }
@@ -167,26 +171,45 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentsCoursesTableViewCell
         let allLessons = StudentExamsModel.getAllLessons()
-            
-        // İstenen döneme göre dersleri filtreleyin
-        var filteredLessons: [StudentExamsModel] = []
-        if let selectedTermIndex = seciliDonemIndisi {
-            filteredLessons = allLessons.filter { $0.term == selectedTermIndex }
-        } else {
-            // Eğer herhangi bir dönem seçilmediyse tüm dersleri gösterin
-            filteredLessons = allLessons
+        
+        if allLessons.isEmpty
+        {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
+            return emptyCell
         }
-
-        
-        let lesson = filteredLessons[indexPath.row]
-        
-        cell.titleLabel.text = lesson.lessonName
-        cell.midtermResult.text = "Ara Sınav: \(lesson.midterm)"
-        cell.finalResult.text = "Final: \(lesson.final)"
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentsCoursesTableViewCell
             
-        return cell
+            let lesson = allLessons[indexPath.row]
+            
+            cell.titleLabel.text = lesson.lessonName
+            
+            if lesson.midterm == 0
+            {
+                cell.midtermResult.text = "Ara Sınav: G"
+            }
+            else
+            {
+                cell.midtermResult.text = "Ara Sınav: \(lesson.midterm)"
+            }
+            
+            if lesson.final == 0
+            {
+                cell.finalResult.text = "Final: G"
+            }
+            else
+            {
+                cell.finalResult.text = "Final: \(lesson.final)"
+            }
+                
+            return cell
+            
+        }
+        
+        
+       
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
