@@ -147,32 +147,89 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // Örnek olarak 150 piksel sabit bir yükseklik veriyoruz
         return 120
-    }
-    
-    func didTapUpdateButton(cell: StudentExamListTableViewCell) {
-        if let indexPath = StudentListTableView.indexPath(for: cell) {
-                let student = self.students[indexPath.row]
-                
-                // Seçilen öğrencinin studentId'sini static değişkenimize ata
-                ExamNoteStudentList.updateId(newValue: student.studentId)
-                
-                // Öğrencinin notlarının güncelleneceği sayfaya yönlendir
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "UpdateGradesViewController") as? UpdateGradesViewController {
-
-                    
-                    // Present modally olarak göster
-                    examUpdateViewController.modalPresentationStyle = .fullScreen
-                    self.present(examUpdateViewController, animated: true, completion: nil)
-                }
-            }
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
         
+        guard let url = URL(string: "https://localhost:7253/api/teacher/EnteringStudentGrades") else {
+                fatalError("Geçersiz URL")
+            }
 
+            // URLRequest oluşturma
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Query parametresi oluşturma
+        let classIdQueryItem = URLQueryItem(name: "classId", value: "\(StudentFilterModel.getClassId())")
+
+            // URLComponents oluşturma
+            var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+            urlComponents.queryItems = [classIdQueryItem]
+
+       
+        // JSON Serialization
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: StudentUpdateExamNoteModel.getAllStudents().map { person in
+                return [
+                    "studentId": person.studentId,
+                    "lessonId": person.lessonId,
+                    "midterm": person.midterm,
+                    "final": person.final
+                ]
+            }, options: .prettyPrinted)
+            
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print("Serialized JSON:")
+                print(jsonString)
+                // String'i Data'ya dönüştür
+                        if let jsonDataFromString = jsonString.data(using: .utf8) {
+                            request.httpBody = jsonDataFromString
+                        } else {
+                            print("Cannot convert String to Data.")
+                        }
+            }
+        } catch {
+            print("JSON Serialization Error: \(error.localizedDescription)")
+        }
+        
+        let session = URLSession.shared
+           let task = session.dataTask(with: request) { data, response, error in
+               if let error = error {
+                   print("İstek hatası: \(error.localizedDescription)")
+                   return
+               }
+               
+               guard let httpResponse = response as? HTTPURLResponse else {
+                   print("Geçersiz yanıt")
+                   return
+               }
+               
+               print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+               
+               guard let data = data else {
+                   print("Veri yok")
+                   return
+               }
+               
+               do {
+                   // Yanıtı işleyin
+                   if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                       print("Yanıt: \(jsonResponse)")
+                       
+                       // Burada JSON verisini istediğiniz şekilde işleyebilirsiniz
+                   } else {
+                       print("JSON formatı beklenmiyor")
+                   }
+               } catch let error {
+                   print("JSON Parsing error: \(error.localizedDescription)")
+               }
+           }
+
+           task.resume()
+
+        
         
     }
 }
