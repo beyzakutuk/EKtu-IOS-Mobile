@@ -16,18 +16,31 @@ class StudentExamListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var updateButton: UIButton!
     
+    weak var delegate: StudentExamListnDelegate?
+    
     @IBAction func updateButton(_ sender: Any) {
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configureCell() {
+            updateButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
+    }
+    
+    @objc func updateButtonTapped(_ sender: UIButton) {
+        delegate?.didTapUpdateButton(cell: self)
     }
 
+}
+
+protocol StudentExamListnDelegate: AnyObject {
+    func didTapUpdateButton(cell: StudentExamListTableViewCell)
 }
