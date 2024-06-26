@@ -150,6 +150,26 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
         return 120
     }
     
+    func didTapUpdateButton(cell: StudentExamListTableViewCell) {
+        if let indexPath = StudentListTableView.indexPath(for: cell) {
+                let student = self.students[indexPath.row]
+                
+                // Seçilen öğrencinin studentId'sini static değişkenimize ata
+                ExamNoteStudentList.updateId(newValue: student.studentId)
+                
+                // Öğrencinin notlarının güncelleneceği sayfaya yönlendir
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "UpdateGradesViewController") as? UpdateGradesViewController {
+
+                    
+                    // Present modally olarak göster
+                    examUpdateViewController.modalPresentationStyle = .fullScreen
+                    self.present(examUpdateViewController, animated: true, completion: nil)
+                }
+            }
+    }
+    
+    
     @IBAction func submitButtonClicked(_ sender: Any) {
         
         guard let url = URL(string: "https://localhost:7253/api/teacher/EnteringStudentGrades") else {
