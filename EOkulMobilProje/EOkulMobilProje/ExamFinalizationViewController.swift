@@ -7,19 +7,33 @@
 
 import UIKit
 
-class ExamFinalizationViewController: UIViewController {
+class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
     
     @IBOutlet weak var className: UIButton!
     
     var isYilSelected : Bool = false
     var DonemID : Int = 0
     
+    var secilenDersId: Int?
+    
     @IBOutlet weak var lessonName: UIButton! // seçilen dersin ismi
+    
+    var teacherLessons: [TeacherClassLessonListModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if let serverTrust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
+    }
+    
+    
     
     
     @IBAction func ClassSelectionButton(_ sender: Any) {//burada öğretmenin seçtiği sınıfa göre filtreleme yapılacak
@@ -32,6 +46,7 @@ class ExamFinalizationViewController: UIViewController {
             self.className.titleLabel?.textColor = .black
             self.isYilSelected = true
             self.DonemID = 1
+            StudentFilterModel.updateClassId(newValue: 1)
 
             print("Seçilen Yil: 1")
         }
@@ -42,6 +57,7 @@ class ExamFinalizationViewController: UIViewController {
             self.className.titleLabel?.textColor = .black
             self.isYilSelected = true
             self.DonemID = 2
+            StudentFilterModel.updateClassId(newValue: 2)
 
             print("Seçilen Tip: 2")
         }
@@ -52,6 +68,7 @@ class ExamFinalizationViewController: UIViewController {
             self.className.titleLabel?.textColor = .black
             self.isYilSelected = true
             self.DonemID = 3
+            StudentFilterModel.updateClassId(newValue: 3)
 
             print("Seçilen Yil: 3")
         }
@@ -62,6 +79,7 @@ class ExamFinalizationViewController: UIViewController {
             self.className.titleLabel?.textColor = .black
             self.isYilSelected = true
             self.DonemID = 4
+            StudentFilterModel.updateClassId(newValue: 4)
             
             print("Seçilen Tip: 4")
         }
@@ -78,13 +96,115 @@ class ExamFinalizationViewController: UIViewController {
     
     @IBAction func LessonSelectionButton(_ sender: Any) {
         
-        // burada öğretmenin girdiği dersler görünecek ve öğretmen hangi derse ait notlandırma yapmak istiyorsa o dersi seçecek.
+        guard let token = UserDefaults.standard.string(forKey: "refreshTokenTeacher") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
+        guard let url = URL(string: "https://localhost:7253/api/teacher/teacherclasslessonlist") else {
+                print("Geçersiz URL")
+                return
+            }
+        var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue( "\(self.DonemID)", forHTTPHeaderField:"classId")
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("İstek hatası: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Geçersiz yanıt")
+                return
+            }
+            
+            print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+            
+            guard let data = data else {
+                print("Veri yok")
+                return
+            }
+            
+            // Gelen veriyi yazdırın
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("Yanıt Verisi: \(responseString)")
+            }
+            
+            do {
+                // Yanıtı işleyin
+                if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    print("Yanıt: \(jsonResponse)")
+                    
+                    // `data` alanındaki diziyi al
+                    if let dataArray = jsonResponse["data"] as? [[String: Any]] {
+                        // Her bir öğeyi işleyin
+                        for lesson in dataArray {
+                            if let lessonId = lesson["lessonId"] as? Int,
+                               let lessonName = lesson["lessonName"] as? String {
+                                print("Ders ID: \(lessonId), Ders Adı: \(lessonName)")
+                                
+                                let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
+                                TeacherClassLessonListModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                
+                            }
+                        }
+                        
+                        self.teacherLessons = TeacherClassLessonListModel.getAllTeachersLessons()
+                        
+                        print(self.teacherLessons)
+                        
+                        DispatchQueue.main.async {
+                            
+                            let alertController = UIAlertController(title: "Ders Seç", message: "Bir ders seçiniz", preferredStyle: .actionSheet)
+                            for lessonItem in self.teacherLessons {
+                                let action = UIAlertAction(title: lessonItem.lessonName, style: .default) { _ in
+                                    print("Seçilen Ders: \(lessonItem.lessonName)")
+                                    self.secilenDersId = lessonItem.lessonId
+                                    StudentFilterModel.updateLessonId(newValue: lessonItem.lessonId)
+                                }
+                                alertController.addAction(action)
+                            }
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    }
+                }
+                    else {
+                    print("JSON formatı beklenmiyor")
+                }
+            } catch let error {
+                print("JSON Parsing error: \(error.localizedDescription)")
+            }
+        }
+
+        task.resume()
     }
-    
+
     
     @IBAction func GetStudentListButton(_ sender: Any) {
-        //burada şu anda eğer sınıf ve ders seçilmişse öğrencilerin listeneceği sayfaya yönlendirilecek
+  
+        /*
+                // Storyboard'u yükle
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                // Storyboard ID'si ile ViewController'ı tanımla
+                guard let studentExamList = storyboard.instantiateViewController(withIdentifier: "StudentExamList") as? StudentExamListViewController else {
+                    fatalError("StudentExamListViewController bulunamadı veya uygun tipte değil.")
+                }
+                
+                // Modal presentation stilini tam ekran olarak ayarla
+                studentExamList.modalPresentationStyle = .fullScreen
+                
+         */
     }
+
     
 }
+
+
+
 
