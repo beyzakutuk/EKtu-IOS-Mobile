@@ -1870,11 +1870,14 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Öğrenci Bilgileri" cornerStyle="capsule">
+                                        <buttonConfiguration key="configuration" style="plain" title="Devamsızlık Bilgisi" cornerStyle="capsule">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="X70-nS-JcD" kind="presentation" modalPresentationStyle="fullScreen" id="BNo-gr-3lp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY4-t6-vhA">
                                         <rect key="frame" x="0.0" y="160" width="333" height="50"/>
@@ -2667,7 +2670,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50m-KY-aw4">
-                                <rect key="frame" x="0.0" y="79" width="188.33333333333334" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="188.33333333333334" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-n8-XVO" userLabel="Back">
                                         <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
@@ -2683,6 +2686,9 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                             <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="chN-BL-i0K" kind="presentation" modalPresentationStyle="fullScreen" id="1yt-Gi-9Ha"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devamsızlık Bilgisi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpD-fh-9Ta" userLabel="SınavSonucları">
                                         <rect key="frame" x="49.333333333333343" y="0.0" width="139" height="40"/>
@@ -2696,7 +2702,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mXp-PW-YYh">
-                                <rect key="frame" x="30" y="180" width="333" height="506"/>
+                                <rect key="frame" x="30" y="121" width="333" height="506"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-Fx-LzQ">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="154"/>
@@ -2845,7 +2851,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-62-zEu">
-                                <rect key="frame" x="2" y="79" width="128.66666666666666" height="40"/>
+                                <rect key="frame" x="2" y="20" width="128.66666666666666" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvc-jR-xd7" userLabel="Back">
                                         <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
@@ -2861,6 +2867,9 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                             <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="X70-nS-JcD" kind="presentation" modalPresentationStyle="fullScreen" id="VAz-V0-Pos"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öğrenciler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-jt-9OQ" userLabel="SınavSonucları">
                                         <rect key="frame" x="49.333333333333336" y="0.0" width="79.333333333333314" height="40"/>
@@ -2874,7 +2883,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WdQ-E5-OLn">
-                                <rect key="frame" x="0.0" y="148" width="393" height="612"/>
+                                <rect key="frame" x="0.0" y="89" width="393" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="3Os-Ry-nSw">
@@ -2903,7 +2912,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8u-x3-7Qj">
-                                <rect key="frame" x="131.66666666666666" y="768" width="129.99999999999997" height="50"/>
+                                <rect key="frame" x="131.66666666666666" y="802" width="129.99999999999997" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EGN-id-4gG"/>
                                     <constraint firstAttribute="width" constant="130" id="knn-o3-jQM"/>
@@ -2975,6 +2984,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                     <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Jne-pK-N0B" kind="presentation" modalPresentationStyle="fullScreen" id="5eW-TX-dfu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff2-4t-i69">
                                 <rect key="frame" x="71" y="335" width="250" height="50"/>
@@ -3540,9 +3552,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LvB-Cz-8Rk"/>
+        <segue reference="xuy-dt-725"/>
+        <segue reference="BNo-gr-3lp"/>
         <segue reference="TAp-Q2-o1g"/>
-        <segue reference="KbQ-Kd-VJg"/>
+        <segue reference="1yt-Gi-9Ha"/>
+        <segue reference="gwd-QZ-zbH"/>
         <segue reference="bN7-NG-RKu"/>
         <segue reference="vBG-zz-RJp"/>
         <segue reference="b5i-RH-1fJ"/>
