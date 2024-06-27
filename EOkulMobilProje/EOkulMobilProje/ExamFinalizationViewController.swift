@@ -143,6 +143,8 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                     if let dataArray = jsonResponse["data"] as? [[String: Any]] {
                         // Her bir öğeyi işleyin
                         
+                        TeacherClassLessonListModel.tumDersleriSil()
+                        
                         if TeacherClassLessonListModel.teacherslesson.isEmpty
                         {
                             for lesson in dataArray {

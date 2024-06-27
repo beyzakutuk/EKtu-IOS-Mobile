@@ -18,7 +18,7 @@ class AbsenceInformationViewController: UIViewController {
     
     var lessonId: Int?
     
-    
+    var teacherLessons: [TeacherClassLessonListModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +83,99 @@ class AbsenceInformationViewController: UIViewController {
     }
     
     @IBAction func lessonSelectionButton(_ sender: Any) {
+        guard let token = UserDefaults.standard.string(forKey: "refreshTokenTeacher") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
+        guard let url = URL(string: "https://localhost:7253/api/teacher/teacherclasslessonlist") else {
+                print("Geçersiz URL")
+                return
+            }
+        var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue( "\(self.classID)", forHTTPHeaderField:"classId")
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("İstek hatası: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Geçersiz yanıt")
+                return
+            }
+            
+            print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+            
+            guard let data = data else {
+                print("Veri yok")
+                return
+            }
+            
+            // Gelen veriyi yazdırın
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("Yanıt Verisi: \(responseString)")
+            }
+            
+            do {
+                // Yanıtı işleyin
+                if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    print("Yanıt: \(jsonResponse)")
+                    
+                    // `data` alanındaki diziyi al
+                    if let dataArray = jsonResponse["data"] as? [[String: Any]] {
+                        // Her bir öğeyi işleyin
+                        
+                        TeacherClassLessonListModel.tumDersleriSil()
+                        
+                        if TeacherClassLessonListModel.teacherslesson.isEmpty
+                        {
+                            for lesson in dataArray {
+                                if let lessonId = lesson["lessonId"] as? Int,
+                                   let lessonName = lesson["lessonName"] as? String {
+                                    print("Ders ID: \(lessonId), Ders Adı: \(lessonName)")
+                                    
+                                    let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
+                                    TeacherClassLessonListModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                    
+                                }
+                            }
+                        }
+                        
+                        self.teacherLessons = TeacherClassLessonListModel.getAllTeachersLessons()
+                        
+                        print(self.teacherLessons)
+                        
+                        DispatchQueue.main.async {
+                            
+                            let alertController = UIAlertController(title: "Ders Seç", message: "Bir ders seçiniz", preferredStyle: .actionSheet)
+                            for lessonItem in self.teacherLessons {
+                                let action = UIAlertAction(title: lessonItem.lessonName, style: .default) { _ in
+                                    print("Seçilen Ders: \(lessonItem.lessonName)")
+                                    self.lessonId = lessonItem.lessonId
+                                    self.lessonName.setTitle(lessonItem.lessonName, for: UIControl.State.normal)
+                                    StudentFilterModel.updateLessonId(newValue: lessonItem.lessonId)
+                                }
+                                alertController.addAction(action)
+                            }
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    }
+                }
+                    else {
+                    print("JSON formatı beklenmiyor")
+                }
+            } catch let error {
+                print("JSON Parsing error: \(error.localizedDescription)")
+            }
+        }
+
+        task.resume()
     }
     
     @IBAction func getListButton(_ sender: Any) {

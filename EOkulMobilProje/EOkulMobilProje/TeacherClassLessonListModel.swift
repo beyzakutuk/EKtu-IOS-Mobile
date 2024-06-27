@@ -24,8 +24,14 @@ class TeacherClassLessonListModel
     }
 
     static func dersEkle(lessonId: Int, lessonName: String) {
-        let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
-        teacherslesson.append(lesson)
+        if !teacherslesson.contains(where: { $0.lessonId == lessonId }) {
+            let lesson = TeacherClassLessonListModel(lessonId: lessonId, lessonName: lessonName)
+            teacherslesson.append(lesson)
+        }
+    }
+    
+    static func tumDersleriSil() {
+        teacherslesson.removeAll()
     }
     
 }
