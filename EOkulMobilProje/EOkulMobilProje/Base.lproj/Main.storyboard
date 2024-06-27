@@ -2843,7 +2843,7 @@
         <!--Student List View Controller-->
         <scene sceneID="Ydn-sh-5Qg">
             <objects>
-                <viewController id="Jne-pK-N0B" userLabel="Student List View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentListFilterViewController" id="Jne-pK-N0B" userLabel="Student List View Controller" customClass="StudentListFilterViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PQw-tA-aLU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3557,7 +3557,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xuy-dt-725"/>
-        <segue reference="BNo-gr-3lp"/>
+        <segue reference="VAz-V0-Pos"/>
         <segue reference="TAp-Q2-o1g"/>
         <segue reference="1yt-Gi-9Ha"/>
         <segue reference="gwd-QZ-zbH"/>

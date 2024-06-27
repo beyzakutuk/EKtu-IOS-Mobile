@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AbsenceInformationViewController: UIViewController {
+class AbsenceInformationViewController: UIViewController , URLSessionDelegate{
     
 
     @IBOutlet weak var className: UIButton!
@@ -179,6 +179,34 @@ class AbsenceInformationViewController: UIViewController {
     }
     
     @IBAction func getListButton(_ sender: Any) {
+        
+        // Sınıf seçilmemişse uyarı ver
+        guard isClassSelected else {
+            showAlert(title: "Uyarı", message: "Lütfen önce bir sınıf seçiniz.")
+            return
+        }
+           
+        // Ders seçilmemişse uyarı ver
+        guard lessonId != nil else {
+            showAlert(title: "Uyarı", message: "Lütfen önce bir ders seçiniz.")
+            return
+        }
+           
+  
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let studentExamList = storyboard.instantiateViewController(withIdentifier: "StudentListFilterViewController") as? StudentListFilterViewController {
+            studentExamList.modalPresentationStyle = .fullScreen
+            self.present(studentExamList, animated: true, completion: nil)
+        }
+        
     }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
     
 }
