@@ -2658,7 +2658,7 @@
         <!--Absence Information View Controller-->
         <scene sceneID="spf-Py-2h0">
             <objects>
-                <viewController id="X70-nS-JcD" userLabel="Absence Information View Controller" sceneMemberID="viewController">
+                <viewController id="X70-nS-JcD" userLabel="Absence Information View Controller" customClass="AbsenceInformationViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YMH-JS-au5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2741,7 +2741,7 @@
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="ClassSelectionButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="cy3-Po-H65"/>
+                                                    <action selector="classSelectionButton:" destination="X70-nS-JcD" eventType="touchUpInside" id="J59-f3-vQd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2776,7 +2776,7 @@
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="LessonSelectionButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="IM5-j9-IQ6"/>
+                                                    <action selector="lessonSelectionButton:" destination="X70-nS-JcD" eventType="touchUpInside" id="eKv-tp-ugr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2808,7 +2808,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="GetStudentListButton:" destination="mWz-J5-AKs" eventType="touchUpInside" id="Dia-Rx-E3L"/>
+                                            <action selector="getListButton:" destination="X70-nS-JcD" eventType="touchUpInside" id="UPJ-Un-DwO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2831,6 +2831,10 @@
                             <constraint firstItem="7mO-L5-6k1" firstAttribute="centerY" secondItem="YMH-JS-au5" secondAttribute="centerY" id="x3m-oz-UJv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="className" destination="1Sw-SB-gxb" id="TB5-a1-IAV"/>
+                        <outlet property="lessonName" destination="Cxm-Jt-61R" id="w5a-QR-6lG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBf-VG-Kfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

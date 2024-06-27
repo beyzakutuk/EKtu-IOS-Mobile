@@ -16,7 +16,7 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
     
     var secilenDersId: Int?
     
-    @IBOutlet weak var lessonName: UIButton! // seçilen dersin ismi
+    @IBOutlet weak var lessonName: UIButton!
     
     var teacherLessons: [TeacherClassLessonListModel] = []
     
