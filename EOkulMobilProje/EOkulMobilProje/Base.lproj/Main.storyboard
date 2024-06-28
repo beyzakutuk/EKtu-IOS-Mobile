@@ -934,6 +934,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="submitButton:" destination="u8B-lu-oA9" eventType="touchUpInside" id="5u8-2b-TBG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2343,6 +2346,9 @@
                                                 <color key="backgroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="nzr-zo-Y7k" kind="presentation" modalPresentationStyle="fullScreen" id="jek-Tp-FIS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2472,6 +2478,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHn-rJ-KIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="-1073"/>
+        </scene>
+        <!--Approve Lessons View Controller-->
+        <scene sceneID="m1N-zB-0xS">
+            <objects>
+                <viewController id="nzr-zo-Y7k" userLabel="Approve Lessons View Controller" customClass="ApproveLessonsViewController" customModule="EOkulMobilProje" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pmx-6j-TmF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-rO-Sv6">
+                                <rect key="frame" x="0.0" y="-98" width="393" height="1048"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-Yc-DOV">
+                                <rect key="frame" x="131" y="302" width="129.99999999999997" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="gL3-VM-AOZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="gyy-Cy-EIv"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.31395165679999998" green="0.39094716489999998" blue="0.2953839606" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="ONAYLA">
+                                            <attributes>
+                                                <font key="NSFont" size="23" name="ChalkboardSE-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="ApproveButton:" destination="nzr-zo-Y7k" eventType="touchUpInside" id="rmJ-LB-dQJ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-zi-bmw">
+                                <rect key="frame" x="2" y="20" width="194.33333333333334" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKj-uJ-NA9" userLabel="Back">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="40"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="52b-CB-smD"/>
+                                            <constraint firstAttribute="height" constant="40" id="Ybq-Jz-eEb"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" red="0.41176474089999998" green="0.43137252329999998" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="xDr-mv-H52" kind="presentation" modalPresentationStyle="fullScreen" id="4bN-35-eM2"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ders Kayıt İşlemleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-cd-tNU" userLabel="SınavSonucları">
+                                        <rect key="frame" x="49.333333333333343" y="0.0" width="145" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="rvT-Xq-P4P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-z8-4C3" userLabel="HarfNotu">
+                                <rect key="frame" x="131.66666666666666" y="548" width="129.99999999999997" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="USb-pt-gfT"/>
+                                    <constraint firstAttribute="height" constant="50" id="gtg-F6-4bb"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.31395165679999998" green="0.39094716489999998" blue="0.2953839606" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="HESAPLA">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="23" name="ChalkboardSE-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="ApproveButton:" destination="nzr-zo-Y7k" eventType="touchUpInside" id="0DM-tq-sjN"/>
+                                    <action selector="letterGradeCalculate:" destination="nzr-zo-Y7k" eventType="touchUpInside" id="SOJ-Ci-9dC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qGJ-Ce-Kb2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sze-zi-bmw" firstAttribute="top" secondItem="qGJ-Ce-Kb2" secondAttribute="top" constant="20" id="U4y-zn-hs9"/>
+                            <constraint firstItem="Xq4-Yc-DOV" firstAttribute="centerX" secondItem="Pmx-6j-TmF" secondAttribute="centerX" id="Wyk-6r-7Dz"/>
+                            <constraint firstItem="Sze-zi-bmw" firstAttribute="leading" secondItem="qGJ-Ce-Kb2" secondAttribute="leading" constant="2" id="Xrz-Cs-7qN"/>
+                            <constraint firstItem="0Wx-z8-4C3" firstAttribute="top" secondItem="Xq4-Yc-DOV" secondAttribute="bottom" constant="97" id="aoO-86-kjV"/>
+                            <constraint firstItem="Xq4-Yc-DOV" firstAttribute="centerY" secondItem="Pmx-6j-TmF" secondAttribute="centerY" id="on9-E5-azh"/>
+                            <constraint firstItem="Xq4-Yc-DOV" firstAttribute="centerY" secondItem="PEc-rO-Sv6" secondAttribute="centerY" id="pyK-8d-yM7"/>
+                            <constraint firstItem="Xq4-Yc-DOV" firstAttribute="centerX" secondItem="PEc-rO-Sv6" secondAttribute="centerX" id="u9w-a3-c1X"/>
+                            <constraint firstItem="0Wx-z8-4C3" firstAttribute="leading" secondItem="Xq4-Yc-DOV" secondAttribute="leading" id="wOT-gx-jv8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjS-aH-qJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3589" y="-1073"/>
         </scene>
         <!--Lesson Addition View Controller-->
         <scene sceneID="YxY-Go-VD4">
@@ -2890,7 +3010,7 @@
                                 <rect key="frame" x="0.0" y="89" width="393" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="3Os-Ry-nSw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="89" id="3Os-Ry-nSw" customClass="StudentListFilterTableViewCell" customModule="EOkulMobilProje" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Os-Ry-nSw" id="TUt-j7-1fv">
@@ -2912,6 +3032,10 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButton" destination="3xJ-l5-Q7o" id="qwl-xF-luh"/>
+                                            <outlet property="nameLabel" destination="XZ9-Ca-t7a" id="oet-JY-fcf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2938,6 +3062,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="submitButtonClicked:" destination="Jne-pK-N0B" eventType="touchUpInside" id="cRc-oF-1qr"/>
                                     <action selector="submitButtonClicked:" destination="3El-bf-TlJ" eventType="touchUpInside" id="fyB-Js-6dL"/>
                                     <action selector="submitButtonClicked:" destination="8Yq-ca-PnI" eventType="touchUpInside" id="vf1-W5-iXy"/>
                                 </connections>
@@ -2959,6 +3084,9 @@
                             <constraint firstItem="f8u-x3-7Qj" firstAttribute="bottom" secondItem="yGm-cS-2Pj" secondAttribute="bottom" id="zLA-Ee-Wjm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="WdQ-E5-OLn" id="lZN-ug-xq2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOm-EV-9gs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3558,12 +3686,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="xuy-dt-725"/>
         <segue reference="VAz-V0-Pos"/>
-        <segue reference="TAp-Q2-o1g"/>
+        <segue reference="4bN-35-eM2"/>
         <segue reference="1yt-Gi-9Ha"/>
         <segue reference="gwd-QZ-zbH"/>
         <segue reference="bN7-NG-RKu"/>
-        <segue reference="vBG-zz-RJp"/>
-        <segue reference="b5i-RH-1fJ"/>
+        <segue reference="qXA-cz-r6V"/>
+        <segue reference="LgZ-PP-7SC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
