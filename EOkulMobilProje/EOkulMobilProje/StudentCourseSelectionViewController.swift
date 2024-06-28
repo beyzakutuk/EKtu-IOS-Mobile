@@ -140,24 +140,16 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
                 }
             }
 
-            // Gönderim işlemini başlatma
             task.resume()
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Validate.lessonRegisterHasChanged = true
+        Validate.lessonRegisterPermission = false
+       
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "StudentProfileVC") as? StudentProfileViewController {
+                examUpdateViewController.modalPresentationStyle = .fullScreen
+                self.present(examUpdateViewController, animated: true, completion: nil)
+            }
         
         
         

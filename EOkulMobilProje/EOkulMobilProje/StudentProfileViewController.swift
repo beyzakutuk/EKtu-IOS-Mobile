@@ -13,14 +13,23 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
     
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
-    var student : StudentModel?
+    @IBOutlet weak var lessonRegister: UIButton!
     
     // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        if Validate.lessonRegisterPermission
+        {
+            lessonRegister.isEnabled = true
+        }
+        else
+        {
+            lessonRegister.isEnabled = false
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

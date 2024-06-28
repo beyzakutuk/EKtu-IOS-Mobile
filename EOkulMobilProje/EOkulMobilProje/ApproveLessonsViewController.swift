@@ -14,6 +14,17 @@ class ApproveLessonsViewController: UIViewController , URLSessionDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Validate.lessonRegisterHasChanged == false
+        {
+            Approve.isEnabled = false
+        }
+        else
+        {
+            Approve.isEnabled = true
+        }
+        
+       
     }
     
     @IBAction func ApproveButton(_ sender: Any) {
@@ -138,5 +149,13 @@ class ApproveLessonsViewController: UIViewController , URLSessionDelegate{
         
     }
     
+    
+}
+
+
+class Validate
+{
+    static var lessonRegisterHasChanged: Bool = false
+    static var lessonRegisterPermission: Bool = true
     
 }
