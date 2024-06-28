@@ -7,13 +7,14 @@
 
 import UIKit
 
-class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource , StudentSelectedCourseDelegate {
-
+class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource , StudentSelectedCourseDelegate , URLSessionDelegate {
+    
     // MARK: -VARIABLES
-
+    
     @IBOutlet weak var selectedLessonsTableView: UITableView!
     
     var selectedCourses: [SelectedLessonModel] = []
+    
     
     // MARK: -FUNCTIONS
     
@@ -35,23 +36,23 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
         return selectedCourses.isEmpty ? 1 : selectedCourses.count
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            if selectedCourses.isEmpty {
-                let emptyCell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
-                emptyCell.textLabel?.text = "Seçili ders bulunmuyor."
-                return emptyCell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "selectedCell", for: indexPath) as! StudentSelectedCourseTableViewCell
-                let selectedCourse = selectedCourses[indexPath.row]
-                cell.selectedLessonName.text = selectedCourse.lessonName
-                
-                cell.delegate = self
-                cell.configureCell()
-                
-                return cell
-            }
+        if selectedCourses.isEmpty {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
+            emptyCell.textLabel?.text = "Seçili ders bulunmuyor."
+            return emptyCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "selectedCell", for: indexPath) as! StudentSelectedCourseTableViewCell
+            let selectedCourse = selectedCourses[indexPath.row]
+            cell.selectedLessonName.text = selectedCourse.lessonName
+            
+            cell.delegate = self
+            cell.configureCell()
+            
+            return cell
+        }
     }
     
     
@@ -82,12 +83,90 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
             {
                 MainLessonModel.dersEkle(lessonId: selectedCourse.lessonId, lessonName: selectedCourse.lessonName)
             }
-
+            
             
             selectedLessonsTableView.reloadData() // TableView'i yeniden yükle
         }
     }
     
+    @IBAction func submitButton(_ sender: Any) {
+        
+        guard let token = UserDefaults.standard.string(forKey: "refreshToken") else {
+                   print("Token yok veya geçersiz")
+                   return
+               }
+        
+        guard let url = URL(string: "https:localhost:7253/api/student/studentchooselesson") else {
+                fatalError("Geçersiz URL")
+            }
+        var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        
+        let selectedIds = SelectedLessonModel.getAllSelectedIds()
+        
+        let requestBody = StudentChooseLessonRequestDto(lessonId: selectedIds)
+
+            do {
+                let jsonData = try JSONEncoder().encode(requestBody)
+                request.httpBody = jsonData
+            } catch {
+                print("JSON verisi oluşturulamadı: (error.localizedDescription)")
+                return
+            }
+        
+        let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
+        let task = session.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("İstek hatası: (error.localizedDescription)")
+                    return
+                }
+
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+                }
+
+                if let data = data {
+                    do {
+                        // Yanıt verisini JSON olarak işleme
+                        if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            print("JSON Yanıtı: (jsonResponse)")
+                        }
+                    } catch {
+                        print("Yanıt verisi işlenemedi: (error.localizedDescription)")
+                    }
+                }
+            }
+
+            // Gönderim işlemini başlatma
+            task.resume()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
+    
+}
+
+struct StudentChooseLessonRequestDto: Codable {
+    let lessonId: [Int]
 }
 

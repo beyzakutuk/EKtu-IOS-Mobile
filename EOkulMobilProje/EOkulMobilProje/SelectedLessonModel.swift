@@ -45,4 +45,12 @@ class SelectedLessonModel
             selectedCourse.remove(at: index)
         }
     }
+    
+    // Tüm seçili derslerin ID'lerini döndüren fonksiyon
+    static func getAllSelectedIds() -> [Int] {
+        return selectedCourse.map { $0.lessonId }
+    }
+    
+    
+    
 }

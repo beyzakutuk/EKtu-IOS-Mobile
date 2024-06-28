@@ -74,6 +74,13 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                     return
                 }
                 
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    print("Geçersiz yanıt")
+                    return
+                }
+                
+                print("HTTP Durum Kodu: \(httpResponse.statusCode)")
+                
                 do {
                     // Yanıtı işleyin
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
