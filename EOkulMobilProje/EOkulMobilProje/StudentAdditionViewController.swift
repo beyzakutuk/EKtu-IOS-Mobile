@@ -21,6 +21,8 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
     var isClassSelected = false
     var selectedClassId : Int?
     
+    var Classes : [Class] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,27 +119,31 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                             }
                                    
                             if let httpResponse = response as? HTTPURLResponse {
+                                print(httpResponse.statusCode)
                                 if httpResponse.statusCode == 200 {
                                     
                                     do {
                                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                                             print("Alınan veri: \(json)")
-                                                   
-                                            var Classes = [Class]()
+                                            
                                                 
-                                            if let classDatas = json["Data"] as? [[String: Any]] {
+                                            if let classDatas = json["data"] as? [[String: Any]] {
                                                 for classData in classDatas {
                                                 
-                                                    if let classId = classData["ClassId"] as? Int,
-                                                       let className = classData["ClassName"] as? String {
+                                                    if let classId = classData["classId"] as? Int,
+                                                       let className = classData["className"] as? String {
                                                         let classs = Class(classId: classId, className: className)
-                                                                              Classes.append(classs)
-                                                        }
+
+                                                        Class.addClass(classs)
+                                                    }
                                                     }
                                                 }
+                                            
+                                            self.Classes = Class.getAllClasses()
+                                            
                                                 DispatchQueue.main.async {
                                                     let alertController = UIAlertController(title: "Sınıf Seç", message: "Bir sınıf seçiniz", preferredStyle: .actionSheet)
-                                                    for classItem in Classes {
+                                                    for classItem in self.Classes {
                                                         let action = UIAlertAction(title: classItem.className, style: .default) { _ in
                                                             
                                                             self.sinifButton.setTitle(classItem.className, for: UIControl.State.normal)
@@ -332,7 +338,33 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
     
 }
 
-struct Class {
+
+class Class: Equatable {
     let classId: Int
     let className: String
+    
+    init(classId: Int, className: String) {
+        self.classId = classId
+        self.className = className
+    }
+    
+    // Equatable protokolü için == operatörünü implement et
+    static func == (lhs: Class, rhs: Class) -> Bool {
+        return lhs.classId == rhs.classId && lhs.className == rhs.className
+    }
+    
+    // Sınıf dizisi
+    static var classes: [Class] = []
+    
+    // Class nesnesini ekleyen, aynı olanları eklemeyen fonksiyon
+    static func addClass(_ newClass: Class) {
+        if !classes.contains(where: { $0 == newClass }) {
+            classes.append(newClass)
+        }
+    }
+    
+    // Tüm Class nesnelerini döndüren fonksiyon
+    static func getAllClasses() -> [Class] {
+        return classes
+    }
 }
