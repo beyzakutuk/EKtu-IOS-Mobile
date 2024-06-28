@@ -145,8 +145,6 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                         
                         TeacherClassLessonListModel.tumDersleriSil()
                         
-                        if TeacherClassLessonListModel.teacherslesson.isEmpty
-                        {
                             for lesson in dataArray {
                                 if let lessonId = lesson["lessonId"] as? Int,
                                    let lessonName = lesson["lessonName"] as? String {
@@ -157,7 +155,7 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                                     
                                 }
                             }
-                        }
+                        
                         
                         self.teacherLessons = TeacherClassLessonListModel.getAllTeachersLessons()
                         
