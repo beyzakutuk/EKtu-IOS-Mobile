@@ -56,7 +56,6 @@ class UpdateGradesViewController: UIViewController {
     
         ExamNoteStudentList.setIsUpdate(newValue: true)
         
-        ExamNoteStudentList.setIsUpdate(newValue: true)
 
         if !midtermGrade.isEmpty && !finalGrade.isEmpty {
             // Hem ara sınav hem de final notu girilmiş
