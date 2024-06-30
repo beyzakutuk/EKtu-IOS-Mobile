@@ -9,7 +9,7 @@ import UIKit
 
 class StudentExamResultsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, URLSessionDelegate {
     
-    // MARK: -VARIABLES
+
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var DonemSecimButton: UIButton!
@@ -19,21 +19,20 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     var seciliDonemIndisi: Int = 0
     
     var lessons: [StudentExamsModel] = []
-    
-    // MARK: -FUNCTIONS
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUrl()
+       
         
-        // Butona bir dokunma olayı ekleyin
         DonemSecimButton.addTarget(self, action: #selector(showDropdownMenu), for: .touchUpInside)
 
         setInitViews()
 
          
         tableView.reloadData()
+        
+        getUrl()
     }
     
     func setInitViews()
@@ -98,27 +97,30 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
                     print(json)
                     
                     if let dataArray = json["data"] as? [[String: Any]] {
-                        for item in dataArray {
-                            if let lessonName = item["lessonName"] as? String,
-                               let exam1 = item["exam1"] as? Int,
-                               let exam2 = item["exam2"] as? Int {
-                                
-                                print("Lesson Name: \(lessonName)")
-                                print("Exam 1: \(exam1)")
-                                print("Exam 2: \(exam2)")
-                                
-                                // Örnek olarak StudentExamsModel'e ekleme yapabiliriz
-                                StudentExamsModel.addLessons(lessonName: lessonName, midterm: exam1, final: exam2)
-                            }
-                        }
-                        
-                        // Tüm dersleri yeniden yükle ve tabloyu güncelle
-                        self.lessons = StudentExamsModel.getAllLessons()
-                        
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
+                                       for item in dataArray {
+                                           if let studentChooseExamGrande = item["studentChooseExamGrande"] as? [[String: Any]] {
+                                               for exam in studentChooseExamGrande {
+                                                   if let lessonName = exam["lessonName"] as? String,
+                                                      let exam1 = exam["exam1"] as? Int,
+                                                      let exam2 = exam["exam2"] as? Int,
+                                                      let letterGrade = exam["letterGrade"]{
+                                                       
+                                                       print("Lesson Name: \(lessonName)")
+                                                       print("Exam 1: \(exam1)")
+                                                       print("Exam 2: \(exam2)")
+                                                       print("LetterGrade: \(letterGrade)")
+                                                       
+                                                       StudentExamsModel.addLessons(lessonName: lessonName, midterm: exam1, final: exam2)
+                                                   }
+                                               }
+                                           }
+                                       }
+                                       self.lessons = StudentExamsModel.getAllLessons()
+                                       
+                                       DispatchQueue.main.async {
+                                           self.tableView.reloadData()
+                                       }
+                                   }
                     
                 }
             }catch {
@@ -127,13 +129,16 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         }
         
     task.resume()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 
     @objc func showDropdownMenu() {
         let alertController = UIAlertController(title: "Dönem Seçiniz", message: nil, preferredStyle: .actionSheet)
         
-        // Güz dönemi seçeneği
         let fallAction = UIAlertAction(title: "Güz Dönemi", style: .default) { _ in
 
             print("Güz Dönemi Seçildi")
@@ -145,7 +150,6 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         
         alertController.addAction(fallAction)
         
-        // Bahar dönemi seçeneği
         let springAction = UIAlertAction(title: "Bahar Dönemi", style: .default) { _ in
 
             print("Bahar Dönemi Seçildi")
@@ -171,9 +175,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let allLessons = StudentExamsModel.getAllLessons()
-        
-        if allLessons.isEmpty
+        if self.lessons.isEmpty
         {
             let emptyCell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
             return emptyCell
@@ -182,7 +184,7 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentsCoursesTableViewCell
             
-            let lesson = allLessons[indexPath.row]
+            let lesson = self.lessons[indexPath.row]
             
             cell.titleLabel.text = lesson.lessonName
             
@@ -207,13 +209,6 @@ class StudentExamResultsViewController: UIViewController , UITableViewDelegate, 
             return cell
             
         }
-        
-        
-       
-    }
-  
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 
 
