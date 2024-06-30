@@ -39,24 +39,15 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
     
     func geturl()
     {
-          
             guard let url = URL(string: "https://localhost:7253/api/teacher/GetAllStudentByClassIdAndLessonId") else {
                 fatalError("Geçersiz URL")
             }
-
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        
-           
-            let parameters: [String: Any] = [
-                "classId": StudentFilterModel.getClassId(),
-                "lessonId": StudentFilterModel.getLessonId()
-            ]
-
+            let parameters: [String: Any] = [ "classId": StudentFilterModel.getClassId(), "lessonId": StudentFilterModel.getLessonId()]
             do {
-                // Verileri JSON formatına dönüştürün
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch let error {
                 print("JSON Serialization error: \(error.localizedDescription)")
@@ -78,11 +69,9 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                     print("Geçersiz yanıt")
                     return
                 }
-                
                 print("HTTP Durum Kodu: \(httpResponse.statusCode)")
                 
                 do {
-                    // Yanıtı işleyin
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         print("Yanıt: \(jsonResponse)")
                         
@@ -94,16 +83,12 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                                    let final = studentData["exam_2"] as? Int
                                 {
                                     if let decodedName = studentName.applyingTransform(StringTransform(rawValue: "Any-Name"), reverse: true) {
-                                        print("Öğrenci Adı: \(decodedName)")
                                         let student = ExamNoteStudentList(studentId: studentId, studentName: decodedName, midtermNote: midterm, finalNote: final)
-                                        
                                         ExamNoteStudentList.addStudent(studentId: studentId, studentName: decodedName, midtermNote: midterm, finalNote: final)
-                                        
                                     }
                                     else
                                     {
                                         let student = ExamNoteStudentList(studentId: studentId, studentName: studentName, midtermNote: midterm, finalNote: final)
-                                        
                                         ExamNoteStudentList.addStudent(studentId: studentId, studentName: studentName, midtermNote: midterm, finalNote: final)
                                     }
                                     
@@ -111,19 +96,11 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                                     
                                     DispatchQueue.main.async {
                                         self.StudentListTableView.reloadData()
-                                    }
-
-                                        
-                                }
-                                
-                                
-                            } }}}
+                                    }}} }}}
                 
                         catch let error {
                     print("JSON Parsing error: \(error.localizedDescription)")
-                }
-            }
-
+                }}
             task.resume()
     }
     
@@ -179,15 +156,12 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
         if let indexPath = StudentListTableView.indexPath(for: cell) {
                 let student = self.students[indexPath.row]
                 
-                // Seçilen öğrencinin studentId'sini static değişkenimize ata
                 ExamNoteStudentList.updateId(newValue: student.studentId)
                 
-                // Öğrencinin notlarının güncelleneceği sayfaya yönlendir
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "UpdateGradesViewController") as? UpdateGradesViewController {
 
                     
-                    // Present modally olarak göster
                     examUpdateViewController.modalPresentationStyle = .fullScreen
                     self.present(examUpdateViewController, animated: true, completion: nil)
                 }
@@ -204,22 +178,15 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
                    print("Token yok veya geçersiz")
                    return
                }
-
-            // URLRequest oluşturma
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        // Query parametresi oluşturma
         let classIdQueryItem = URLQueryItem(name: "classId", value: "\(StudentFilterModel.getClassId())")
+        
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        urlComponents.queryItems = [classIdQueryItem]
 
-            // URLComponents oluşturma
-            var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-            urlComponents.queryItems = [classIdQueryItem]
-
-       
-        // JSON Serialization
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: StudentUpdateExamNoteModel.getAllStudents().map { person in
                 return [
@@ -233,42 +200,34 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 print("Serialized JSON:")
                 print(jsonString)
-                // String'i Data'ya dönüştür
-                        if let jsonDataFromString = jsonString.data(using: .utf8) {
-                            request.httpBody = jsonDataFromString
-                        } else {
-                            print("Cannot convert String to Data.")
-                        }
-            }
+                if let jsonDataFromString = jsonString.data(using: .utf8) {
+                    request.httpBody = jsonDataFromString
+                } else {
+                    print("Cannot convert String to Data.")
+                }
+    }
         } catch {
             print("JSON Serialization Error: \(error.localizedDescription)")
         }
-        
         let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
         let task = session.dataTask(with: request) { data, response, error in
                if let error = error {
                    print("İstek hatası: \(error.localizedDescription)")
                    return
                }
-               
                guard let httpResponse = response as? HTTPURLResponse else {
                    print("Geçersiz yanıt")
                    return
                }
-               
                print("HTTP Durum Kodu: \(httpResponse.statusCode)")
                
                guard let data = data else {
                    print("Veri yok")
                    return
                }
-               
                do {
-                   // Yanıtı işleyin
                    if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                        print("Yanıt: \(jsonResponse)")
-                       
-                       // Burada JSON verisini istediğiniz şekilde işleyebilirsiniz
                    } else {
                        print("JSON formatı beklenmiyor")
                    }
@@ -280,6 +239,23 @@ class StudentExamListViewController: UIViewController , UITableViewDelegate, UIT
            task.resume()
 
         
-        
+        showAlert()
+       
+    }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: "Başarılı", message: "Öğrenci notları sisteme başarıyla kaydedildi.", preferredStyle: .alert)
+            
+        let anaSayfayaDonAction = UIAlertAction(title: "Ana Sayfaya Dön", style: .default) { _ in
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "TeacherProfileVC") as? TeacherProfileViewController {
+                    examUpdateViewController.modalPresentationStyle = .fullScreen
+                    self.present(examUpdateViewController, animated: true, completion: nil)
+                }
+        }
+
+        alertController.addAction(anaSayfayaDonAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
