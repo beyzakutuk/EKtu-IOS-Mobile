@@ -59,7 +59,6 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
                 emptyCell.textLabel?.text = "Ders bulunmuyor"
                 return emptyCell
             } else {
-                // Dersler varsa normal hücreleri oluştur
                 let cell = tableView.dequeueReusableCell(withIdentifier: "selectionCell", for: indexPath) as! OptionalCourseSelectionTableViewCell
                 let course = optional1[indexPath.row]
                 cell.lessonNameLabel.text = course.lessonName
@@ -76,7 +75,6 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
                 emptyCell.textLabel?.text = "Ders bulunmuyor"
                 return emptyCell
             } else {
-                // Dersler varsa normal hücreleri oluştur
                 let cell = tableView.dequeueReusableCell(withIdentifier: "selectionCell", for: indexPath) as! OptionalCourse2SelectionTableViewCell
                 let course = optional2[indexPath.row]
                 cell.lessonNameLabel.text = course.lessonName
@@ -92,7 +90,6 @@ class OptionalLessonsViewController: UIViewController, UITableViewDelegate, UITa
                 emptyCell.textLabel?.text = "Ders bulunmuyor"
                 return emptyCell
             } else {
-                // Dersler varsa normal hücreleri oluştur
                 let cell = tableView.dequeueReusableCell(withIdentifier: "selectionCell", for: indexPath) as! OptionalCourse3SelectionTableViewCell
                 let course = optional3[indexPath.row]
                 cell.lessonNameLabel.text = course.lessonName

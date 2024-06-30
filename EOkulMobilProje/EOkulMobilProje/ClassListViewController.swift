@@ -53,10 +53,8 @@ class ClassListViewController: UIViewController , UITableViewDelegate, UITableVi
                 print("Boş yanıt")
                 return
             }
-            // JSON verilerini çözme
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // Access token alınması
                     if let accessToken = json["access_token"] as? String {
                         print("Access Token: \(accessToken)")
 
@@ -104,7 +102,7 @@ class ClassListViewController: UIViewController , UITableViewDelegate, UITableVi
                                             self.Classes = Class.getAllClasses()
                                             
                                             DispatchQueue.main.async {
-                                                self.tableView.reloadData() // TableView'i yeniden yükle
+                                                self.tableView.reloadData()
                                             }
                                      
                                         } else {
@@ -119,7 +117,6 @@ class ClassListViewController: UIViewController , UITableViewDelegate, UITableVi
                                 }
                             }
                     
-                        // İsteği başlatma
                         task.resume()
                     
                     } else {

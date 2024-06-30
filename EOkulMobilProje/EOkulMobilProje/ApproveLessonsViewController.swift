@@ -62,13 +62,11 @@ class ApproveLessonsViewController: UIViewController , URLSessionDelegate{
                 return
             }
             
-            // Gelen veriyi yazdırın
             if let responseString = String(data: data, encoding: .utf8) {
                 print("Yanıt Verisi: \(responseString)")
             }
             
             do {
-                // Yanıtı işleyin
                 if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print("Yanıt: \(jsonResponse)")
                     
@@ -123,13 +121,11 @@ class ApproveLessonsViewController: UIViewController , URLSessionDelegate{
                 return
             }
             
-            // Gelen veriyi yazdırın
             if let responseString = String(data: data, encoding: .utf8) {
                 print("Yanıt Verisi: \(responseString)")
             }
             
             do {
-                // Yanıtı işleyin
                 if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print("Yanıt: \(jsonResponse)")
                     

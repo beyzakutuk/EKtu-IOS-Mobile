@@ -10,14 +10,10 @@ import Alamofire
 
 class StudentLoginViewController: UIViewController {
     
-    // MARK: -VARIABLES
-    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    // MARK: -FUNCTIONS
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
@@ -25,10 +21,10 @@ class StudentLoginViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+        self.view.endEditing(true)
     }
     
-    private func setInitViews() // her bir içerik değiştiğinde kontrol edecek.
+    private func setInitViews()
     {
         usernameField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
@@ -126,30 +122,6 @@ class StudentLoginViewController: UIViewController {
     
     func saveTokens(refreshToken:String){
         UserDefaults.standard.set(refreshToken , forKey: "refreshToken")
-    }
-   
-    @IBAction func forgotPasswordButton(_ sender: UIButton) {
-        
-        // "Şifreni mi unuttun?" butonuna tıklandığında eylem
-        let alertController = UIAlertController(title: "Şifreni mi unuttun?", message: "E-posta adresinizi girin", preferredStyle: .alert)
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "E-posta adresi"
-        }
-        
-        let cancelAction = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
-        let submitAction = UIAlertAction(title: "Gönder", style: .default) { (_) in
-            if let email = alertController.textFields?.first?.text {
-                // Burada e-posta adresiyle yapılacak işlemleri gerçekleştireceğiz
-                print("Girilen e-posta: \(email)")
-            }
-        }
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(submitAction)
-        
-        present(alertController, animated: true, completion: nil)
-        
     }
     
 }

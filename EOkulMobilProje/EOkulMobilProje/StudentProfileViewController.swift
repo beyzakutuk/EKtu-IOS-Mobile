@@ -9,14 +9,10 @@ import UIKit
 
 class StudentProfileViewController: UIViewController , URLSessionDelegate {
     
-    // MARK: -VARIABLES
-    
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lessonRegister: UIButton!
     
-    // MARK: -FUNCTIONS
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,13 +72,11 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
                         return
                     }
                     
-                    // Response'u parse edin ve kullanın
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             print("Kullanıcı Bilgisi: \(json["name"]!)")
                             print("Kullanıcı className: \(json["classname"]!)")
                             
-                            // Kullanıcı bilgilerini güncelle
                             DispatchQueue.main.async {
                                 self.nameLabel.text = json["name"] as? String
                                 self.classLabel.text = json["classname"] as? String
@@ -103,14 +97,11 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
     @IBAction func exitButtonClicked(_ sender: UIButton) {
           
         let exitAlert = UIAlertController(title: "Çıkış Yap", message: "Çıkış yapmak istediğinizden emin misiniz?", preferredStyle: .alert)
-        
-        //evet
+
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
-                                          // Giriş sayfasına geri dön
             self.performSegue(withIdentifier: "backToLogin", sender: self)
             UserDefaults.standard.removeObject(forKey: "refreshToken")
                                       }))
-        //iptal
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         
         self.present(exitAlert, animated: true, completion: nil)
@@ -120,12 +111,10 @@ class StudentProfileViewController: UIViewController , URLSessionDelegate {
         
         let exitAlert = UIAlertController(title: "Ana Sayfaya Dön", message: "Ana sayfaya dönmek istediğinizden emin misiniz?", preferredStyle: .alert)
         
-        //evet
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
-                                          // Giriş sayfasına geri dön
+                                          
             self.performSegue(withIdentifier: "backToMain", sender: self)
                                       }))
-        //iptal
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         
         self.present(exitAlert, animated: true, completion: nil)

@@ -47,21 +47,19 @@ class LessonAdditionViewController: UIViewController {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+        self.view.endEditing(true)  
     }
     
     private func setupViews() {
-        // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır
         [isimField].forEach { textField in
             textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         }
         
-        validateFields() // Başlangıçta butonu pasif hale getirmek için
+        validateFields()
     }
 
     @objc private func validateFields()
     {
-        // Bütün text fieldların dolu olup olmadığını kontrol et
         let isFormValid = !(isimField.text?.isEmpty ?? true) &&
                       isTipSelected && isYilSelected && isDonemSelected
             
@@ -77,6 +75,7 @@ class LessonAdditionViewController: UIViewController {
                 self.HasOptionalButton.setTitle("Seçmeli", for: UIControl.State.normal)
                 self.HasOptionalButton.titleLabel?.textColor = .black
                 self.isTipSelected = true
+                self.hasOptional = true
                 self.validateFields()
 
                 print("Seçilen Tip: Seçmeli")
@@ -89,7 +88,7 @@ class LessonAdditionViewController: UIViewController {
                 self.HasOptionalButton.setTitle("Ana Ders", for: UIControl.State.normal)
                 self.HasOptionalButton.titleLabel?.textColor = .black
                 self.isTipSelected = true
-                self.selectedSecmeliId = nil
+                self.selectedSecmeliId = 0
                 self.validateFields()
 
                 print("Seçilen Tip: Ana Ders")
@@ -213,6 +212,14 @@ class LessonAdditionViewController: UIViewController {
         let grant_type = "client_credentials"
             
 
+        let lessonData: [String: Any] = [
+              "lessonName": isim,
+              "hasOptional": hasOptional,
+              "optionalLessonId": selectedSecmeliId!,
+              "grade": DonemID!,
+              "term": selectedDonem!
+            ]
+        
         let parameters = "client_id=\(client_id)&client_secret=\(client_secret)&grant_type=\(grant_type)"
         let postData = parameters.data(using: .utf8)
         
@@ -237,7 +244,6 @@ class LessonAdditionViewController: UIViewController {
             // JSON verilerini çözme
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // Access token alınması
                     if let accessToken = json["access_token"] as? String {
                         print("Access Token: \(accessToken)")
                             
@@ -245,13 +251,7 @@ class LessonAdditionViewController: UIViewController {
                             return
                         }
                             
-                        let lessonData: [String: Any] = [
-                              "lessonName": isim,
-                              "hasOptional": self.hasOptional,
-                              "optionalLessonId": self.selectedSecmeliId!,
-                              "grade": self.DonemID!,
-                              "term": self.selectedDonem!
-                            ]
+                        
                             
                         guard let jsonData = try? JSONSerialization.data(withJSONObject: lessonData) else {
                             print("Error encoding teacher data")
@@ -265,6 +265,16 @@ class LessonAdditionViewController: UIViewController {
                             request.httpBody = jsonData
                                 
                         let task = session.dataTask(with: request) { data, response, error in
+                            print("request başarılı")
+                            
+                            guard let httpResponse = response as? HTTPURLResponse else {
+                                print("Geçersiz HTTP yanıtı")
+                                return
+                            }
+                            
+                            print("Status code: \(httpResponse.statusCode)")
+                            
+                            
                             
                             if let error = error {
                                 print("Error: \(error)")
@@ -275,6 +285,7 @@ class LessonAdditionViewController: UIViewController {
                                 print("No data received")
                                 return
                             }
+                            
                                     
                         }
 
@@ -292,13 +303,12 @@ class LessonAdditionViewController: UIViewController {
         }
 
         task.resume()
-
+        
 
         // Onay mesajını güncelle
         onayLabel.text = "Kaydedildi"
         onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
                 
-        // TextField'lerin içeriğini temizle
         isimField.text = ""
         HasOptionalButton.setTitle("Tip Seçiniz", for: .normal)
         isTipSelected = false

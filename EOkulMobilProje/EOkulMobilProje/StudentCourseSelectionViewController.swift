@@ -8,16 +8,12 @@
 import UIKit
 
 class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource , StudentSelectedCourseDelegate , URLSessionDelegate {
-    
-    // MARK: -VARIABLES
-    
+
+    @IBOutlet weak var onayLabel: UILabel!
     @IBOutlet weak var selectedLessonsTableView: UITableView!
     
     var selectedCourses: [SelectedLessonModel] = []
-    
-    
-    // MARK: -FUNCTIONS
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setInitViews()
@@ -85,7 +81,7 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
             }
             
             
-            selectedLessonsTableView.reloadData() // TableView'i yeniden yükle
+            selectedLessonsTableView.reloadData()
         }
     }
     
@@ -130,7 +126,6 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
 
                 if let data = data {
                     do {
-                        // Yanıt verisini JSON olarak işleme
                         if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             print("JSON Yanıtı: (jsonResponse)")
                         }
@@ -142,16 +137,17 @@ class StudentCourseSelectionViewController: UIViewController ,UITableViewDelegat
 
             task.resume()
         
+        onayLabel.text = "Kaydedildi"
+        onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
+        
         Validate.lessonRegisterHasChanged = true
         Validate.lessonRegisterPermission = false
-       
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let examUpdateViewController = storyboard.instantiateViewController(withIdentifier: "StudentProfileVC") as? StudentProfileViewController {
                 examUpdateViewController.modalPresentationStyle = .fullScreen
                 self.present(examUpdateViewController, animated: true, completion: nil)
             }
-        
-        
         
     }
     

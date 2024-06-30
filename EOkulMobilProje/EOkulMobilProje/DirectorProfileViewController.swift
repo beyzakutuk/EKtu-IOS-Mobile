@@ -61,7 +61,6 @@ class DirectorProfileViewController: UIViewController , URLSessionDelegate{
                         return
                     }
                     
-                    // Response'u parse edin ve kullanın
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             print("Kullanıcı Bilgisi: \(json["name"]!)")
@@ -83,13 +82,13 @@ class DirectorProfileViewController: UIViewController , URLSessionDelegate{
         
         let exitAlert = UIAlertController(title: "Çıkış Yap", message: "Çıkış yapmak istediğinizden emin misiniz?", preferredStyle: .alert)
         
-        //evet
+  
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
-                                          // Giriş sayfasına geri dön
+                        
             self.performSegue(withIdentifier: "backToLogin", sender: self)
             UserDefaults.standard.removeObject(forKey: "refreshTokenPrincipal")
                                       }))
-        //iptal
+
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         self.present(exitAlert, animated: true, completion: nil)
     }
@@ -98,12 +97,11 @@ class DirectorProfileViewController: UIViewController , URLSessionDelegate{
         
         let exitAlert = UIAlertController(title: "Ana Sayfaya Dön", message: "Ana sayfaya dönmek istediğinizden emin misiniz?", preferredStyle: .alert)
         
-        //evet
         exitAlert.addAction(UIAlertAction(title: "Evet", style: .default , handler: {(_) in
-                                          // Giriş sayfasına geri dön
+                                        
             self.performSegue(withIdentifier: "backToMain", sender: self)
                                       }))
-        //iptal
+   
         exitAlert.addAction(UIAlertAction(title: "İptal", style: .cancel , handler: nil))
         
         self.present(exitAlert, animated: true, completion: nil)

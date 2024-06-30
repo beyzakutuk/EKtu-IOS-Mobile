@@ -11,6 +11,9 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     
+
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +64,6 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
                 return
             }
                     
-            // Response'u parse edin ve kullanın
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print("Kullanıcı Bilgisi: \(json["name"]!)")
@@ -116,4 +118,6 @@ class TeacherProfileViewController: UIViewController , URLSessionDelegate {
         
         self.present(exitAlert, animated: true, completion: nil)
     }
+    
+    
 }

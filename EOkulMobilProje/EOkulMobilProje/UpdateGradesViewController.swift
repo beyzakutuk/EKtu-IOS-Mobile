@@ -22,11 +22,10 @@ class UpdateGradesViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+        self.view.endEditing(true)  
     }
     
     private func setupViews() {
-        // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır
         [midtermGradesTextField, finalGradesTextField].forEach { textField in
             textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         }
@@ -58,18 +57,15 @@ class UpdateGradesViewController: UIViewController {
         
 
         if !midtermGrade.isEmpty && !finalGrade.isEmpty {
-            // Hem ara sınav hem de final notu girilmiş
             if let student = ExamNoteStudentList.findStudentById(studentId: ExamNoteStudentList.getId()) {
                 student.setMidterm(midtermNote: Int(midtermGrade) ?? 0)
                 student.setFinal(final: Int(finalGrade) ?? 0)
             }
         } else if !midtermGrade.isEmpty {
-            // Sadece ara sınav notu girilmiş
             if let student = ExamNoteStudentList.findStudentById(studentId: ExamNoteStudentList.getId()) {
                 student.setMidterm(midtermNote: Int(midtermGrade) ?? 0)
             }
         } else if !finalGrade.isEmpty {
-            // Sadece final notu girilmiş
             if let student = ExamNoteStudentList.findStudentById(studentId: ExamNoteStudentList.getId()) {
                 student.setFinal(final: Int(finalGrade) ?? 0)
             }

@@ -17,8 +17,7 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         setInitViews()
         getUrl()
-        
-        lessons = MainLessonModel.getAllMainLessons()
+
     }
 
     func setInitViews() {
@@ -33,7 +32,6 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
     func getUrl()
     {
         
-        // Kullanıcı bilgilerini almak için kullanılacak token
         guard let refreshToken = UserDefaults.standard.string(forKey: "refreshToken") else {
             print("Refresh token alınamadı.")
             return
@@ -48,7 +46,7 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
         termlessonrequest.httpMethod = "GET"
         
         
-        termlessonrequest.setValue("false", forHTTPHeaderField: "term")
+        termlessonrequest.setValue("true", forHTTPHeaderField: "term")
         termlessonrequest.setValue("Bearer \(refreshToken)", forHTTPHeaderField: "Authorization")
         
         let session = URLSession(configuration: .default, delegate: MySessionDelegate(), delegateQueue: nil)
@@ -66,16 +64,14 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                        return
                    }
 
-                   // Response'u parse edin ve kullanın
                    if let httpResponse = response as? HTTPURLResponse {
                        print("Response status code: \(httpResponse.statusCode)")
 
                        do {
-                           // JSON verisini işleyin
                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                                print("JSON: \(json)")
                                
-                               
+                               MainLessonModel.tumDersleriSil()
                                
                                if let jsonData = json["data"] as? [String: Any],
                                   let anaDersData = jsonData["anaDers"] as? [[String: Any]] {
@@ -84,7 +80,11 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                                if let lessonId = lessonData["lessonId"] as? Int,
                                                   let lessonName = lessonData["lessonName"] as? String {
                                                    let lesson = MainLessonModel(lessonId: lessonId, lessonName: lessonName)
-                                                   MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                                   
+                                                   if !SelectedLessonModel.selectedCourse.contains(where: { $0.lessonId == lessonId })
+                                                   {
+                                                       MainLessonModel.dersEkle(lessonId: lesson.lessonId, lessonName: lesson.lessonName)
+                                                   }
                                                }
                                                
                                                self.lessons = MainLessonModel.getAllMainLessons()
@@ -120,14 +120,12 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
                                                    }
                                                
                                            }
-                                           
-                                           
                                            }
                                            
                                        }
                                        
                                        DispatchQueue.main.async {
-                                           self.lessonsTableView.reloadData() // TableView'i yeniden yükle
+                                           self.lessonsTableView.reloadData()
                                        }
                                    }
                                }
@@ -167,7 +165,7 @@ class MainLessonsViewController: UIViewController, UITableViewDelegate, UITableV
             MainLessonModel.anaderslerdenKaldır(lessonId: selectedCourse.lessonId)
             
          
-            lessonsTableView.reloadData() // TableView'i yeniden yükle
+            lessonsTableView.reloadData() 
         }
     }
 

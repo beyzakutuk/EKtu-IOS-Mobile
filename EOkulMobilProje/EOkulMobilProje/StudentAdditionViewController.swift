@@ -38,16 +38,15 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+        self.view.endEditing(true)
     }
     
     private func setupViews() {
-        // Text fieldlar için editingChanged eventini dinleyerek validateFields fonksiyonunu çağır
         [isimField, soyisimField, tcKimlikField, sifreField].forEach { textField in
             textField?.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         }
         
-        validateFields() // Başlangıçta butonu pasif hale getirmek için
+        validateFields()
     }
     
     @objc private func validateFields()
@@ -92,10 +91,8 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                 return
             }
                 
-            // JSON verilerini çözme
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // Access token alınması
                     if let accessToken = json["access_token"] as? String {
                         print("Access Token: \(accessToken)")
 
@@ -125,6 +122,8 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                                     do {
                                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                                             print("Alınan veri: \(json)")
+                                            
+                                            Class.removeAllClasses()
                                             
                                                 
                                             if let classDatas = json["data"] as? [[String: Any]] {
@@ -186,16 +185,7 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
     }
             
     task.resume()
-        
-        /*
 
-                // UIAlertController'i göster
-                if let popoverController = alertController.popoverPresentationController {
-                    popoverController.sourceView = sender as? UIView
-                    popoverController.sourceRect = (sender as AnyObject).bounds
-                }
-                
-                present(alertController, animated: true, completion: nil)*/
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
@@ -238,10 +228,8 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                 return
             }
                 
-            // JSON verilerini çözme
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // Access token alınması
                     if let accessToken = json["access_token"] as? String {
                         print("Access Token: \(accessToken)")
                             
@@ -250,12 +238,12 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                         }
                             
                         let studentData: [String: Any] = [
-                                "StudentName": isim,
-                                "StudentLastName": soyisim,
-                                "Email": "--",
-                                "StudentPassword": sifre,
-                                "StudentTckNo": tcKimlikNo,
-                                "ClassId": self.selectedClassId!
+                            "studentName": isim,
+                              "studentLastName": soyisim,
+                              "email": "--",
+                              "studentPassword": sifre,
+                              "studentTckNo": tcKimlikNo,
+                            "classId": self.selectedClassId!
                             ]
                             
                         guard let jsonData = try? JSONSerialization.data(withJSONObject: studentData) else {
@@ -269,6 +257,9 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
                             request.httpBody = jsonData
+                        
+                        
+                            
                                 
                         let task = session.dataTask(with: request) { data, response, error in
                             
@@ -285,6 +276,10 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
                             do {
                                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                                     print("Response: \(json)")
+                                    
+                                    if let httpResponse = response as? HTTPURLResponse{
+                                        print("Response status code: \(httpResponse.statusCode)")}
+                                   
                                 }
                             } catch {
                                 print("Error parsing response: \(error)")
@@ -306,11 +301,9 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
 
         task.resume()
 
-        // Onay mesajını güncelle
         onayLabel.text = "Kaydedildi"
         onayLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1)
                 
-        // TextField'lerin içeriğini temizle
         isimField.text = ""
         soyisimField.text = ""
         tcKimlikField.text = ""
@@ -318,7 +311,7 @@ class StudentAdditionViewController: UIViewController , URLSessionDelegate  {
         sinifButton.setTitle("Sınıf Seçiniz", for: .normal)
         isClassSelected = false
             
-        validateFields() // Alanları temizledikten sonra tekrar doğrula
+        validateFields()
         
         showAlert()
         
@@ -348,23 +341,25 @@ class Class: Equatable {
         self.className = className
     }
     
-    // Equatable protokolü için == operatörünü implement et
     static func == (lhs: Class, rhs: Class) -> Bool {
         return lhs.classId == rhs.classId && lhs.className == rhs.className
     }
     
-    // Sınıf dizisi
     static var classes: [Class] = []
+    static var id: Int = 0
     
-    // Class nesnesini ekleyen, aynı olanları eklemeyen fonksiyon
     static func addClass(_ newClass: Class) {
         if !classes.contains(where: { $0 == newClass }) {
             classes.append(newClass)
         }
     }
     
-    // Tüm Class nesnelerini döndüren fonksiyon
     static func getAllClasses() -> [Class] {
         return classes
     }
+    
+    static func removeAllClasses() {
+        classes.removeAll()
+    }
+
 }

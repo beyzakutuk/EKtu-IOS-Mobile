@@ -9,15 +9,11 @@ import UIKit
 
 class TeacherLoginViewController: UIViewController {
     
-    // MARK: -VARIABLES
-    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var loggedInTeacher: TeacherModel?
-    
-    // MARK: -FUNCTIONS
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +21,10 @@ class TeacherLoginViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)  // ekranda herhangi bir yere dokunduğunda klavyeyi kapat
+        self.view.endEditing(true)
     }
     
-    private func setInitViews() // her bir içerik değiştiğinde kontrol edecek.
+    private func setInitViews()
     {
         usernameField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
@@ -89,7 +85,7 @@ class TeacherLoginViewController: UIViewController {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
                         print("Cevap JSON: \(json)")
-                        if let refreshToken = json["refresh_token"] as? String {
+                        if let refreshToken = json["access_token"] as? String {
                             self.saveTokens(refreshToken: refreshToken)
                         }
                     }
@@ -136,7 +132,6 @@ class TeacherLoginViewController: UIViewController {
                let cancelAction = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
                let submitAction = UIAlertAction(title: "Gönder", style: .default) { (_) in
                    if let email = alertController.textFields?.first?.text {
-                       // Burada e-posta adresiyle yapılacak işlemleri gerçekleştirebilirsiniz.
                        print("Girilen e-posta: \(email)")
                    }
                }

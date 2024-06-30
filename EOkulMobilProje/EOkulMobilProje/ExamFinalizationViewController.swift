@@ -129,19 +129,15 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
                 return
             }
             
-            // Gelen veriyi yazdırın
             if let responseString = String(data: data, encoding: .utf8) {
                 print("Yanıt Verisi: \(responseString)")
             }
             
             do {
-                // Yanıtı işleyin
                 if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     print("Yanıt: \(jsonResponse)")
                     
-                    // `data` alanındaki diziyi al
                     if let dataArray = jsonResponse["data"] as? [[String: Any]] {
-                        // Her bir öğeyi işleyin
                         
                         TeacherClassLessonListModel.tumDersleriSil()
                         
@@ -192,13 +188,11 @@ class ExamFinalizationViewController: UIViewController , URLSessionDelegate {
     
     @IBAction func GetStudentListButton(_ sender: Any) {
         
-        // Sınıf seçilmemişse uyarı ver
         guard isYilSelected else {
             showAlert(title: "Uyarı", message: "Lütfen önce bir sınıf seçiniz.")
             return
         }
            
-        // Ders seçilmemişse uyarı ver
         guard secilenDersId != nil else {
             showAlert(title: "Uyarı", message: "Lütfen önce bir ders seçiniz.")
             return

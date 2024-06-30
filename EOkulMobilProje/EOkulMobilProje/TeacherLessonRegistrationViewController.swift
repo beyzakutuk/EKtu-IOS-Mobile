@@ -95,7 +95,6 @@ class TeacherLessonRegistrationViewController: UIViewController , SelectionDeleg
       
     }
     
-    // Geçiş sırasında delegate'i ayarlayın
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showClassList", let classListVC = segue.destination as? ClassListViewController {
             classListVC.delegate = self
@@ -108,7 +107,6 @@ class TeacherLessonRegistrationViewController: UIViewController , SelectionDeleg
         }
     }
     
-    // SelectionDelegate Method
     func didSelectItem(_ item: Class) {
         classSelectionButton.setTitle(item.className, for: .normal)
     }

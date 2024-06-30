@@ -93,7 +93,6 @@ class TeacherListViewController: UIViewController , UITableViewDelegate, UITable
                     }
                 }
         
-            // İsteği başlatma
             task.resume()
     }
     

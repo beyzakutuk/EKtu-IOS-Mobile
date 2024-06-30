@@ -39,4 +39,9 @@ class MainLessonModel
             mainLessons.remove(at: index)
         }
     }
+    
+    static func tumDersleriSil() {
+        mainLessons.removeAll()
+    }
+    
 }
